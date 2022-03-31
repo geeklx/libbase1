@@ -62,7 +62,9 @@ subprojects {
 //                    artifactId "$project.name"
 //                    from components.release
                             from components.release
-                            groupId = PROJ_GROUP
+
+//                            groupId = PROJ_GROUP
+                            groupId = PROJ_NAME
                             artifactId = PROJ_ARTIFACTID
                             version = PROJ_VERSION
 
