@@ -46,6 +46,7 @@ include ':libsCenterNew',
 // end aar
 
 // commonlibs
+include ':libgeek'
 include ':libocr'
 include ':libyanzheng'
 include ':libdkplayer'
