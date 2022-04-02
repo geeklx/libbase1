@@ -50,4 +50,4 @@ include ':libgeek'
 include ':libocr'
 include ':libyanzheng'
 include ':libdkplayer'
-
+include ':libshadowlayout'

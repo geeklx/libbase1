@@ -1,0 +1,8 @@
+apply from: "${rootDir.path}/gradle/publish.gradle"
+apply from: "${rootDir.path}/gradle/base.gradle"
+def librarys = rootProject.ext.dependencies //依赖
+dependencies {
+    api fileTree(dir: 'libs', include: ['*.jar'])
+    implementation librarys.glide47
+//    implementation 'com.github.bumptech.glide:glide:4.9.0'
+}
