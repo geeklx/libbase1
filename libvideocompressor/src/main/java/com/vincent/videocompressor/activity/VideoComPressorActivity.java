@@ -129,7 +129,8 @@ public class VideoComPressorActivity extends AppCompatActivity implements View.O
     private TextView progressTime;
     private ImageView videoImage;
     private LinearLayout compressionMsg;
-    String video_Paths;
+    private String video_Paths;//获取到视频路径
+    private long videosize;//获取到视频大小
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -185,24 +186,34 @@ public class VideoComPressorActivity extends AppCompatActivity implements View.O
             @Override
             public void onClick(View view) {
                 if (localMediaList != null && !"".equals(localMediaList)) {
-                    String videoPath = localMediaList.get(0).getAndroidQToPath();
-                    if (videoPath.endsWith("bmp") || videoPath.endsWith("jpg") || videoPath.endsWith("jpeg") || videoPath.endsWith("png") || videoPath.endsWith("gif")) {
-                        com.blankj.utilcode.util.ToastUtils.showShort("视频格式错误，请重新选择");
-                        return;
-                    }
-                    File f = new File(Environment.getExternalStoragePublicDirectory(Environment.DIRECTORY_MOVIES) + "/lighthouse/videos");
-                    if (f.mkdirs() || f.isDirectory()) {
-                        //compress and output new video specs
-                        //                                    asyncTask = new VideoCompressAsyncTask(this);
-                        //                                    asyncTask.execute(videoPath, f.getPath());
-                        String path = f.getAbsolutePath();
-                        File file = new File(path);
-                        if (!file.exists()) {
-                            file.mkdir();
+                    try {
+                        String videoPath = localMediaList.get(0).getAndroidQToPath();
+                        videosize = VideoCompressorUtil.getFileSize(new File(videoPath));
+                        Log.e("aaaaaa", "videoPath" + videosize);
+                        if (videosize <= 0) {
+                            com.blankj.utilcode.util.ToastUtils.showShort("当前视频已很小了，不用在进行压缩了！");
+                            return;
                         }
+                        if (videoPath.endsWith("bmp") || videoPath.endsWith("jpg") || videoPath.endsWith("jpeg") || videoPath.endsWith("png") || videoPath.endsWith("gif")) {
+                            com.blankj.utilcode.util.ToastUtils.showShort("视频格式错误，请重新选择");
+                            return;
+                        }
+                        File f = new File(Environment.getExternalStoragePublicDirectory(Environment.DIRECTORY_MOVIES) + "/lighthouse/videos");
+                        if (f.mkdirs() || f.isDirectory()) {
+                            //compress and output new video specs
+                            //asyncTask = new VideoCompressAsyncTask(this);
+                            //asyncTask.execute(videoPath, f.getPath());
+                            String path = f.getAbsolutePath();
+                            File file = new File(path);
+                            if (!file.exists()) {
+                                file.mkdir();
+                            }
 
-                        video_Paths = path + "/" + getRandomFileName() + ".mp4";
-                        compressVideo2(videoPath, video_Paths);
+                            video_Paths = path + "/" + getRandomFileName() + ".mp4";
+                            compressVideo2(videoPath, video_Paths);
+                        }
+                    } catch (Exception e) {
+                        e.printStackTrace();
                     }
                 } else {
                     com.blankj.utilcode.util.ToastUtils.showShort("视频不能为空");
@@ -527,10 +538,10 @@ public class VideoComPressorActivity extends AppCompatActivity implements View.O
 //                if (videoImage.getTag() == null) {
                 Bitmap b = ThumbnailUtils.createVideoThumbnail(url, MediaStore.Video.Thumbnails.MINI_KIND);
                 if (b != null && !"".equals(b)) {
-                    File file = saveBitmapToBeLocalFile(b, "/storage/emulated/0/Movies/lighthouse/videos/", getRandomFileName()+"screenShot.jpg");
+                    File file = saveBitmapToBeLocalFile(b, "/storage/emulated/0/Movies/lighthouse/videos/", getRandomFileName() + "screenShot.jpg");
                     GlideEngine.createGlideEngine().loadImage(VideoComPressorActivity.this, file.getAbsolutePath(), videoImage);
-                }else{
-                    com.blankj.utilcode.util.ToastUtils.showShort("视频太小压缩失败");
+                } else {
+                    com.blankj.utilcode.util.ToastUtils.showShort("视频压缩失败");
                 }
 //                File file = saveBitmapToBeLocalFile(b, "/storage/emulated/0/Movies/lighthouse/videos/", "screenShot.jpg");
 //                    videoImage.setTag(file.getAbsolutePath());
