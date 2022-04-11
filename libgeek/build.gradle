@@ -6,5 +6,7 @@ dependencies {
     api project(':libdkplayer')
     api project(':libocr')
     api project(':libyanzheng')
+    api project(':libshadowlayout')
+    api project(':libvideocompressor')
 
 }
