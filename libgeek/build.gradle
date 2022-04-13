@@ -8,5 +8,6 @@ dependencies {
     api project(':libyanzheng')
     api project(':libshadowlayout')
     api project(':libvideocompressor')
+    api project(':libguide')
 
 }
