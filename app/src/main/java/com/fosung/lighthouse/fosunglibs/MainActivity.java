@@ -5,8 +5,7 @@ import android.os.Bundle;
 
 import androidx.appcompat.app.AppCompatActivity;
 
-import com.geek.libshadowlayout.ShadowMainActivity;
-import com.vincent.videocompressor.activity.VideoComPressorActivity;
+import com.geek.libnsfw.NsfwMainActivity;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -15,7 +14,7 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        Intent intent3 = new Intent(this, VideoComPressorActivity.class);
+        Intent intent3 = new Intent(this, NsfwMainActivity.class);
         startActivity(intent3);
 //        Intent intent3 = new Intent(this, ShadowMainActivity.class);
 //        startActivity(intent3);

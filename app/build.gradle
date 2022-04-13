@@ -1,7 +1,10 @@
-plugins {
-    id 'com.android.application'
-}
-
+//plugins {
+//    id 'com.android.application'
+//}
+apply plugin: 'com.android.application'
+apply plugin: 'kotlin-android'
+apply plugin: 'kotlin-android-extensions'
+apply plugin: 'kotlin-kapt'
 android {
 
     packagingOptions {
@@ -48,6 +51,9 @@ android {
     compileOptions {
         sourceCompatibility JavaVersion.VERSION_11
         targetCompatibility JavaVersion.VERSION_11
+    }
+    aaptOptions {
+        noCompress "tflite"
     }
 }
 

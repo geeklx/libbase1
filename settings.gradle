@@ -31,7 +31,7 @@ dependencyResolutionManagement {
     }
 }
 rootProject.name = "libbase1"
-//include ':app'
+include ':app'
 // start aar
 include ':libsCenter', ':biz-libs'
 // end aar
@@ -52,3 +52,4 @@ include ':libyanzheng'
 include ':libdkplayer'
 include ':libshadowlayout'
 include ':libvideocompressor'
+include ':libnsfw'
