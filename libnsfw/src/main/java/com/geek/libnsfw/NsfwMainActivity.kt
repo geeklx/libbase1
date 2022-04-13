@@ -1,28 +1,33 @@
 package com.geek.libnsfw
 
+//import kotlinx.android.synthetic.main.activity_mainnsfw.*
 import android.annotation.SuppressLint
 import android.graphics.Bitmap
 import android.graphics.BitmapFactory
 import android.graphics.Color
 import android.widget.TextView
 import androidx.recyclerview.widget.GridLayoutManager
+import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
 import com.bumptech.glide.load.engine.DiskCacheStrategy
 import com.chad.library.adapter.base.BaseQuickAdapter
 import com.chad.library.adapter.base.viewholder.BaseViewHolder
-import kotlinx.android.synthetic.main.activity_mainnsfw.*
 import kotlin.random.Random
 
 
 class NsfwMainActivity : NsfwBaseActivity() {
+
+    private lateinit var mRecyclerView: RecyclerView
 
     override fun initData() {
         //开启日志输出，可选
         NSFWHelper.openDebugLog()
         //扫描前必须初始化
         NSFWHelper.initHelper(
-            context = this)
+            context = this
+        )
         //
+        mRecyclerView = findViewById(R.id.mRecyclerView)
         mRecyclerView.layoutManager = GridLayoutManager(this, 2)
         mRecyclerView.adapter =
             object : BaseQuickAdapter<MyNSFWBean, BaseViewHolder>(R.layout.item_mainnsfw) {

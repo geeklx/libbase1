@@ -10,6 +10,7 @@
 /.idea/assetWizardSettings.xml
 .DS_Store
 /build
+/libvideocompressor/build
 /captures
 .externalNativeBuild
 .cxx

@@ -48,7 +48,7 @@ object NSFWHelper {
         context: Context,
         modelPath: String? = null,
         isOpenGPU: Boolean = false,
-        numThreads: Int = 4
+        numThreads: Int = 1
     ) {
 
         nsfwApplication?.let {

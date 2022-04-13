@@ -1,18 +1,19 @@
 apply from: "${rootDir.path}/gradle/publish.gradle"
-apply plugin: 'kotlin-android-extensions'
+//apply plugin: 'kotlin-android-extensions'
+apply plugin: 'kotlin-parcelize'
 apply plugin: 'kotlin-kapt'
 apply from: "${rootDir.path}/gradle/base.gradle"
 def librarys = rootProject.ext.dependencies //依赖
-//android {
-//    compileOptions {
-//        sourceCompatibility JavaVersion.VERSION_11
-//        targetCompatibility JavaVersion.VERSION_11
-//    }
-//
-//    aaptOptions {
-//        noCompress "tflite"
-//    }
-//}
+android {
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_11
+        targetCompatibility JavaVersion.VERSION_11
+    }
+
+    aaptOptions {
+        noCompress "tflite"
+    }
+}
 dependencies {
     api fileTree(dir: 'libs', include: ['*.jar'])
 //    implementation project(':libutils')
