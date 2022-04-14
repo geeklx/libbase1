@@ -37,6 +37,7 @@ Share this release:
 
     // new 方式1
     implementation 'com.github.geeklx.libbase1:zdkplayer:2.0.6'//三方库
+    implementation 'com.github.geeklx.libbase1:libgeek:2.0.6'//三方库
     implementation 'com.github.geeklx.libbase1:libguide:2.0.6'//三方库
     implementation 'com.github.geeklx.libbase1:libnsfw:2.0.6'//三方库
     implementation 'com.github.geeklx.libbase1:libocr:2.0.6'//三方库
