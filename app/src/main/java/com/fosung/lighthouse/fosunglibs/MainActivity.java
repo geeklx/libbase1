@@ -8,7 +8,7 @@ import android.widget.Button;
 import androidx.appcompat.app.AppCompatActivity;
 
 import com.app.hubert.guide.newbieguide.FirstActivity;
-import com.geek.libnsfw.NsfwMainActivity;
+import com.geek.libnsfw.NsfwAct;
 import com.geek.libocr.ScanAct1;
 import com.geek.libshadowlayout.ShadowMainActivity;
 import com.vincent.videocompressor.activity.VideoComPressorActivity;
@@ -46,7 +46,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     public void onClick(View view) {
         switch (view.getId()) {
             case R.id.button:
-                Intent intent = new Intent(this, NsfwMainActivity.class);
+                Intent intent = new Intent(this, NsfwAct.class);
                 startActivity(intent);
                 break;
             case R.id.button1:

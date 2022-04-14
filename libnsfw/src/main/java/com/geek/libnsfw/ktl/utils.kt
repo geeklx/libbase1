@@ -1,4 +1,4 @@
-package com.geek.libnsfw
+package com.geek.libnsfw.ktl
 
 import java.lang.Exception
 import java.nio.ByteBuffer
