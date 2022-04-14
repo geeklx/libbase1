@@ -8,6 +8,7 @@ import android.widget.Button;
 import androidx.appcompat.app.AppCompatActivity;
 
 import com.app.hubert.guide.newbieguide.FirstActivity;
+import com.example.slbyanzheng.ZhiwenActtivity;
 import com.geek.libnsfw.NsfwAct;
 import com.geek.libocr.ScanAct1;
 import com.geek.libshadowlayout.ShadowMainActivity;
@@ -18,7 +19,7 @@ import com.vincent.videocompressor.activity.VideoComPressorActivity;
  * @date 2022/4/13
  */
 public class MainActivity extends AppCompatActivity implements View.OnClickListener {
-    private Button button, button1, button2, button3, button4;
+    private Button button, button1, button2, button3, button4, button5;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -29,11 +30,13 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         button2 = findViewById(R.id.button2);
         button3 = findViewById(R.id.button3);
         button4 = findViewById(R.id.button4);
+        button5 = findViewById(R.id.button5);
         button.setOnClickListener(this);
         button1.setOnClickListener(this);
         button2.setOnClickListener(this);
         button3.setOnClickListener(this);
         button4.setOnClickListener(this);
+        button5.setOnClickListener(this);
 //        new PgyerSDKManager.Init()
 //                .setContext(getApplicationContext()) //设置上下问对象
 //                .start();
@@ -68,6 +71,11 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 /*shadow阴影的各项使用*/
                 Intent intent4 = new Intent(this, ShadowMainActivity.class);
                 startActivity(intent4);
+                break;
+            case R.id.button5:
+                /*shadow阴影的各项使用*/
+                Intent intent5 = new Intent(this, ZhiwenActtivity.class);
+                startActivity(intent5);
                 break;
         }
     }

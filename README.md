@@ -36,18 +36,22 @@ Share this release:
 ### 你也可以这样
 
     // new 方式1
-    implementation 'com.github.geeklx.libbase1:libocr:2.0.2'//三方库
-    implementation 'com.github.geeklx.libbase1:zdkplayer:2.0.2'//三方库
-    implementation 'com.github.geeklx.libbase1:libyanzheng:2.0.2'//三方库
+    implementation 'com.github.geeklx.libbase1:zdkplayer:2.0.6'//三方库
+    implementation 'com.github.geeklx.libbase1:libguide:2.0.6'//三方库
+    implementation 'com.github.geeklx.libbase1:libnsfw:2.0.6'//三方库
+    implementation 'com.github.geeklx.libbase1:libocr:2.0.6'//三方库
+    implementation 'com.github.geeklx.libbase1:libshadowlayout:2.0.6'//三方库
+    implementation 'com.github.geeklx.libbase1:libvideocompressor:2.0.6'//三方库
+    implementation 'com.github.geeklx.libbase1:libyanzheng:2.0.6'//三方库
     // 方式1
     implementation 'com.github.geeklx.libbase2:libutils:2.0.7'//核心库
     implementation 'com.github.geeklx.libbase2:libbase:2.0.7'//核心库
     implementation 'com.github.geeklx.libbase2:libotherlibs:2.0.7'//核心库
     //方式2
-    implementation 'com.github.geeklx.libbase1:libgeek:2.0.2'//三方库
+    implementation 'com.github.geeklx.libbase1:libgeek:2.0.6'//三方库
     implementation 'com.github.geeklx.libbase2:libgeek:2.0.7'//核心库
     //方式2
-    implementation 'com.github.geeklx:libbase1:2.0.2'//三方库
+    implementation 'com.github.geeklx:libbase1:2.0.6'//三方库
     implementation 'com.github.geeklx:libbase2:2.0.7'//核心库
 
 混合移动应用框架APP-Android3

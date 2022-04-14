@@ -50,6 +50,13 @@
                 android:layout_height="wrap_content"
                 android:gravity="center"
                 android:text="shadow阴影的各项使用" />
+            <Button
+                android:id="@+id/button5"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:text="手势指纹验证库" />
+
         </LinearLayout>
     </ScrollView>
 </androidx.constraintlayout.widget.ConstraintLayout>
