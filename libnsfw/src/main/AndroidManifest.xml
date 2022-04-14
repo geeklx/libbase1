@@ -1,14 +1,19 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.geek.libnsfw">
-    <application >
-        <activity android:name="com.geek.libnsfw.NsfwMainActivity"
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE"/>
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE"/>
+    <application>
+        <activity
+            android:name="com.geek.libnsfw.NsfwAct"
             android:exported="true">
             <intent-filter>
-                <action android:name="${applicationId}.hs.act.slbapp.NsfwMainActivity" />
+                <action android:name="${applicationId}.hs.act.slbapp.NsfwAct" />
                 <category android:name="android.intent.category.DEFAULT" />
             </intent-filter>
         </activity>
+        <activity android:name=".javas.NsfwAct2" />
+        <activity android:name=".ktl.NsfwMainActivity" />
 
     </application>
 </manifest>

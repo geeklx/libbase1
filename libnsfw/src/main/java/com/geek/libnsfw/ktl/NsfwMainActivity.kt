@@ -1,4 +1,4 @@
-package com.geek.libnsfw
+package com.geek.libnsfw.ktl
 
 //import kotlinx.android.synthetic.main.activity_mainnsfw.*
 import android.annotation.SuppressLint
@@ -12,6 +12,7 @@ import com.bumptech.glide.Glide
 import com.bumptech.glide.load.engine.DiskCacheStrategy
 import com.chad.library.adapter.base.BaseQuickAdapter
 import com.chad.library.adapter.base.viewholder.BaseViewHolder
+import com.geek.libnsfw.R
 import kotlin.random.Random
 
 

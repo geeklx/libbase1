@@ -1,4 +1,4 @@
-package com.geek.libnsfw
+package com.geek.libnsfw.ktl
 
 import android.app.Application
 

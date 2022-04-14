@@ -2,7 +2,8 @@ package com.fosung.lighthouse.fosunglibs;
 
 import android.app.Application;
 
-import com.geek.libnsfw.NSFWHelper;
+import com.geek.libnsfw.ktl.NSFWHelper;
+
 
 public class Applications extends Application {
 

@@ -2,8 +2,10 @@ package com.fosung.lighthouse.fosunglibs;
 
 import android.content.Intent;
 import android.os.Bundle;
+
 import androidx.appcompat.app.AppCompatActivity;
-import com.geek.libnsfw.NsfwMainActivity;
+
+import com.geek.libnsfw.NsfwAct;
 
 /**
  * @author houjie
@@ -15,7 +17,7 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        Intent intent3 = new Intent(this, NsfwMainActivity.class);
+        Intent intent3 = new Intent(this, NsfwAct.class);
         startActivity(intent3);
         /*ocr识别*/
 //        Intent intent3 = new Intent(this, ScanAct1.class);
