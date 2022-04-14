@@ -18,7 +18,6 @@
         <activity android:name=".newbieguide.RecyclerViewActivity" />
         <activity android:name=".newbieguide.SimpleGuideViewActivity" />
         <activity android:name=".guideview.newguideview.SimpleGuideViewActivity1" />
-
         <activity android:name=".newbieguide.ScrollViewActivity" />
     </application>
 

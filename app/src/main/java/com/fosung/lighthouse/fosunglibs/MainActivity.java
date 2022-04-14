@@ -2,38 +2,73 @@ package com.fosung.lighthouse.fosunglibs;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.view.View;
+import android.widget.Button;
+
 import androidx.appcompat.app.AppCompatActivity;
+
+import com.app.hubert.guide.newbieguide.FirstActivity;
 import com.geek.libnsfw.NsfwMainActivity;
+import com.geek.libocr.ScanAct1;
+import com.geek.libshadowlayout.ShadowMainActivity;
+import com.vincent.videocompressor.activity.VideoComPressorActivity;
 
 /**
  * @author houjie
  * @date 2022/4/13
  */
-public class MainActivity extends AppCompatActivity {
+public class MainActivity extends AppCompatActivity implements View.OnClickListener {
+    private Button button, button1, button2, button3, button4;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        Intent intent3 = new Intent(this, NsfwMainActivity.class);
-        startActivity(intent3);
-        /*ocr识别*/
-//        Intent intent3 = new Intent(this, ScanAct1.class);
-//        startActivity(intent3);
-        /*新手引导页*/
-//        Intent intent3 = new Intent(this, FirstActivity.class);
-//        startActivity(intent3);
-        /*适配压缩*/
-//        Intent intent3 = new Intent(this, VideoComPressorActivity.class);
-//        startActivity(intent3);
-        /*shadow阴影的各项使用*/
-//        Intent intent3 = new Intent(this, ShadowMainActivity.class);
-//        startActivity(intent3);
+        button = findViewById(R.id.button);
+        button1 = findViewById(R.id.button1);
+        button2 = findViewById(R.id.button2);
+        button3 = findViewById(R.id.button3);
+        button4 = findViewById(R.id.button4);
+        button.setOnClickListener(this);
+        button1.setOnClickListener(this);
+        button2.setOnClickListener(this);
+        button3.setOnClickListener(this);
+        button4.setOnClickListener(this);
 //        new PgyerSDKManager.Init()
 //                .setContext(getApplicationContext()) //设置上下问对象
 //                .start();
 //        startActivity(new Intent(MainActivity.this, ScanAct2.class));
 
 
+    }
+
+    @Override
+    public void onClick(View view) {
+        switch (view.getId()) {
+            case R.id.button:
+                Intent intent = new Intent(this, NsfwMainActivity.class);
+                startActivity(intent);
+                break;
+            case R.id.button1:
+                /*ocr识别*/
+                Intent intent1 = new Intent(this, ScanAct1.class);
+                startActivity(intent1);
+                break;
+            case R.id.button2:
+                /*新手引导页*/
+                Intent intent2 = new Intent(this, FirstActivity.class);
+                startActivity(intent2);
+                break;
+            case R.id.button3:
+                /*视频压缩*/
+                Intent intent3 = new Intent(this, VideoComPressorActivity.class);
+                startActivity(intent3);
+                break;
+            case R.id.button4:
+                /*shadow阴影的各项使用*/
+                Intent intent4 = new Intent(this, ShadowMainActivity.class);
+                startActivity(intent4);
+                break;
+        }
     }
 }
