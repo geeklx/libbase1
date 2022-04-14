@@ -10,5 +10,6 @@ dependencies {
     api project(':libshadowlayout')
     api project(':libvideocompressor')
     api project(':libguide')
+    api project(':libpicturecompressor')
 
 }
