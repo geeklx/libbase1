@@ -9,10 +9,14 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import com.app.hubert.guide.newbieguide.FirstActivity;
 import com.example.slbyanzheng.ZhiwenActtivity;
+import com.geek.libgoodview.blastgoodview.BlastActivity;
+import com.geek.libgoodview.livegoodview.liveview.LiveActivity;
+import com.geek.libgoodview.ordinarygoodview.GoodViewActivity;
 import com.geek.libnsfw.NsfwAct;
 import com.geek.libocr.ScanAct1;
 import com.geek.libpicturecompressor.PictureCompressorActivity;
 import com.geek.libshadowlayout.ShadowMainActivity;
+import com.geek.libsupertextview.supertextview.SuperTextviewActivity;
 import com.vincent.videocompressor.activity.VideoComPressorActivity;
 
 /**
@@ -20,7 +24,7 @@ import com.vincent.videocompressor.activity.VideoComPressorActivity;
  * @date 2022/4/13
  */
 public class MainActivity extends AppCompatActivity implements View.OnClickListener {
-    private Button button, button1, button2, button3, button4, button5, button6;
+    private Button button, button1, button2, button3, button4, button5, button6, button7, button8, button9, button10;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -33,6 +37,10 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         button4 = findViewById(R.id.button4);
         button5 = findViewById(R.id.button5);
         button6 = findViewById(R.id.button6);
+        button7 = findViewById(R.id.button7);
+        button8 = findViewById(R.id.button8);
+        button9 = findViewById(R.id.button9);
+        button10 = findViewById(R.id.button10);
         button.setOnClickListener(this);
         button1.setOnClickListener(this);
         button2.setOnClickListener(this);
@@ -40,12 +48,14 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         button4.setOnClickListener(this);
         button5.setOnClickListener(this);
         button6.setOnClickListener(this);
+        button7.setOnClickListener(this);
+        button8.setOnClickListener(this);
+        button9.setOnClickListener(this);
+        button10.setOnClickListener(this);
 //        new PgyerSDKManager.Init()
 //                .setContext(getApplicationContext()) //设置上下问对象
 //                .start();
 //        startActivity(new Intent(MainActivity.this, ScanAct2.class));
-
-
     }
 
     @Override
@@ -84,6 +94,26 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 /*shadow阴影的各项使用*/
                 Intent intent6 = new Intent(this, PictureCompressorActivity.class);
                 startActivity(intent6);
+                break;
+            case R.id.button7:
+                /*shadow阴影的各项使用*/
+                Intent intent7 = new Intent(this, SuperTextviewActivity.class);
+                startActivity(intent7);
+                break;
+            case R.id.button8:
+                /*shadow阴影的各项使用*/
+                Intent intent8 = new Intent(this, GoodViewActivity.class);
+                startActivity(intent8);
+                break;
+            case R.id.button9:
+                /*shadow阴影的各项使用*/
+                Intent intent9 = new Intent(this, BlastActivity.class);
+                startActivity(intent9);
+                break;
+            case R.id.button10:
+                /*shadow阴影的各项使用*/
+                Intent intent10 = new Intent(this, LiveActivity.class);
+                startActivity(intent10);
                 break;
         }
     }

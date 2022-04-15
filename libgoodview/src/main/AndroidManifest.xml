@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.geek.libgoodview">
+
+    <application
+        android:allowBackup="true"
+        android:supportsRtl="true">
+        <activity
+            android:name=".ordinarygoodview.GoodViewActivity"
+            android:exported="true">
+            <intent-filter>
+                <action android:name="${applicationId}.hs.act.slbapp.GoodViewActivity" />
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name=".blastgoodview.BlastActivity"
+            android:exported="false" />
+        <activity
+            android:name=".livegoodview.liveview.LiveActivity"
+            android:exported="false" />
+        <activity
+            android:name=".livegoodview.liveview.NormalActivity"
+            android:exported="false" />
+        <activity
+            android:name=".livegoodview.liveview.RecyclerActivity"
+            android:exported="false" />
+        <activity
+            android:name=".livegoodview.liveview.Viewpager2Activity"
+            android:exported="false" />
+    </application>
+
+</manifest>

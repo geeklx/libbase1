@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:shape="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical">
+
+    <com.geek.libsupertextview.shape.ShapeFrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="5dp"
+        shape:shadowBottomWidth="5dp"
+        shape:shadowColor="@color/colorAccent"
+        shape:shadowColorAlpha="0.2"
+        shape:shadowCornersRadius="9dp"
+        shape:shadowLeftWidth="5dp"
+        shape:shadowRightWidth="3dp"
+        shape:shadowTopWidth="3dp"
+        shape:showShadow="true">
+
+        <com.geek.libsupertextview.SuperTextView
+            android:id="@+id/item_super_tv"
+            android:layout_width="match_parent"
+            android:layout_height="80dp"
+            shape:sLeftBottomLines="1"
+            shape:sLeftBottomMaxEms="100"
+            shape:sLeftViewGravity="left_center"
+            shape:sUseRipple="false" />
+    </com.geek.libsupertextview.shape.ShapeFrameLayout>
+
+</LinearLayout>

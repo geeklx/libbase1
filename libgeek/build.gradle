@@ -11,5 +11,7 @@ dependencies {
     api project(':libvideocompressor')
     api project(':libguide')
     api project(':libpicturecompressor')
+    api project(':libsupertextview')
+    api project(':libgoodview')
 
 }
