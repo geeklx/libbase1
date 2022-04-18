@@ -1,0 +1,8 @@
+<resources>
+    <string name="app_name">FaceDetector</string>
+    <string name="register">识别注册</string>
+    <string name="register2">识别注册2</string>
+    <string name="verify">验证匹配</string>
+    <string name="verify2">验证匹配2</string>
+    <string name="view_data">查看数据</string>
+</resources>

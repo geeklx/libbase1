@@ -2,7 +2,6 @@ package com.fosung.lighthouse.fosunglibs;
 
 import android.app.Application;
 
-import com.geek.libgoodview.blastgoodview.utils.ApplicationUtils;
 
 /**
  * @author:wangshouxue
@@ -13,6 +12,6 @@ public class MyApplication extends Application {
     @Override
     public void onCreate() {
         super.onCreate();
-        ApplicationUtils.init(this);
+//        ApplicationUtils.init(this);
     }
 }

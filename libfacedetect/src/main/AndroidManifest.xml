@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.geek.libfacedetect">
+
+    <uses-permission android:name="android.permission.CAMERA" />
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+
+    <application>
+        <activity
+            android:name=".activity.MainActivityfdt"
+            android:exported="true">
+            <intent-filter>
+                <action android:name="${applicationId}.hs.act.slbapp.MainActivityfdt" />
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name=".activity.DetectActivity"
+            android:screenOrientation="fullSensor"
+            android:theme="@style/Theme.AppCompat.Light.NoActionBar" />
+        <activity android:name=".activity.ViewDataActivityfdt" />
+        <activity android:name=".activity.FdActivity" />
+        <activity android:name=".activity.DetectActivity2" />
+        <activity android:name=".activity.RegisterActivityfdt" />
+    </application>
+</manifest>
