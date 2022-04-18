@@ -24,7 +24,7 @@ import com.vincent.videocompressor.activity.VideoComPressorActivity;
  * @date 2022/4/13
  */
 public class MainActivity extends AppCompatActivity implements View.OnClickListener {
-    private Button button, button1, button2, button3, button4, button5, button6, button7, button8, button9, button10;
+    private Button button, button1, button2, button3, button4, button5, button6, button7, button8, button9, button10, button11;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -41,6 +41,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         button8 = findViewById(R.id.button8);
         button9 = findViewById(R.id.button9);
         button10 = findViewById(R.id.button10);
+        button11 = findViewById(R.id.button11);
         button.setOnClickListener(this);
         button1.setOnClickListener(this);
         button2.setOnClickListener(this);
@@ -52,6 +53,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         button8.setOnClickListener(this);
         button9.setOnClickListener(this);
         button10.setOnClickListener(this);
+        button11.setOnClickListener(this);
 //        new PgyerSDKManager.Init()
 //                .setContext(getApplicationContext()) //设置上下问对象
 //                .start();
@@ -116,6 +118,11 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 /*直播点赞效果*/
                 Intent intent10 = new Intent(this, LiveActivity.class);
                 startActivity(intent10);
+            case R.id.button11:
+                /*人脸识别*/
+                startActivity(new Intent(getPackageName() + ".hs.act.slbapp.MainActivityfdt"));
+                break;
+            default:
                 break;
         }
     }

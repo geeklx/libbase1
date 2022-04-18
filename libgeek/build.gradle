@@ -6,12 +6,13 @@ dependencies {
     api project(':libdkplayer')
     api project(':libocr')
     api project(':libnsfw')
+    api project(':libfacedetect')
     api project(':libyanzheng')
     api project(':libshadowlayout')
     api project(':libvideocompressor')
     api project(':libguide')
     api project(':libpicturecompressor')
-    api project(':libsupertextview')
-    api project(':libgoodview')
+//    api project(':libsupertextview')
+//    api project(':libgoodview')
 
 }
