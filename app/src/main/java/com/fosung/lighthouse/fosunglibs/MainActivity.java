@@ -9,14 +9,10 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import com.app.hubert.guide.newbieguide.FirstActivity;
 import com.example.slbyanzheng.ZhiwenActtivity;
-import com.geek.libgoodview.blastgoodview.BlastActivity;
-import com.geek.libgoodview.livegoodview.liveview.LiveActivity;
-import com.geek.libgoodview.ordinarygoodview.GoodViewActivity;
 import com.geek.libnsfw.NsfwAct;
 import com.geek.libocr.ScanAct1;
 import com.geek.libpicturecompressor.PictureCompressorActivity;
 import com.geek.libshadowlayout.ShadowMainActivity;
-import com.geek.libsupertextview.supertextview.SuperTextviewActivity;
 import com.vincent.videocompressor.activity.VideoComPressorActivity;
 
 /**
@@ -101,23 +97,23 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 break;
             case R.id.button7:
                 /*通用自定义textview*/
-                Intent intent7 = new Intent(this, SuperTextviewActivity.class);
-                startActivity(intent7);
+//                Intent intent7 = new Intent(this, SuperTextviewActivity.class);
+//                startActivity(intent7);
                 break;
             case R.id.button8:
                 /*Android点赞+1效果*/
-                Intent intent8 = new Intent(this, GoodViewActivity.class);
-                startActivity(intent8);
+//                Intent intent8 = new Intent(this, GoodViewActivity.class);
+//                startActivity(intent8);
                 break;
             case R.id.button9:
                 /*Android仿头条点赞效果*/
-                Intent intent9 = new Intent(this, BlastActivity.class);
-                startActivity(intent9);
+//                Intent intent9 = new Intent(this, BlastActivity.class);
+//                startActivity(intent9);
                 break;
             case R.id.button10:
                 /*直播点赞效果*/
-                Intent intent10 = new Intent(this, LiveActivity.class);
-                startActivity(intent10);
+//                Intent intent10 = new Intent(this, LiveActivity.class);
+//                startActivity(intent10);
             case R.id.button11:
                 /*人脸识别*/
                 startActivity(new Intent(getPackageName() + ".hs.act.slbapp.MainActivityfdt"));
