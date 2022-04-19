@@ -36,14 +36,15 @@ Share this release:
 ### 你也可以这样
 
     // new 方式1
-    implementation 'com.github.geeklx.libbase1:zdkplayer:2.0.6'//三方库
-    implementation 'com.github.geeklx.libbase1:libgeek:2.0.6'//三方库
-    implementation 'com.github.geeklx.libbase1:libguide:2.0.6'//三方库
-    implementation 'com.github.geeklx.libbase1:libnsfw:2.0.6'//三方库
-    implementation 'com.github.geeklx.libbase1:libocr:2.0.6'//三方库
-    implementation 'com.github.geeklx.libbase1:libshadowlayout:2.0.6'//三方库
-    implementation 'com.github.geeklx.libbase1:libvideocompressor:2.0.6'//三方库
-    implementation 'com.github.geeklx.libbase1:libyanzheng:2.0.6'//三方库
+    implementation 'com.github.geeklx.libbase1:zdkplayer:2.0.6'//视频三方库
+    implementation 'com.github.geeklx.libbase1:libguide:2.0.6'//新手指引三方库
+    implementation 'com.github.geeklx.libbase1:libnsfw:2.0.6'//黄图识别三方库
+    implementation 'com.github.geeklx.libbase1:libocr:2.0.6'//各种图片识别三方库
+    implementation 'com.github.geeklx.libbase1:libshadowlayout:2.0.6'//阴影三方库
+    implementation 'com.github.geeklx.libbase1:libvideocompressor:2.0.6'//视频压缩三方库
+    implementation 'com.github.geeklx.libbase1:libyanzheng:2.0.6'//指纹验证三方库
+    implementation 'com.github.geeklx.libbase1:libfacedetect:2.0.6'//人脸识别三方库
+    implementation 'com.github.geeklx.libbase1:libpicturecompressor:2.0.6'//图片压缩三方库
     // 方式1
     implementation 'com.github.geeklx.libbase2:libutils:2.0.7'//核心库
     implementation 'com.github.geeklx.libbase2:libbase:2.0.7'//核心库

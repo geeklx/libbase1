@@ -63,7 +63,7 @@ public class PictureCompressorActivity extends AppCompatActivity {
         RecyclerView mRecyclerView = findViewById(R.id.recycler_view);
         mRecyclerView.setLayoutManager(new LinearLayoutManager(this));
         mRecyclerView.setAdapter(mAdapter);
-
+        withRx(assetsToFiles());
         initPermission();
     }
 
