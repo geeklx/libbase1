@@ -41,6 +41,7 @@ public class DetectActivity2 extends AppCompatActivity implements
     public final static int FLAG_VERIFY = 2;
     private CameraBridgeViewBase cameraView;
     private CascadeClassifier classifier;
+    private CascadeClassifier mJavaDetector, mNoseDetector;
     private Mat mGray;
     private Mat mRgba;
     private int mAbsoluteFaceSize = 0;
@@ -216,10 +217,12 @@ public class DetectActivity2 extends AppCompatActivity implements
 //        Scalar faceRectColor = new Scalar(0, 255, 0, 255);
         for (Rect faceRect : facesArray) {
             Imgproc.rectangle(mRgba, faceRect.tl(), faceRect.br(), FACE_RECT_COLOR, 3);
-            if (faceRect.height > 400 && faceRect.height < 500) {
+            Log.e("sssssssssssss", faceRect.height + "");
+            if (faceRect.height > 500 && faceRect.height < 600) {
                 // 获取并利用message传递当前检测的人脸
                 Imgproc.rectangle(mRgba, faceRect.tl(), faceRect.br(), FACE_RECT_COLOR2, 3);
                 Mat faceMat = new Mat(mRgba, faceRect);
+                Log.e("sssssssssssss", faceMat.width() + "," + faceMat.height());
                 Imgproc.resize(faceMat, faceMat, new Size(320, 320));
                 Bitmap bitmap = Bitmap.createBitmap(faceMat.width(),
                         faceMat.height(), Bitmap.Config.ARGB_8888);
@@ -232,9 +235,30 @@ public class DetectActivity2 extends AppCompatActivity implements
             }
         }
         //new2
+//        mRgba = inputFrame.rgba(); //RGBA
+//        mGray = inputFrame.gray(); //单通道灰度图
+//        //检测并显示
+//        MatOfRect frontalFaces = new MatOfRect();
+//        MatOfRect profileFaces = new MatOfRect();
+//
+//        if (classifier != null) {//这里2个 Size 是用于检测人脸的，越小，检测距离越远，1.1, 5, 2, m65Size, mDefault着四个参数可以提高检测的准确率，5表示确认五次，具体百度 detectMultiScale 这个方法
+//            classifier.detectMultiScale(mGray, frontalFaces, 1.1, 5, 2, m65Size, mDefault);
+//            mFrontalFacesArray = frontalFaces.toArray();
+//            mFronFacesSize = mFrontalFacesArray.length;
+//            //如果正脸数大于0就绘制框框
+//            if (mFronFacesSize > 0) {
+//                Log.i("TAG", "正脸人数为 : " + mFrontalFacesArray.length);
+//                for (int i = 0; i < mFrontalFacesArray.length; i++) {    //用框标记
+//                    Imgproc.rectangle(mRgba, mFrontalFacesArray[i].tl(), mFrontalFacesArray[i].br(), new Scalar(0, 255, 0, 255), 3);
+//                    Log.d("caifeng", "绘制正脸框框");
+//                }
+//            }
+//        }
+
 
         return mRgba;
     }
+
 
     private static final Scalar FACE_RECT_COLOR = new Scalar(0, 255, 0, 255);
     private static final Scalar FACE_RECT_COLOR2 = new Scalar(255, 255, 255, 255);
