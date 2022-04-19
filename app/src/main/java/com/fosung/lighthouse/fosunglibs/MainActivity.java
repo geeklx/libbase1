@@ -60,6 +60,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     public void onClick(View view) {
         switch (view.getId()) {
             case R.id.button:
+                /*黄图识别*/
                 Intent intent = new Intent(this, NsfwAct.class);
                 startActivity(intent);
                 break;
@@ -84,39 +85,37 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 startActivity(intent4);
                 break;
             case R.id.button5:
-                /*shadow阴影的各项使用*/
+                /*手势指纹验证库*/
                 Intent intent5 = new Intent(this, ZhiwenActtivity.class);
                 startActivity(intent5);
                 break;
             case R.id.button6:
-                /*shadow阴影的各项使用*/
-                Intent intent6 = new Intent(this, PictureCompressorActivity.class);
+                /*图片压缩库*/
+                Intent intent6 = new Intent(MainActivity.this, PictureCompressorActivity.class);
                 startActivity(intent6);
+
                 break;
             case R.id.button7:
-                /*shadow阴影的各项使用*/
+                /*通用自定义textview*/
 //                Intent intent7 = new Intent(this, SuperTextviewActivity.class);
 //                startActivity(intent7);
                 break;
             case R.id.button8:
-                /*shadow阴影的各项使用*/
+                /*Android点赞+1效果*/
 //                Intent intent8 = new Intent(this, GoodViewActivity.class);
 //                startActivity(intent8);
                 break;
             case R.id.button9:
-                /*shadow阴影的各项使用*/
+                /*Android仿头条点赞效果*/
 //                Intent intent9 = new Intent(this, BlastActivity.class);
 //                startActivity(intent9);
                 break;
             case R.id.button10:
-                /*shadow阴影的各项使用*/
+                /*直播点赞效果*/
 //                Intent intent10 = new Intent(this, LiveActivity.class);
 //                startActivity(intent10);
-                break;
             case R.id.button11:
-                /*shadow阴影的各项使用*/
-//                Intent intent10 = new Intent(this, LiveActivity.class);
-//                startActivity(intent10);
+                /*人脸识别*/
                 startActivity(new Intent(getPackageName() + ".hs.act.slbapp.MainActivityfdt"));
                 break;
             default:
