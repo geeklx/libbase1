@@ -12,14 +12,9 @@ def librarys = rootProject.ext.dependencies //依赖
 dependencies {
     implementation fileTree(dir: 'libs', include: ['*.jar'])
     //common url
-    implementation librarys.design
-    implementation librarys.appcompatV7
-    implementation librarys.supportannotations
-    implementation librarys.recyclerviewv7
     implementation librarys.cardviewv7
     implementation librarys.percent
     implementation librarys.constraintlayout
-    implementation librarys.swiperefreshlayout
     implementation librarys.blankj
     implementation librarys.glide47
     implementation 'io.github.lucksiege:pictureselector:v2.7.3-rc08'

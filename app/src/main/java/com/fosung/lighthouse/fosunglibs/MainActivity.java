@@ -20,7 +20,7 @@ import com.vincent.videocompressor.activity.VideoComPressorActivity;
  * @date 2022/4/13
  */
 public class MainActivity extends AppCompatActivity implements View.OnClickListener {
-    private Button button, button1, button2, button3, button4, button5, button6, button7, button8, button9, button10, button11;
+    private Button button, button1, button2, button3, button4, button5, button6, button7, button8, button9, button10, button11, button12;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -38,6 +38,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         button9 = findViewById(R.id.button9);
         button10 = findViewById(R.id.button10);
         button11 = findViewById(R.id.button11);
+        button12 = findViewById(R.id.button12);
         button.setOnClickListener(this);
         button1.setOnClickListener(this);
         button2.setOnClickListener(this);
@@ -50,6 +51,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         button9.setOnClickListener(this);
         button10.setOnClickListener(this);
         button11.setOnClickListener(this);
+        button12.setOnClickListener(this);
 //        new PgyerSDKManager.Init()
 //                .setContext(getApplicationContext()) //设置上下问对象
 //                .start();
@@ -117,6 +119,10 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
             case R.id.button11:
                 /*人脸识别*/
                 startActivity(new Intent(getPackageName() + ".hs.act.slbapp.MainActivityfdt"));
+                break;
+            case R.id.button12:
+                /*Viewpager+Bottomsheet功能*/
+                startActivity(new Intent(getPackageName() + ".hs.act.slbapp.MainActivitySheet"));
                 break;
             default:
                 break;
