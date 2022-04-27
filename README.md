@@ -689,7 +689,8 @@ Share this release:
 ### 99.commonlibs：dkplayer：DK播放器支持推流
 ### 
 ### 100.slbyanzheng：指纹登录组件
-### 
+### https://github.com/Zweihui/RxFingerPrinter
+### https://github.com/wzx54321/LockDemo
 ### 101.HuxiAct：布局加载组件
 
 
