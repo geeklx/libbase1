@@ -1,0 +1,5 @@
+<resources>
+    <string name="app_viewpagerbottonsheet">ViewPagerBottomSheet</string>
+    <string name="tab_recycler">业务1</string>
+    <string name="tab_nested_scroll">业务2</string>
+</resources>

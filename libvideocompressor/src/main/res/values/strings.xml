@@ -1,0 +1,7 @@
+<resources>
+    <string name="app_namelibvideocompressor">VideoCompressor</string>
+    <string name="app_drag_delete" translatable="false">拖动到此处删除</string>
+    <string name="app_let_go_drag_delete" translatable="false">松手即可删除</string>
+    <string name="app_wechat_send" translatable="false">发送</string>
+    <string name="app_wechat_send_num" translatable="false">发送(%1$d/%2$d)</string>
+</resources>
