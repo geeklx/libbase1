@@ -9,6 +9,10 @@ import android.widget.TextView;
 import androidx.appcompat.app.AppCompatActivity;
 
 
+/**
+ * ocr识别
+ * com.github.geeklx.libbase1:libocr:2.0.6
+ */
 public class ScanAct1 extends AppCompatActivity {
 
     private final String TAG = getClass().getSimpleName();
