@@ -78,7 +78,7 @@ dependencies {
 //    implementation 'com.github.geeklx.fosunglibs:libbase:1.2.5'
 //    implementation 'com.github.geeklx.fosunglibs:libdkplayer:1.2.5'
 //    implementation 'com.github.geeklx.fosunglibs:libyanzheng:1.2.5'
-//    implementation 'com.github.geeklx.fosunglibs:libutils:1.2.5'
+    implementation 'com.github.geeklx.fosunglibs:libutils:1.2.5'
 //    implementation 'com.github.geeklx.fosunglibs:libotherlibs:1.2.5'
 //    implementation 'com.github.geeklx.fosunglibs:libocr:1.2.5'
     //

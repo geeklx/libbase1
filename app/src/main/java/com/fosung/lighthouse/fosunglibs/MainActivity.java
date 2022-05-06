@@ -4,6 +4,7 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
+import android.widget.TextView;
 
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -20,7 +21,9 @@ import com.vincent.videocompressor.activity.VideoComPressorActivity;
  * @date 2022/4/13
  */
 public class MainActivity extends AppCompatActivity implements View.OnClickListener {
-    private Button button, button1, button2, button3, button4, button5, button6, button7, button8, button9, button10, button11;
+    private Button button, button1, button2, button3, button4, button5, button6, button7, button8, button9, button10, button11, button12;
+
+    private TextView tv1;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -38,6 +41,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         button9 = findViewById(R.id.button9);
         button10 = findViewById(R.id.button10);
         button11 = findViewById(R.id.button11);
+        button12 = findViewById(R.id.button12);
         button.setOnClickListener(this);
         button1.setOnClickListener(this);
         button2.setOnClickListener(this);
@@ -50,10 +54,15 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         button9.setOnClickListener(this);
         button10.setOnClickListener(this);
         button11.setOnClickListener(this);
+        button12.setOnClickListener(this);
 //        new PgyerSDKManager.Init()
 //                .setContext(getApplicationContext()) //设置上下问对象
 //                .start();
 //        startActivity(new Intent(MainActivity.this, ScanAct2.class));
+//        String strBase64 = Base64.encodeToString("梁肖".getBytes(), Base64.DEFAULT);// 编码
+////        tv1.setText(EncodeUtils.base64Encode2String("梁肖".getBytes()));
+//        String str2 = new String(Base64.decode(strBase64.getBytes(), Base64.DEFAULT));// 解码
+//        tv1.setText(strBase64 + "," + str2);
     }
 
     @Override
@@ -93,7 +102,6 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 /*图片压缩库*/
                 Intent intent6 = new Intent(MainActivity.this, PictureCompressorActivity.class);
                 startActivity(intent6);
-
                 break;
             case R.id.button7:
                 /*通用自定义textview*/
@@ -118,8 +126,14 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 /*人脸识别*/
                 startActivity(new Intent(getPackageName() + ".hs.act.slbapp.MainActivityfdt"));
                 break;
+            case R.id.button12:
+                /*Viewpager+Bottomsheet功能*/
+                startActivity(new Intent(getPackageName() + ".hs.act.slbapp.MainActivitySheet"));
+                break;
             default:
                 break;
         }
     }
+
+
 }

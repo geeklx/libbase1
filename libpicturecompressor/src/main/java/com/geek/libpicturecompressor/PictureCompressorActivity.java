@@ -43,6 +43,11 @@ import io.reactivex.functions.Consumer;
 import io.reactivex.functions.Function;
 import io.reactivex.schedulers.Schedulers;
 
+/**
+ * @author fosung
+ * 图片压缩库
+ * com.github.geeklx.libbase1:libpicturecompressor:2.0.6
+ */
 public class PictureCompressorActivity extends AppCompatActivity {
     private static final String TAG = "Luban";
     private static final int range = 3;
@@ -63,7 +68,7 @@ public class PictureCompressorActivity extends AppCompatActivity {
         RecyclerView mRecyclerView = findViewById(R.id.recycler_view);
         mRecyclerView.setLayoutManager(new LinearLayoutManager(this));
         mRecyclerView.setAdapter(mAdapter);
-
+        withRx(assetsToFiles());
         initPermission();
     }
 

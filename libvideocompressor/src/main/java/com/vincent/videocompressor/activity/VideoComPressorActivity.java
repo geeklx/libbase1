@@ -94,7 +94,11 @@ import java.util.Date;
 import java.util.List;
 import java.util.Random;
 
-/*视频压缩*/
+/**
+ * @author fosung
+ * 视频压缩
+ * com.github.geeklx.libbase1:libvideocompressor:2.0.6
+ */
 public class VideoComPressorActivity extends AppCompatActivity implements View.OnClickListener,
         RadioGroup.OnCheckedChangeListener, CompoundButton.OnCheckedChangeListener {
     private final static String TAG = "PictureSelectorTag";

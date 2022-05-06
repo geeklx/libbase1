@@ -17,6 +17,11 @@ import com.geek.libfacedetect.db.UserInfo;
 import com.geek.libfacedetect.util.PermissionHelper;
 import com.geek.libfacedetect.util.ToastUtil;
 
+/**
+ * @author fosung
+ * 人脸识别
+ * com.github.geeklx.libbase1:libfacedetect:2.0.6
+ */
 public class MainActivityfdt extends AppCompatActivity implements View.OnClickListener {
 
     @Override

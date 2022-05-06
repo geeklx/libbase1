@@ -9,6 +9,11 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import com.blankj.utilcode.util.AppUtils;
 
+/**
+ * @author fosung
+ * 手势指纹验证库
+ * com.github.geeklx.libbase1:libyanzheng:2.0.6
+ */
 public class ZhiwenActtivity extends AppCompatActivity {
     @Override
     protected void onCreate(@Nullable @org.jetbrains.annotations.Nullable Bundle savedInstanceState) {

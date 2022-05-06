@@ -29,6 +29,8 @@ import com.app.hubert.guide.model.RelativeGuide;
 
 /**
  * @author fosung
+ * 新手引导页面
+ * com.github.geeklx.libbase1:libguide:2.0.6
  */
 public class FirstActivity extends AppCompatActivity {
 
