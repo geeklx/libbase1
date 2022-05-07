@@ -1,0 +1,10 @@
+apply from: "${rootDir.path}/gradle/publish.gradle"
+apply from: "${rootDir.path}/gradle/base.gradle"
+def librarys = rootProject.ext.dependencies //依赖
+dependencies {
+    implementation fileTree(dir: 'libs', include: ['*.jar'])
+    //common url
+    implementation librarys.constraintlayout
+    implementation librarys.blankj
+    implementation 'com.white:progressview:1.0.1'
+}

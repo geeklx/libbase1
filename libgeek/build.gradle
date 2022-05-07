@@ -13,6 +13,7 @@ dependencies {
     api project(':libguide')
     api project(':libpicturecompressor')
     api project(':libviewpagerbottomsheet')
+    api project(':libprogressbar')
 //    api project(':libsupertextview')
 //    api project(':libgoodview')
 

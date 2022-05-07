@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.geek.libprogressbar">
+
+    <application
+        android:allowBackup="true"
+        android:supportsRtl="true">
+        <activity
+            android:name=".ProgressMainActivity"
+            android:exported="true" >
+            <intent-filter>
+                <action android:name="${applicationId}.hs.act.slbapp.ProgressMainActivity" />
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name=".numberprogressbar.NumberActivity"
+            android:exported="true" >
+            <intent-filter>
+                <action android:name="${applicationId}.hs.act.slbapp.NumberActivity" />
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name=".CircleProgress.CircularProgressActivity"
+            android:exported="true" >
+            <intent-filter>
+                <action android:name="${applicationId}.hs.act.slbapp.CircularProgressActivity" />
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </activity>
+    </application>
+</manifest>

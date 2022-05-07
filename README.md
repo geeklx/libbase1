@@ -46,6 +46,7 @@ Share this release:
     implementation 'com.github.geeklx.libbase1:libfacedetect:2.0.6'//人脸识别三方库
     implementation 'com.github.geeklx.libbase1:libpicturecompressor:2.0.6'//图片压缩三方库
     implementation 'com.github.geeklx.libbase1:libviewpagerbottomsheet:2.0.6'//滑动菜单三方库
+    implementation 'com.github.geeklx.libbase1:libprogressbar:2.0.6'//多种进度条样式功能
     // 方式1
     implementation 'com.github.geeklx.libbase2:libutils:2.0.7'//核心库
     implementation 'com.github.geeklx.libbase2:libbase:2.0.7'//核心库

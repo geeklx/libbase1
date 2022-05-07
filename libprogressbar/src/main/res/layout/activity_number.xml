@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:cpb="http://schemas.android.com/apk/res-auto"
+    xmlns:custom="http://schemas.android.com/apk/res-auto"
+    xmlns:npb="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:gravity="center"
+    android:orientation="vertical">
+
+    <com.geek.libprogressbar.numberprogressbar.HorizontalProgress
+        android:id="@+id/progress_horizontal"
+        style="@android:style/Widget.ProgressBar.Horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_marginLeft="16dp"
+        android:layout_marginTop="15dp"
+        android:layout_marginRight="16dp"
+        android:max="100"
+        android:progress="0"
+        android:progressDrawable="@drawable/layer_list_progress_drawable"
+        android:secondaryProgress="0" />
+
+    <com.geek.libprogressbar.numberprogressbar.UpperNumberProgressBar
+        android:id="@+id/number_progress"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:layout_marginLeft="16dp"
+        android:layout_marginTop="10dp"
+        android:layout_marginRight="16dp"
+        android:padding="16dp" />
+
+    <com.geek.libprogressbar.numberprogressbar.NumberProgressBar
+        android:id="@+id/progress_barss"
+        style="@style/NumberProgressBar_Default"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="16dp"
+        android:layout_marginTop="10dp"
+        android:layout_marginRight="16dp"
+        android:padding="16dp"
+        custom:progress_current="0" />
+
+    <com.geek.libprogressbar.numberprogressbar.NumberHorizontalProgressBar
+        android:id="@+id/num_pb"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="50dp"
+        android:visibility="visible"
+        npb:percent_size="15sp"
+        npb:progress_bar_height="3dp"
+        npb:progress_bar_style="top"
+        npb:show_percent="false" />
+
+    <com.geek.libprogressbar.numberprogressbar.NumberHorizontalProgressBar
+        android:id="@+id/num_pb2"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:visibility="visible"
+        npb:percent_size="15sp"
+        npb:progress_bar_height="3dp"
+        npb:progress_bar_style="center" />
+
+    <com.geek.libprogressbar.numberprogressbar.NumberHorizontalProgressBar
+        android:id="@+id/num_pb3"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:visibility="visible"
+        npb:percent_size="15sp"
+        npb:progress_bar_height="3dp"
+        npb:progress_bar_style="bottom" />
+
+    <com.geek.libprogressbar.numberprogressbar.CircleProgressBar
+        android:id="@+id/cpb"
+        android:layout_width="250dp"
+        android:layout_height="250dp"
+        cpb:progress_bar_start_round="90"
+        cpb:progress_style="center" />
+</LinearLayout>

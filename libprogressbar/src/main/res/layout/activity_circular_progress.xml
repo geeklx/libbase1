@@ -1,0 +1,185 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.core.widget.NestedScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:context=".MainActivity">
+
+        <com.geek.libprogressbar.CircleProgress.CircularProgressBar
+            android:id="@+id/progress"
+            android:layout_width="72dp"
+            android:layout_height="72dp"
+            android:layout_marginStart="30dp"
+            android:layout_marginTop="50dp"
+            app:grp_max="100"
+            app:grp_roundColor="#dce7fd"
+            app:grp_roundWidth="6dp"
+            app:grp_startAngle="-90"
+            app:grp_textColor="#5289F5"
+            app:grp_textSize="16sp"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="150dp"
+            android:layout_marginTop="70dp"
+            android:text="圆角弧渐变"
+            android:textSize="15sp"
+            android:textStyle="bold"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <com.geek.libprogressbar.CircleProgress.CircularProgressBar
+            android:id="@+id/progress2"
+            android:layout_width="72dp"
+            android:layout_height="72dp"
+            android:layout_marginStart="30dp"
+            android:layout_marginTop="150dp"
+            app:grp_endColor="#00000000"
+            app:grp_max="100"
+            app:grp_midColor="#5289F5"
+            app:grp_roundColor="#dce7fd"
+            app:grp_roundWidth="2dp"
+            app:grp_startAngle="-90"
+            app:grp_startColor="#dce7fd"
+            app:grp_textColor="#5289F5"
+            app:grp_textSize="16sp"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="150dp"
+            android:layout_marginTop="170dp"
+            android:text="细边progress"
+            android:textSize="15sp"
+            android:textStyle="bold"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <com.geek.libprogressbar.CircleProgress.CircularProgressBar
+            android:id="@+id/progress3"
+            android:layout_width="80dp"
+            android:layout_height="80dp"
+            android:layout_marginStart="30dp"
+            android:layout_marginTop="250dp"
+            app:grp_endColor="#00000000"
+            app:grp_max="100"
+            app:grp_midColor="#FF815C"
+            app:grp_progressFillet="false"
+            app:grp_roundColor="#fff9db"
+            app:grp_roundWidth="5dp"
+            app:grp_startAngle="-90"
+            app:grp_startColor="#fff9db"
+            app:grp_text="进度"
+            app:grp_textColor="#FF815C"
+            app:grp_textSize="16sp"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="150dp"
+            android:layout_marginTop="270dp"
+            android:text="直角弧渐变"
+            android:textSize="15sp"
+            android:textStyle="bold"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <com.geek.libprogressbar.CircleProgress.CircularProgressBar
+            android:id="@+id/progress4"
+            android:layout_width="80dp"
+            android:layout_height="80dp"
+            android:layout_marginStart="30dp"
+            android:layout_marginTop="350dp"
+            app:grp_endColor="#FF0000"
+            app:grp_max="100"
+            app:grp_midColor="#FFFF00"
+            app:grp_progressFillet="false"
+            app:grp_roundColor="#0000FF"
+            app:grp_roundWidth="5dp"
+            app:grp_startAngle="-90"
+            app:grp_startColor="#0000FF"
+            app:grp_text="进度"
+            app:grp_textColor="#5289F5"
+            app:grp_textSize="16sp"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="150dp"
+            android:layout_marginTop="370dp"
+            android:text="三色渐变"
+            android:textSize="15sp"
+            android:textStyle="bold"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="30dp"
+            android:layout_marginTop="450dp"
+            android:orientation="vertical"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <Button
+                android:id="@+id/btn1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:onClick="btn1"
+                android:text="开始" />
+
+            <Button
+                android:id="@+id/btn2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:onClick="btn2"
+                android:text="停止" />
+
+            <RelativeLayout
+                android:layout_width="wrap_content"
+                android:layout_gravity="center_vertical"
+                android:layout_height="wrap_content">
+                <com.geek.libprogressbar.CircleProgress.ProgressYuan
+                    android:id="@+id/view1"
+                    android:layout_width="216dp"
+                    android:layout_height="200dp"
+                    android:background="@drawable/aaaa"
+                    tools:layout_editor_absoluteX="79dp"
+                    tools:layout_editor_absoluteY="462dp" />
+
+                <com.white.progressview.CircleProgressView
+                    android:id="@+id/circle_progress_normal"
+                    android:layout_width="wrap_content"
+                    android:layout_height="160dp"
+                    android:layout_centerInParent="true"
+                    android:layout_weight="1"
+                    android:padding="10dp"
+                    android:progress="100"
+                    app:progressNormalSize="4dp"
+                    app:progressReachSize="4dp"
+                    app:progressStyle="FillInner"
+                    app:progressTextColor="@android:color/white"
+                    app:radius="70dp" />
+
+
+            </RelativeLayout>
+        </LinearLayout>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</androidx.core.widget.NestedScrollView>
