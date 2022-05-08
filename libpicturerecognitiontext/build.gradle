@@ -8,7 +8,7 @@ dependencies {
     implementation librarys.blankj
     implementation librarys.glide47
     implementation librarys.appcompatV7
-    implementation 'com.rmtheis:tess-two:6.2.0@aar'
     implementation 'io.github.lucksiege:pictureselector:v2.7.3-rc08'
+    api 'com.rmtheis:tess-two:6.2.0@aar'
 //    implementation 'com.rmtheis:tess-two:9.1.0'
 }

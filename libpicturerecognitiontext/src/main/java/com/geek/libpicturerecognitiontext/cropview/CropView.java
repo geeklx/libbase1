@@ -19,6 +19,7 @@ import static android.view.MotionEvent.ACTION_CANCEL;
 import static android.view.MotionEvent.ACTION_DOWN;
 import static android.view.MotionEvent.ACTION_UP;
 
+import android.annotation.SuppressLint;
 import android.content.Context;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
@@ -48,6 +49,7 @@ import java.io.File;
 import java.io.IOException;
 import java.io.InputStream;
 
+@SuppressLint("AppCompatCustomView")
 public class CropView extends ImageView implements ViewTreeObserver.OnGlobalLayoutListener, OnGestureListener {
     private static final float DEFAULT_MAX_SCALE = 6.0f;
     private static final float DEFAULT_MID_SCALE = 3.0f;

@@ -6,5 +6,5 @@ dependencies {
     //common url
     implementation librarys.constraintlayout
     implementation librarys.blankj
-    implementation 'com.white:progressview:1.0.1'
+    api 'com.white:progressview:1.0.1'
 }

@@ -45,7 +45,7 @@ import java.io.InputStream;
 import java.io.OutputStream;
 
 public class CropUtil {
-    private static final boolean DEBUG = false;
+    private static final boolean DEBUG = true;
     private static final String TAG = CropUtil.class.getSimpleName();
 
     private static final String SCHEME_FILE = "file";
