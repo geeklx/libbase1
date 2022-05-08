@@ -2,6 +2,7 @@ package com.geek.libpicturecompressor;
 
 import android.Manifest;
 import android.annotation.TargetApi;
+import android.content.Context;
 import android.content.pm.PackageManager;
 import android.graphics.BitmapFactory;
 import android.net.Uri;
@@ -215,13 +216,36 @@ public class PictureCompressorActivity extends AppCompatActivity {
                 }).launch();
     }
 
+    /**
+     * 创建跟目录文件
+     */
     private String getPath() {
-        String path = Environment.getExternalStorageDirectory() + "/Luban/image/";
+        String path = getSDPath(this) + "/Luban/image/";//Environment.getExternalStorageDirectory() + "/Luban/image/";
         File file = new File(path);
         if (file.mkdirs()) {
             return path;
         }
         return path;
+    }
+
+    /**
+     * 判断高低版本获取跟目录
+     */
+    public static String getSDPath(Context context) {
+        File sdDir = null;
+        boolean sdCardExist = Environment.getExternalStorageState().equals(
+                Environment.MEDIA_MOUNTED);// 判断sd卡是否存在
+        if (sdCardExist) {
+            if (Build.VERSION.SDK_INT >= 29) {
+                //Android10之后
+                sdDir = context.getExternalFilesDir(null);
+            } else {
+                sdDir = Environment.getExternalStorageDirectory();// 获取SD卡根目录
+            }
+        } else {
+            sdDir = Environment.getRootDirectory();// 获取跟目录
+        }
+        return sdDir.toString();
     }
 
     private void showResult(List<File> photos, File file) {
