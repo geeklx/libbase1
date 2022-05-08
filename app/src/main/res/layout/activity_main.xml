@@ -116,6 +116,12 @@
                 android:layout_height="wrap_content"
                 android:gravity="center"
                 android:text="多种进度条样式功能" />
+            <Button
+                android:id="@+id/button14"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:text="图片识别文字" />
 
         </LinearLayout>
     </ScrollView>

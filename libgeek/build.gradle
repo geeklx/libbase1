@@ -14,6 +14,7 @@ dependencies {
     api project(':libpicturecompressor')
     api project(':libviewpagerbottomsheet')
     api project(':libprogressbar')
+    api project(':libpicturerecognitiontext')
 //    api project(':libsupertextview')
 //    api project(':libgoodview')
 
