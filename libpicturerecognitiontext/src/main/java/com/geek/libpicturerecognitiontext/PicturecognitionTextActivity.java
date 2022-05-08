@@ -3,6 +3,7 @@ package com.geek.libpicturerecognitiontext;
 import static com.geek.libpicturerecognitiontext.SDUtils.assets2SD;
 
 import android.Manifest;
+import android.content.Context;
 import android.content.Intent;
 import android.content.pm.PackageManager;
 import android.graphics.Bitmap;
@@ -63,11 +64,11 @@ public class PicturecognitionTextActivity extends AppCompatActivity implements V
      * TessBaseAPI初始化用到的第一个参数，是个目录。
      */
 //    private static final String DATAPATH = Environment.getExternalStorageDirectory().getAbsolutePath() + File.separator;
-    private static final String DATAPATH = Environment.getExternalStoragePublicDirectory(Environment.DIRECTORY_DOCUMENTS) + File.separator;
+//    private final String DATAPATH = getSDPath(PicturecognitionTextActivity.this);//Environment.getExternalStoragePublicDirectory(Environment.DIRECTORY_DOCUMENTS) + File.separator;
     /**
      * 在DATAPATH中新建这个目录，TessBaseAPI初始化要求必须有这个目录。
      */
-    private static final String tessdata = DATAPATH + File.separator + "tessdata";
+    private String tessdata; //= DATAPATH + File.separator + "tessdata";
     /**
      * TessBaseAPI初始化测第二个参数，就是识别库的名字不要后缀名。
      */
@@ -79,7 +80,7 @@ public class PicturecognitionTextActivity extends AppCompatActivity implements V
     /**
      * 保存到SD卡中的完整文件名
      */
-    private static String LANGUAGE_PATH = tessdata + File.separator + DEFAULT_LANGUAGE_NAME;
+    private  String LANGUAGE_PATH ;//= tessdata + File.separator + DEFAULT_LANGUAGE_NAME;
 
     /**
      * 权限请求值
@@ -99,6 +100,25 @@ public class PicturecognitionTextActivity extends AppCompatActivity implements V
 
     float lastX;
 
+    /**
+     * 判断高低版本获取跟目录
+     */
+    public static String getSDPath(Context context) {
+        File sdDir = null;
+        boolean sdCardExist = Environment.getExternalStorageState().equals(
+                Environment.MEDIA_MOUNTED);// 判断sd卡是否存在
+        if (sdCardExist) {
+            if (Build.VERSION.SDK_INT >= 29) {
+                //Android10之后
+                sdDir = context.getExternalFilesDir(null);
+            } else {
+                sdDir = Environment.getExternalStorageDirectory();// 获取SD卡根目录
+            }
+        } else {
+            sdDir = Environment.getRootDirectory();// 获取跟目录
+        }
+        return sdDir.toString();
+    }
     /**
      * @param savedInstanceState
      */
@@ -141,7 +161,7 @@ public class PicturecognitionTextActivity extends AppCompatActivity implements V
         }
 
         //Android6.0之前安装时就能复制，6.0之后要先请求权限，所以6.0以上的这个方法无用。
-
+        LANGUAGE_PATH= getSDPath(PicturecognitionTextActivity.this) + File.separator + DEFAULT_LANGUAGE_NAME;
         assets2SD(getApplicationContext(), LANGUAGE_PATH, DEFAULT_LANGUAGE_NAME);
 
 
@@ -196,7 +216,7 @@ public class PicturecognitionTextActivity extends AppCompatActivity implements V
                     DEFAULT_LANGUAGE = array[position];
                 }
                 DEFAULT_LANGUAGE_NAME = DEFAULT_LANGUAGE + ".traineddata";
-                LANGUAGE_PATH = tessdata + File.separator + DEFAULT_LANGUAGE_NAME;
+                LANGUAGE_PATH = getSDPath(PicturecognitionTextActivity.this) + File.separator + "tessdata" + File.separator + DEFAULT_LANGUAGE_NAME;
                 Toast.makeText(getApplicationContext(), array[position], Toast.LENGTH_SHORT).show();
             }
 
@@ -227,7 +247,7 @@ public class PicturecognitionTextActivity extends AppCompatActivity implements V
                 long startTime = System.currentTimeMillis();
                 Log.i(TAG, "run: kaishi " + startTime);
                 TessBaseAPI tessBaseAPI = new TessBaseAPI();
-                tessBaseAPI.init(DATAPATH, DEFAULT_LANGUAGE);
+                tessBaseAPI.init( getSDPath(PicturecognitionTextActivity.this), DEFAULT_LANGUAGE);
                 tessBaseAPI.setImage(bitmap);
                 text = text + "识别结果：" + tessBaseAPI.getUTF8Text();
                 long finishTime = System.currentTimeMillis();
