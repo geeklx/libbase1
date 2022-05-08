@@ -7,6 +7,6 @@ dependencies {
     implementation librarys.constraintlayout
     implementation librarys.blankj
     implementation librarys.appcompatV7
-    implementation 'com.rmtheis:tess-two:6.2.0@aar'
+    api 'com.rmtheis:tess-two:6.2.0@aar'
 //    implementation 'com.rmtheis:tess-two:9.1.0'
 }
