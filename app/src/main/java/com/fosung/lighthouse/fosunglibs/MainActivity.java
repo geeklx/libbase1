@@ -141,7 +141,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 break;
             case R.id.button14:
                 /*图片识别文字*/
-                startActivity(new Intent(getPackageName() + ".hs.act.slbapp.PicturecognitionTextActivity"));
+                startActivity(new Intent(getPackageName() + ".hs.act.slbapp.PicturecognitionTextMainActivity"));
                 break;
             default:
                 break;
