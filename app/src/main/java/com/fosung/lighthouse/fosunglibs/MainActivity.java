@@ -142,11 +142,13 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 startActivity(new Intent(getPackageName() + ".hs.act.slbapp.ProgressMainActivity"));
                 break;
             case R.id.button14:
-                /*图片识别文字*/
+                /*图片识别文字
+                * 源库地址 'com.rmtheis:tess-two:9.1.0'*/
                 startActivity(new Intent(getPackageName() + ".hs.act.slbapp.PicturecognitionTextMainActivity"));
                 break;
             case R.id.button15:
-                /*扫描库*/
+                /*扫描库
+                 *项目地址: https://github.com/jenly1314/ZXingLite/tree/androidx*/
                 startActivity(new Intent(getPackageName() + ".hs.act.slbapp.ZxingMainActivity"));
                 break;
             default:
