@@ -22,7 +22,7 @@ import com.vincent.videocompressor.activity.VideoComPressorActivity;
  */
 public class MainActivity extends AppCompatActivity implements View.OnClickListener {
     private Button button, button1, button2, button3, button4, button5, button6, button7, button8, button9,
-            button10, button11, button12, button13,button14;
+            button10, button11, button12, button13, button14, button15;
 
     private TextView tv1;
 
@@ -45,6 +45,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         button12 = findViewById(R.id.button12);
         button13 = findViewById(R.id.button13);
         button14 = findViewById(R.id.button14);
+        button15 = findViewById(R.id.button15);
         button.setOnClickListener(this);
         button1.setOnClickListener(this);
         button2.setOnClickListener(this);
@@ -60,6 +61,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         button12.setOnClickListener(this);
         button13.setOnClickListener(this);
         button14.setOnClickListener(this);
+        button15.setOnClickListener(this);
 //        new PgyerSDKManager.Init()
 //                .setContext(getApplicationContext()) //设置上下问对象
 //                .start();
@@ -142,6 +144,10 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
             case R.id.button14:
                 /*图片识别文字*/
                 startActivity(new Intent(getPackageName() + ".hs.act.slbapp.PicturecognitionTextMainActivity"));
+                break;
+            case R.id.button15:
+                /*扫描库*/
+                startActivity(new Intent(getPackageName() + ".hs.act.slbapp.ZxingMainActivity"));
                 break;
             default:
                 break;
