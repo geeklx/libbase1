@@ -23,7 +23,6 @@
         android:layout_marginTop="-5dp"
         android:layout_marginRight="-5dp"
         android:scaleType="centerInside"
-        android:src="@drawable/ic_delete_menu"
         android:visibility="gone"
         tools:visibility="visible" />
 
