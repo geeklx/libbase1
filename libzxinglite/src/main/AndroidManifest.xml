@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.geek.libzxinglite">
+
+    <uses-permission android:name="android.permission.VIBRATE" />
+    <uses-permission android:name="android.permission.CHANGE_WIFI_STATE" />
+    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+
+    <application android:requestLegacyExternalStorage="true">
+        <activity
+            android:name=".app.ZxingMainActivity"
+            android:exported="true"
+            android:screenOrientation="portrait">
+            <intent-filter>
+                <action android:name="${applicationId}.hs.act.slbapp.ZxingMainActivity" />
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name="com.geek.libzxinglite.CaptureActivity"
+            android:screenOrientation="portrait"
+            android:theme="@style/CaptureTheme" />
+
+        <activity
+            android:name=".app.EasyCaptureActivity"
+            android:screenOrientation="portrait"
+            android:theme="@style/CaptureTheme" />
+        <activity
+            android:name=".app.CustomCaptureActivity"
+            android:theme="@style/CaptureTheme" />
+
+        <activity
+            android:name=".app.CaptureFragmentActivity"
+            android:screenOrientation="portrait"
+            android:theme="@style/CaptureTheme" />
+
+        <activity
+            android:name=".app.CustomActivity"
+            android:screenOrientation="portrait"
+            android:theme="@style/CaptureTheme" />
+
+        <activity
+            android:name=".app.CodeActivity"
+            android:screenOrientation="portrait" />
+    </application>
+
+</manifest>
