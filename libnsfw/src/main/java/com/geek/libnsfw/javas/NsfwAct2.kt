@@ -71,12 +71,12 @@ class NsfwAct2 : AppCompatActivity(), View.OnClickListener {
                     .minSelectNum(1)// 最小选择数量 int
                     .imageSpanCount(3)// 每行显示个数 int
                     .selectionMode(PictureConfig.MULTIPLE)// 多选 or 单选  or PictureConfig.SINGLE
-                    .previewImage(true)// 是否可预览图片 true or false
+                    .isPreviewImage(true)// 是否可预览图片 true or false
                     .isCamera(false)// 是否显示拍照按钮 true or false
                     .isZoomAnim(true)// 图片列表点击 缩放效果 默认true
-                    .selectionMedia(selectList)
-                    .sizeMultiplier(0.5f)// glide 加载图片大小 0~1之间 如设置 .glideOverride()无效
-                    .previewEggs(true)// 预览图片时 是否增强左右滑动图片体验(图片滑动一半即可看到上一张是否选中) true or false
+                    .selectionData(selectList)
+//                    .sizeMultiplier(0.5f)// glide 加载图片大小 0~1之间 如设置 .glideOverride()无效
+                    .isPreviewEggs(true)// 预览图片时 是否增强左右滑动图片体验(图片滑动一半即可看到上一张是否选中) true or false
                     .imageEngine(GlideEngineNsfw.createGlideEngine())// 外部传入图片加载引擎，必传项
 //                    .forResult(0x01);//结果回调onActivityResult code
                     .forResult(object : OnResultCallbackListener<LocalMedia?> {
@@ -127,7 +127,7 @@ class NsfwAct2 : AppCompatActivity(), View.OnClickListener {
 
     private fun reScFromImgs(list: MutableList<LocalMedia?>) {
         index = 0
-        mainAdapter?.setNewData(null)
+        mainAdapter?.setNewInstance(null)
         listData = ArrayList<MyNsfwBean>()
         Thread(Runnable {
             for (lm in list) {
@@ -150,7 +150,7 @@ class NsfwAct2 : AppCompatActivity(), View.OnClickListener {
 
     private fun reScAssetsImgs() {
         index = 0
-        mainAdapter?.setNewData(null)
+        mainAdapter?.setNewInstance(null)
         listData = ArrayList<MyNsfwBean>()
         for (a in resources.assets.list("img")!!) {
             val path = "img/${a}"

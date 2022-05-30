@@ -13,10 +13,10 @@ class Nsfw2ActAdapter(nsfwList: List<MyNsfwBean>?) :
         nsfwList as MutableList<MyNsfwBean>?
     ) {
 
-    override fun convert(helper: BaseViewHolder, item: MyNsfwBean) {
-        val textView = helper.getView<TextView>(R.id.tv_text)
-        val imageView = helper.getView<ImageView>(R.id.iv)
-        val view = helper.getView<RelativeLayout>(R.id.view)
+    override fun convert(holder: BaseViewHolder, item: MyNsfwBean) {
+        val textView = holder.getView<TextView>(R.id.tv_text)
+        val imageView = holder.getView<ImageView>(R.id.iv)
+        val view = holder.getView<RelativeLayout>(R.id.view)
         var color = ContextCompat.getColor(context, R.color.nsfw1)
         when (item.nsfw) {
             in 0.0..0.2 -> {
