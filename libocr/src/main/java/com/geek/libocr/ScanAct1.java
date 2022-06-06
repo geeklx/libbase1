@@ -10,7 +10,7 @@ import androidx.appcompat.app.AppCompatActivity;
 
 
 /**
- * ocr识别
+ * ocr识别 https://github.com/shouzhong/Scanner
  * com.github.geeklx.libbase1:libocr:2.0.6
  */
 public class ScanAct1 extends AppCompatActivity {

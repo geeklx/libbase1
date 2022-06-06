@@ -9,7 +9,7 @@ import com.app.hubert.guide.core.Builder;
 
 /**
  * Created by hubert
- * <p>
+ * <p>用户引到遮罩层 https://github.com/binIoter/GuideView
  * Created on 2017/7/27.
  */
 public class NewbieGuide {

@@ -11,7 +11,7 @@ import com.geek.libnsfw.javas.NsfwAct2;
 import com.geek.libnsfw.ktl.NsfwMainActivity;
 
 /**
- * 黄图识别
+ * 黄图识别 https://github.com/devzwy/open_nsfw_android
  * com.github.geeklx.libbase1:libnsfw:2.0.6
  */
 public class NsfwAct extends AppCompatActivity {
