@@ -22,7 +22,7 @@ import com.google.android.material.tabs.TabLayout;
 import java.util.ArrayList;
 /**
  * @author fosung
- * Viewpager+Bottomsheet滑动菜单三方库功能
+ * Viewpager+Bottomsheet滑动菜单三方库功能  https://github.com/RainyJiang22/ViewPagerBottomSheetBehavior
  * com.github.geeklx.libbase1:libviewpagerbottomsheet:2.0.6
  */
 public class MainActivitySheet extends AppCompatActivity {

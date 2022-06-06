@@ -36,6 +36,10 @@ import xyz.doikki.videoplayer.player.PlayerFactory;
 import xyz.doikki.videoplayer.player.VideoViewConfig;
 import xyz.doikki.videoplayer.player.VideoViewManager;
 
+/**
+ * 主流播放器 https://github.com/Doikki/DKVideoPlayer
+ */
+
 public class DKMainActivity extends BaseActivityDk implements BottomNavigationView.OnNavigationItemSelectedListener {
 
     private List<Fragment> mFragments = new ArrayList<>();

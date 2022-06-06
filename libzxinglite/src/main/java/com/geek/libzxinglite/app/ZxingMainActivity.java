@@ -42,7 +42,7 @@ import pub.devrel.easypermissions.AfterPermissionGranted;
 import pub.devrel.easypermissions.EasyPermissions;
 
 /**
- * 扫码Demo示例说明
+ * 扫码Demo示例说明    https://github.com/jenly1314/ZXingLite
  * <p>
  * 快速实现扫码有以下几种方式：
  * <p>

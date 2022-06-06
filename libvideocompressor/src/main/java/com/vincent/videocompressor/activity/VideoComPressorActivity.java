@@ -96,7 +96,7 @@ import java.util.Random;
 
 /**
  * @author fosung
- * 视频压缩
+ * 视频压缩 https://github.com/qingshangming/VideoCompressDemo
  * com.github.geeklx.libbase1:libvideocompressor:2.0.6
  */
 public class VideoComPressorActivity extends AppCompatActivity implements View.OnClickListener,

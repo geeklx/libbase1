@@ -11,7 +11,7 @@ import com.blankj.utilcode.util.AppUtils;
 
 /**
  * @author fosung
- * 手势指纹验证库
+ * 手势指纹验证库  https://github.com/wzx54321/LockDemo
  * com.github.geeklx.libbase1:libyanzheng:2.0.6
  */
 public class ZhiwenActtivity extends AppCompatActivity {

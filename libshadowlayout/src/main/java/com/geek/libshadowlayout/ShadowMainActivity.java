@@ -10,7 +10,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import com.geek.libshadowlayout.widgets.ShadowLayouts;
 
 /**
- * shadow阴影的各项使用
+ * shadow阴影的各项使用 https://github.com/lihangleo2/ShadowLayout
  * com.github.geeklx.libbase1:libshadowlayout:2.0.6
  */
 public class ShadowMainActivity extends AppCompatActivity {

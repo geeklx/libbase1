@@ -46,7 +46,7 @@ import io.reactivex.schedulers.Schedulers;
 
 /**
  * @author fosung
- * 图片压缩库
+ * 图片压缩库 https://github.com/Curzibn/Luban
  * com.github.geeklx.libbase1:libpicturecompressor:2.0.6
  */
 public class PictureCompressorActivity extends AppCompatActivity {
