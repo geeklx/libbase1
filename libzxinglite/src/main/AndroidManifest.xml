@@ -40,6 +40,10 @@
             android:name=".app.CustomActivity"
             android:screenOrientation="portrait"
             android:theme="@style/CaptureTheme" />
+        <activity
+            android:name=".app.CustomActivity1"
+            android:screenOrientation="portrait"
+            android:theme="@style/CaptureTheme" />
 
         <activity
             android:name=".app.CodeActivity"
