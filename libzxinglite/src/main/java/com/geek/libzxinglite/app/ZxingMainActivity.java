@@ -230,6 +230,11 @@ public class ZxingMainActivity extends AppCompatActivity implements EasyPermissi
             this.title = ((Button) v).getText().toString();
             isContinuousScan = true;
             checkCameraPermissions();
+        } else if (id == R.id.btn41) {
+            this.cls = CustomActivity1.class;
+            this.title = ((Button) v).getText().toString();
+            isContinuousScan = true;
+            checkCameraPermissions();
         } else if (id == R.id.btn5) {
             startCode(false);
         } else if (id == R.id.btn6) {

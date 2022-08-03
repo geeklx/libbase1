@@ -20,4 +20,13 @@
         android:padding="20dp"
         android:text="圆形进度条" />
 
+    <TextView
+        android:id="@+id/tv_jindutiao1"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:padding="20dp"
+        android:text="横向进度条1" />
+
+
 </LinearLayout>

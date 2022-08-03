@@ -81,4 +81,27 @@
     <declare-styleable name="Themes">
         <attr name="numberProgressBarStyle" format="reference"/>
     </declare-styleable>
+
+    <declare-styleable name="EnhancedProgressBar">
+        <attr name="android:progress" format="integer" />
+        <attr name="lyj_unreached_color" format="reference|color" />
+        <attr name="lyj_reached_color" format="reference|color" />
+        <attr name="lyj_reached_height" format="reference|dimension" />
+        <attr name="lyj_unreached_height" format="reference|dimension" />
+        <attr name="lyj_text_visible" format="boolean" />
+        <attr name="lyj_text_size" format="reference|dimension" />
+        <attr name="lyj_text_color" format="reference|color" />
+        <attr name="lyj_text_offset" format="reference|dimension" />
+        <attr name="lyj_text_align" format="enum">
+            <enum name="middle" value="0" />
+            <enum name="top" value="1" />
+        </attr>
+        <attr name="lyj_text_bold" format="boolean" />
+        <attr name="lyj_cut_corner" format="enum">
+            <enum name="none" value="0" />
+            <enum name="parallelogram" value="1" />
+            <enum name="ellipse" value="2" />
+        </attr>
+    </declare-styleable>
+
 </resources>

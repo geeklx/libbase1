@@ -29,5 +29,12 @@ public class ProgressMainActivity extends AppCompatActivity {
                 startActivity(new Intent(ProgressMainActivity.this, CircularProgressActivity.class));
             }
         });
+        findViewById(R.id.tv_jindutiao1).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                startActivity(new Intent(ProgressMainActivity.this, NumberActivity1.class));
+            }
+        });
+
     }
 }
