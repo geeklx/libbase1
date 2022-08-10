@@ -32,7 +32,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         //
-        Utils.init(App11.get());// com.blankj:utilcode:1.17.3 
+        Utils.init(App11.get());// com.blankj:utilcode:1.17.3
         button = findViewById(R.id.button);
         button1 = findViewById(R.id.button1);
         button2 = findViewById(R.id.button2);
