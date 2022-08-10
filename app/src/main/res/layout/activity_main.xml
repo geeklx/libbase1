@@ -1,10 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    tools:context=".MainActivity">
+    android:layout_height="match_parent">
 
     <ScrollView
         android:layout_width="match_parent"
@@ -104,24 +102,28 @@
                 android:layout_height="wrap_content"
                 android:gravity="center"
                 android:text="人脸识别" />
+
             <Button
                 android:id="@+id/button12"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:gravity="center"
                 android:text="Viewpager+Bottomsheet" />
+
             <Button
                 android:id="@+id/button13"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:gravity="center"
                 android:text="多种进度条样式功能" />
+
             <Button
                 android:id="@+id/button14"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:gravity="center"
                 android:text="图片识别文字" />
+
             <Button
                 android:id="@+id/button15"
                 android:layout_width="wrap_content"

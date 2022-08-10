@@ -9,6 +9,7 @@ import android.widget.TextView;
 import androidx.appcompat.app.AppCompatActivity;
 
 import com.app.hubert.guide.newbieguide.FirstActivity;
+import com.blankj.utilcode.util.Utils;
 import com.example.slbyanzheng.ZhiwenActtivity;
 import com.geek.libnsfw.NsfwAct;
 import com.geek.libocr.ScanAct1;
@@ -30,6 +31,8 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+        //
+        Utils.init(App11.get());// com.blankj:utilcode:1.17.3
         button = findViewById(R.id.button);
         button1 = findViewById(R.id.button1);
         button2 = findViewById(R.id.button2);
@@ -79,6 +82,50 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 /*黄图识别*/
                 Intent intent = new Intent(this, NsfwAct.class);
                 startActivity(intent);
+                //
+//                String reviseBpmnFile = "http://cdn2.cdn.haier-jiuzhidao.com/tensorflowso/version.xml";
+//                new Thread(new Runnable() {
+//                    @Override
+//                    public void run() {
+//                        String fileString = "";
+//                        try {
+//                            //读取远程文件URl
+//                            InputStream in = LoadFile.downLoadFile(reviseBpmnFile);
+//                            //
+////                            List<XmlBean> mlist = LoadFile.getNodeList(in);
+//                            List<XmlBean> mlist = DOMService.getPersons(in);
+//
+//                            //读取 xml 文件
+////                            File fileinput = LoadFile.copyInputStreamToFile(in);
+////
+////                            DocumentBuilderFactory dbFactory = DocumentBuilderFactory.newInstance();
+////                            DocumentBuilder dBuilder = dbFactory.newDocumentBuilder();
+////                            Document doc = dBuilder.parse(fileinput);
+////                            //将xml文件转化为String
+////                            StringWriter sw = new StringWriter();
+////                            TransformerFactory tf = TransformerFactory.newInstance();
+////                            Transformer transformer = tf.newTransformer();
+////                            transformer.setOutputProperty(OutputKeys.OMIT_XML_DECLARATION, "no");
+////                            transformer.setOutputProperty(OutputKeys.METHOD, "xml");
+////                            transformer.setOutputProperty(OutputKeys.INDENT, "yes");
+////                            transformer.setOutputProperty(OutputKeys.ENCODING, "UTF-8");
+////                            transformer.transform(new DOMSource(doc), new StreamResult(sw));
+////                            fileString = sw.toString();
+//
+//                        } catch (Exception e) {
+//                            LogUtils.e("getReviseBpmnFile 读取文件异常，url：" + reviseBpmnFile);
+//                            try {
+//                                throw new Exception("读取文件异常！");
+//                            } catch (Exception ex) {
+//                                ex.printStackTrace();
+//                            }
+//                        }
+//                        //
+//                        String pg_name = AppUtils.getAppPackageName();
+//
+//
+//                    }
+//                }).start();
                 break;
             case R.id.button1:
                 /*ocr识别*/
@@ -143,7 +190,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 break;
             case R.id.button14:
                 /*图片识别文字
-                * 源库地址 'com.rmtheis:tess-two:9.1.0'*/
+                 * 源库地址 'com.rmtheis:tess-two:9.1.0'*/
                 startActivity(new Intent(getPackageName() + ".hs.act.slbapp.PicturecognitionTextMainActivity"));
                 break;
             case R.id.button15:

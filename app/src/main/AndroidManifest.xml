@@ -3,8 +3,11 @@
     xmlns:tools="http://schemas.android.com/tools"
     package="com.fosung.lighthouse.fosunglibs">
 
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE"></uses-permission>
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE"></uses-permission>
+
     <application
-        android:name=".MyApplication"
+        android:name="com.fosung.lighthouse.fosunglibs.MyApplication"
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
         android:label="@string/app_fosunglibs"
@@ -12,9 +15,10 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.Fosunglibs"
+        android:usesCleartextTraffic="true"
         tools:replace="android:allowBackup,android:label,android:theme">
         <activity
-            android:name=".MainActivity"
+            android:name="com.fosung.lighthouse.fosunglibs.MainActivity"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
