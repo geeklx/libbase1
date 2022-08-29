@@ -5,24 +5,24 @@
     android:orientation="vertical">
 
     <Button
-        android:id="@+id/register"
+        android:id="@+id/register1"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="@string/register"
-        android:visibility="gone" />
+        android:text="识别注册1"
+        android:visibility="visible" />
+
+    <Button
+        android:id="@+id/verify1"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="验证匹配1"
+        android:visibility="visible" />
 
     <Button
         android:id="@+id/register2"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="@string/register2" />
-
-    <Button
-        android:id="@+id/verify"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="@string/verify"
-        android:visibility="gone" />
 
     <Button
         android:id="@+id/verify2"

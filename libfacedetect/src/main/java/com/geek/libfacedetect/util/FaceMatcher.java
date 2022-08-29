@@ -1,5 +1,6 @@
 package com.geek.libfacedetect.util;
 
+import android.annotation.SuppressLint;
 import android.graphics.Bitmap;
 import android.util.Log;
 
@@ -25,6 +26,8 @@ public class FaceMatcher {
     private static final String TAG = "FaceMatcher";
     private static int counter;
     public final int UNFINISHED = -2;
+    public final int width = 500;
+    public final int height = 500;
     public final int NO_MATCHER = -1;
     private final int MAX_COUNTER = 45;
     private final double MY_SIMILARITY = 0.8;
@@ -38,6 +41,7 @@ public class FaceMatcher {
         }
     }
 
+    @SuppressLint("LongLogTag")
     public int histogramMatch(Bitmap bitmap) {
         if (counter < MAX_COUNTER) {
             Mat testMat = new Mat();
@@ -46,10 +50,14 @@ public class FaceMatcher {
             Imgproc.cvtColor(testMat, testMat, Imgproc.COLOR_RGB2GRAY);
             // 把矩阵的类型转换为Cv_32F，因为在c++代码中会判断类型
             testMat.convertTo(testMat, CvType.CV_32F);
+            Log.e("ssssssssssss-histogramMatchtestMat", testMat.width() + "," + testMat.height());
             for (int i = 0; i < mPathList.size(); i++) {
                 String path = mPathList.get(i);
                 Mat mat = Imgcodecs.imread(path);
-                Imgproc.resize(mat, mat, new Size(320, 320));
+//                Mat mat = Highgui.imread(path);
+                Log.e("ssssssssssss-histogramMatchmat", mat.width() + "," + mat.height());
+//                Imgproc.resize(mat, mat, new Size(mat.width(), mat.height()));
+                Imgproc.resize(mat, mat, new Size(width, height));
                 Imgproc.cvtColor(mat, mat, Imgproc.COLOR_RGB2GRAY);
                 mat.convertTo(mat, CvType.CV_32F);
                 // 直方图比较
@@ -64,6 +72,9 @@ public class FaceMatcher {
                     Log.e(TAG, "histogramMatch: " + counter);
                     counter++;
                 }
+            }
+            if (mPathList.size() == 0) {
+                counter++;
             }
             return UNFINISHED;
         } else {

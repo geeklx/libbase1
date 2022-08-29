@@ -1,5 +1,6 @@
 package com.geek.libfacedetect.db;
 
+import android.annotation.SuppressLint;
 import android.content.ContentValues;
 import android.content.Context;
 import android.database.Cursor;
@@ -7,6 +8,9 @@ import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
 import android.graphics.Bitmap;
 import android.util.Log;
+
+import com.blankj.utilcode.util.Utils;
+import com.geek.libfacedetect.util.BaseAppCamera;
 
 import java.io.File;
 import java.io.FileOutputStream;
@@ -51,7 +55,8 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         int userNum = db.query("face_data",
                 null, null, null, null, null, null).getCount() + 1;
         try {
-            String filePath = mContext.getFilesDir() + "/face" + userNum + ".png";
+//            String filePath = get_file_url() + "/face" + userNum + ".png";
+            String filePath = Utils.getApp().getExternalFilesDir(null).getPath() + "/face" + userNum + ".png";
             File file = new File(filePath);
             OutputStream out = new FileOutputStream(file);
             bitmap.compress(Bitmap.CompressFormat.PNG, 100, out);
@@ -64,6 +69,18 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         return null;
     }
 
+    public static String get_file_url() {
+        String file_apk_url;
+        File file_apks = BaseAppCamera.get().getExternalCacheDir();
+        if (file_apks != null) {
+            file_apk_url = file_apks.getAbsolutePath();
+        } else {
+            file_apk_url = Utils.getApp().getExternalFilesDir(null).getAbsolutePath();
+        }
+        return file_apk_url;
+    }
+
+    @SuppressLint("Range")
     public List<UserInfo> query() {
         Cursor cursor = db.query("face_data", null, null, null, null, null, null);
         List<UserInfo> userList = new ArrayList<>();
@@ -91,6 +108,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         values.clear();
     }
 
+    @Override
     public void close() {
         db.close();
     }

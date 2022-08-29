@@ -12,10 +12,11 @@
         android:layout_weight="1" />
 
     <Button
-        android:layout_margin="10dp"
         android:id="@+id/switch_camera"
         android:layout_width="43dp"
         android:layout_height="37dp"
         android:layout_gravity="center_vertical"
-        android:background="@drawable/ic_camera" />
+        android:layout_margin="10dp"
+        android:background="@drawable/ic_camera"
+        android:visibility="gone" />
 </LinearLayout>

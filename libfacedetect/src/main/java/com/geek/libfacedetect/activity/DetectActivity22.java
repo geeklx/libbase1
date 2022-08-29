@@ -6,6 +6,7 @@ import android.content.Intent;
 import android.graphics.Bitmap;
 import android.os.Bundle;
 import android.os.Handler;
+import android.os.Looper;
 import android.os.Message;
 import android.util.Log;
 import android.view.View;
@@ -17,6 +18,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import com.geek.libfacedetect.R;
 import com.geek.libfacedetect.db.DatabaseHelper;
 import com.geek.libfacedetect.db.UserInfo;
+import com.geek.libfacedetect.util.BitmapUtil;
 import com.geek.libfacedetect.util.FaceMatcher;
 
 import org.opencv.android.CameraBridgeViewBase;
@@ -35,7 +37,10 @@ import java.io.FileOutputStream;
 import java.io.InputStream;
 import java.util.List;
 
-public class DetectActivity2 extends AppCompatActivity implements
+import tech.huqi.smartopencv.SmartOpenCV;
+import tech.huqi.smartopencv.core.preview.CameraConfiguration;
+
+public class DetectActivity22 extends AppCompatActivity implements
         CameraBridgeViewBase.CvCameraViewListener2, View.OnClickListener {
     public final static int FLAG_REGISTER = 1;
     public final static int FLAG_VERIFY = 2;
@@ -50,7 +55,7 @@ public class DetectActivity2 extends AppCompatActivity implements
     List<UserInfo> userList;
     private Bitmap mDetectedFace;
     private FaceMatcher matcher;
-    private Handler mHandler = new Handler() {
+    private Handler mHandler = new Handler(Looper.myLooper()) {
         @SuppressLint("LongLogTag")
         @Override
         public void handleMessage(Message msg) {
@@ -63,10 +68,11 @@ public class DetectActivity2 extends AppCompatActivity implements
                         if (result == matcher.UNFINISHED) {
                             mDetectedFace = null;
                         } else if (result == matcher.NO_MATCHER) {
-                            Log.e("ssssssssssssmDetectedFace", mDetectedFace.getByteCount() + "");
-                            intent = new Intent(DetectActivity2.this,
+//                            Log.e("ssssssssssssmDetectedFace", mDetectedFace.getByteCount() + "");
+                            intent = new Intent(DetectActivity22.this,
                                     RegisterActivityfdt.class);
-                            intent.putExtra("Face", mDetectedFace);
+                            intent.putExtra("Face", "bitmap");
+                            BitmapUtil.saveBitmap2file(mDetectedFace, "bitmap");
                             startActivity(intent);
                             finish();
                         } else {
@@ -79,6 +85,10 @@ public class DetectActivity2 extends AppCompatActivity implements
                 case FLAG_VERIFY:
                     if (mDetectedFace == null) {
                         mDetectedFace = (Bitmap) msg.obj;
+                        //
+                        Mat testMat = new Mat();
+                        Utils.bitmapToMat(mDetectedFace, testMat);
+                        Log.e("sssssssssssss-人脸矩阵传值前", testMat.width() + "," + testMat.height());
                         int result = matcher.histogramMatch(mDetectedFace);
                         if (result == matcher.UNFINISHED) {
                             mDetectedFace = null;
@@ -109,7 +119,7 @@ public class DetectActivity2 extends AppCompatActivity implements
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         initWindowSettings();
-        setContentView(R.layout.activty_detect2facedetector);
+        setContentView(R.layout.activty_detectfacedetector22);
         cameraView = (CameraBridgeViewBase) findViewById(R.id.camera_view);
         cameraView.setCameraIndex(CameraBridgeViewBase.CAMERA_ID_FRONT);
         cameraView.setCvCameraViewListener(this); // 设置相机监听
@@ -117,6 +127,35 @@ public class DetectActivity2 extends AppCompatActivity implements
         cameraView.enableView();
         Button switchCamera = (Button) findViewById(R.id.switch_camera);
         switchCamera.setOnClickListener(this); // 切换相机镜头，默认后置
+        //
+        SmartOpenCV.getInstance().init(cameraView, new CameraConfiguration.Builder()
+                .debug(true)
+                .cameraIndex(1)      // 设置摄像头索引,主要用于多摄像头设备，优先级低于frontCamera
+                .keepScreenOn(false) // 是否保持屏幕常亮
+                .frontCamera(true)   // 是否使用前置摄像头
+                .openCvDefaultDrawStrategy(false)      // 是否使用OpenCV默认的预览图像绘制策略
+                .openCvDefaultPreviewCalculator(false) // 是否使用OpenCV默认的预览帧大小计算策略
+                .landscape(false)     // 是否横屏显示
+                .enableFpsMeter(false) // 开启预览帧率的显示
+                .usbCamera(false)     // 是否使用USB摄像头，当设备接入的是USB摄像头时将其设置为true
+                .bitmapConfig(Bitmap.Config.RGB_565) // 设置预览帧图像格式
+                .maxFrameSize(400, 320)     // 设置预览帧的最大大小
+                .cvCameraViewListener(this) // 设置OpenCV回调监听器
+//                .previewSizeCalculator(new IPreviewSizeCalculator() { // 自定义预览帧大小计算策略
+//                    @Override
+//                    public Size calculateCameraFrameSize(List<Size> supportedSizes, int surfaceWidth, int surfaceHeight) {
+//                        // 若需要根据自己的具体业务场景改写览帧大小，覆写该方法逻辑
+//                        return new Size(1080, 1920);
+//                    }
+//                })
+//                .drawStrategy(new IDrawStrategy() { // 自定义绘制策略
+//                    @Override
+//                    public void drawBitmap(Canvas canvas, Bitmap frameBitmap, int surfaceWidth, int surfaceHeight) {
+//                        // 若需根据自己的具体业务场景绘制预览帧图像，覆写该方法逻辑
+//
+//                    }
+//                })
+                .build());
     }
 
     @Override
@@ -169,7 +208,7 @@ public class DetectActivity2 extends AppCompatActivity implements
             e.printStackTrace();
         }
 //        cameraView.enableView();
-        DatabaseHelper helper = new DatabaseHelper(DetectActivity2.this);
+        DatabaseHelper helper = new DatabaseHelper(DetectActivity22.this);
         userList = helper.query();
         matcher = new FaceMatcher(userList);
         helper.close();
@@ -217,16 +256,17 @@ public class DetectActivity2 extends AppCompatActivity implements
 //        Scalar faceRectColor = new Scalar(0, 255, 0, 255);
         for (Rect faceRect : facesArray) {
             Imgproc.rectangle(mRgba, faceRect.tl(), faceRect.br(), FACE_RECT_COLOR, 3);
-            Log.e("sssssssssssss", faceRect.height + "");
+//            Log.e("sssssssssssss", faceRect.height + "");
             if (faceRect.height > 500 && faceRect.height < 600) {
                 // 获取并利用message传递当前检测的人脸
                 Imgproc.rectangle(mRgba, faceRect.tl(), faceRect.br(), FACE_RECT_COLOR2, 3);
                 Mat faceMat = new Mat(mRgba, faceRect);
-                Log.e("sssssssssssss", faceMat.width() + "," + faceMat.height());
-                Imgproc.resize(faceMat, faceMat, new Size(320, 320));
+                Log.e("sssssssssssss-获取人脸矩阵", faceMat.width() + "," + faceMat.height());
+                Imgproc.resize(faceMat, faceMat, new Size(matcher.width, matcher.height));
+//                Imgproc.resize(faceMat, faceMat, new Size(faceMat.width(), faceMat.height()));
                 Bitmap bitmap = Bitmap.createBitmap(faceMat.width(),
                         faceMat.height(), Bitmap.Config.ARGB_8888);
-                Log.e("ssssssssssssbitmap", bitmap.getByteCount() + "");
+//                Log.e("ssssssssssssbitmap", bitmap.getByteCount() + "");
                 Utils.matToBitmap(faceMat, bitmap);
                 Message message = Message.obtain();
                 message.what = getIntent().getIntExtra("flag", 0);

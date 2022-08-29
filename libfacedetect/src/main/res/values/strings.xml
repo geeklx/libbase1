@@ -5,4 +5,8 @@
     <string name="verify">验证匹配</string>
     <string name="verify2">验证匹配2</string>
     <string name="view_data">查看数据</string>
+    <string name="description">拍照要求:\n1. 图像保证自然光亮度，无炫光，无夜晚灯光散射，无闪光灯高光照射等。
+\n2.  拍摄背景以纯色最优，建议红色背景，图像清晰，人脸占图像60%以上。
+\n3. 人脸全脸入镜，人脸为正脸，不可俯拍仰拍，不可低头抬头歪头。无明显表情。
+\n4. 人脸全脸入镜无遮挡，比如不可佩戴口罩、墨镜等具有遮挡效应的物品。</string>
 </resources>

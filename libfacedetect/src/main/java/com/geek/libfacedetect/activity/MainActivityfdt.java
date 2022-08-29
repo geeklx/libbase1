@@ -2,8 +2,6 @@ package com.geek.libfacedetect.activity;
 
 import android.Manifest;
 import android.content.Intent;
-import android.graphics.Bitmap;
-import android.graphics.BitmapFactory;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
@@ -28,45 +26,63 @@ public class MainActivityfdt extends AppCompatActivity implements View.OnClickLi
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_mainfacedetector);
-        Button registerButton = (Button) findViewById(R.id.register);
+        Button registerButton1 = (Button) findViewById(R.id.register1);
+        Button verifyButton1 = (Button) findViewById(R.id.verify1);
         Button registerButton2 = (Button) findViewById(R.id.register2);
-        Button verifyButton = (Button) findViewById(R.id.verify);
         Button verifyButton2 = (Button) findViewById(R.id.verify2);
         Button viewDataButton = (Button) findViewById(R.id.view_data);
 
-        registerButton.setOnClickListener(this);
+        registerButton1.setOnClickListener(this);
         registerButton2.setOnClickListener(this);
         viewDataButton.setOnClickListener(this);
-        verifyButton.setOnClickListener(this);
+        verifyButton1.setOnClickListener(this);
         verifyButton2.setOnClickListener(this);
         initDatabase();
+
+
     }
 
     // 初始化数据库
     private void initDatabase() {
         DatabaseHelper helper = new DatabaseHelper(this);
-        if (helper.query().size() == 0) {
-            Bitmap bitmap = BitmapFactory.decodeResource(getResources(),
-                    R.drawable.user_defaut);
-            String path = helper.saveBitmapToLocal(bitmap);
-            UserInfo user = new UserInfo("默认用户", "男", 25, path);
-            helper.insert(user);
-        }
+//        if (helper.query().size() == 0) {
+//            Bitmap bitmap = BitmapFactory.decodeResource(getResources(),
+//                    R.drawable.user_defaut);
+//            String path = helper.saveBitmapToLocal(bitmap);
+//            UserInfo user = new UserInfo("默认用户", "男", 25, path);
+//            helper.insert(user);
+//        }
         helper.close();
     }
 
     @Override
     public void onClick(View v) {
         int id = v.getId();
-        if (id == R.id.register) {
+        if (id == R.id.register1) {
             requestCameraPermission(new PermissionHelper.RequestListener() {
                 @Override
                 public void onGranted() {
                     Intent intent = new Intent(MainActivityfdt.this,
-                            DetectActivity.class);
-                    intent.putExtra("flag", DetectActivity.FLAG_REGISTER);
+                            DetectActivity11.class);
+                    intent.putExtra("flag", DetectActivity11.FLAG_REGISTER);
                     startActivityForResult(intent,
-                            DetectActivity.FLAG_REGISTER);
+                            DetectActivity11.FLAG_REGISTER);
+                }
+
+                @Override
+                public void onDenied() {
+                    ToastUtil.showToast(MainActivityfdt.this, "权限拒绝", 0);
+                }
+            });
+        } else if (id == R.id.verify1) {
+            requestCameraPermission(new PermissionHelper.RequestListener() {
+                @Override
+                public void onGranted() {
+                    Intent intent = new Intent(MainActivityfdt.this,
+                            DetectActivity12.class);
+                    intent.putExtra("flag", DetectActivity12.FLAG_VERIFY);
+                    startActivityForResult(intent,
+                            DetectActivity12.FLAG_VERIFY);
                 }
 
                 @Override
@@ -79,10 +95,10 @@ public class MainActivityfdt extends AppCompatActivity implements View.OnClickLi
                 @Override
                 public void onGranted() {
                     Intent intent = new Intent(MainActivityfdt.this,
-                            DetectActivity2.class);
-                    intent.putExtra("flag", DetectActivity2.FLAG_REGISTER);
+                            DetectActivity21.class);
+                    intent.putExtra("flag", DetectActivity21.FLAG_REGISTER);
                     startActivityForResult(intent,
-                            DetectActivity2.FLAG_REGISTER);
+                            DetectActivity21.FLAG_REGISTER);
                 }
 
                 @Override
@@ -90,7 +106,7 @@ public class MainActivityfdt extends AppCompatActivity implements View.OnClickLi
                     ToastUtil.showToast(MainActivityfdt.this, "权限拒绝", 0);
                 }
             });
-        } else if (id == R.id.verify) {
+        }/* else if (id == R.id.verify) {
             requestCameraPermission(new PermissionHelper.RequestListener() {
                 @Override
                 public void onGranted() {
@@ -106,15 +122,15 @@ public class MainActivityfdt extends AppCompatActivity implements View.OnClickLi
                     ToastUtil.showToast(MainActivityfdt.this, "权限拒绝", 0);
                 }
             });
-        } else if (id == R.id.verify2) {
+        }*/ else if (id == R.id.verify2) {
             requestCameraPermission(new PermissionHelper.RequestListener() {
                 @Override
                 public void onGranted() {
                     Intent intent = new Intent(MainActivityfdt.this,
-                            DetectActivity2.class);
-                    intent.putExtra("flag", DetectActivity2.FLAG_VERIFY);
+                            DetectActivity22.class);
+                    intent.putExtra("flag", DetectActivity22.FLAG_VERIFY);
                     startActivityForResult(intent,
-                            DetectActivity2.FLAG_VERIFY);
+                            DetectActivity22.FLAG_VERIFY);
                 }
 
                 @Override
