@@ -2,7 +2,7 @@ package tech.huqi.smartopencv.core.preview;
 
 import android.graphics.Bitmap;
 
-import org.opencv.android.CameraBridgeViewBase;
+import org.opencv.android.CameraBridgeViewBase3;
 
 import tech.huqi.smartopencv.draw.IDrawStrategy;
 import tech.huqi.smartopencv.draw.IPreviewSizeCalculator;
@@ -28,8 +28,8 @@ public class CameraConfiguration {
     final Bitmap.Config bitmapConfig;
     final IDrawStrategy drawStrategy;
     final IPreviewSizeCalculator previewSizeCalculator;
-    final CameraBridgeViewBase.CvCameraViewListener cvCameraViewListener;
-    final CameraBridgeViewBase.CvCameraViewListener2 cvCameraViewListener2;
+    final CameraBridgeViewBase3.CvCameraViewListener cvCameraViewListener;
+    final CameraBridgeViewBase3.CvCameraViewListener2 cvCameraViewListener2;
 
     public CameraConfiguration(final Builder builder) {
         this.maxWidth = builder.maxWidth;
@@ -75,8 +75,8 @@ public class CameraConfiguration {
         private Bitmap.Config bitmapConfig = DEFAULT_BITMAP_CONFIG;
         private IDrawStrategy drawStrategy;
         private IPreviewSizeCalculator previewSizeCalculator;
-        private CameraBridgeViewBase.CvCameraViewListener cvCameraViewListener;
-        private CameraBridgeViewBase.CvCameraViewListener2 cvCameraViewListener2;
+        private CameraBridgeViewBase3.CvCameraViewListener cvCameraViewListener;
+        private CameraBridgeViewBase3.CvCameraViewListener2 cvCameraViewListener2;
 
         public Builder debug(boolean isEnableDebug) {
             this.debug = isEnableDebug;
@@ -172,12 +172,12 @@ public class CameraConfiguration {
             return this;
         }
 
-        public Builder cvCameraViewListener(CameraBridgeViewBase.CvCameraViewListener cvCameraViewListener) {
+        public Builder cvCameraViewListener(CameraBridgeViewBase3.CvCameraViewListener cvCameraViewListener) {
             this.cvCameraViewListener = cvCameraViewListener;
             return this;
         }
 
-        public Builder cvCameraViewListener(CameraBridgeViewBase.CvCameraViewListener2 cvCameraViewListener) {
+        public Builder cvCameraViewListener(CameraBridgeViewBase3.CvCameraViewListener2 cvCameraViewListener) {
             this.cvCameraViewListener2 = cvCameraViewListener;
             return this;
         }

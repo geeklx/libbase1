@@ -173,7 +173,7 @@ public class DetectActivity12 extends AppCompatActivity implements
         for (Rect faceRect : facesArray) {
             Imgproc.rectangle(mRgba, faceRect.tl(), faceRect.br(), FACE_RECT_COLOR, 3);
 //            Log.e("ssssssssssss", faceRect.height + "");
-            if (faceRect.height > 500 && faceRect.height < 600) {
+            if (faceRect.height > 200 && faceRect.height < 1024) {
                 // 获取并利用message传递当前检测的人脸
 //                Imgproc.rectangle(mRgba, faceRect.tl(), faceRect.br(), FACE_RECT_COLOR2, 3);
                 Mat faceMat = new Mat(mRgba, faceRect);

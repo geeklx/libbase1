@@ -10,7 +10,6 @@ import java.util.Collections;
 import java.util.Comparator;
 import java.util.List;
 
-//import tech.huqi.smartopencv.SmartOpenCV;
 import tech.huqi.smartopencv.SmartOpenCV;
 import tech.huqi.smartopencv.utils.Util;
 

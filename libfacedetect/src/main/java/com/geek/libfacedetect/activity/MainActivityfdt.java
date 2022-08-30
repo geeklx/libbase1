@@ -26,17 +26,21 @@ public class MainActivityfdt extends AppCompatActivity implements View.OnClickLi
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_mainfacedetector);
-        Button registerButton1 = (Button) findViewById(R.id.register1);
-        Button verifyButton1 = (Button) findViewById(R.id.verify1);
-        Button registerButton2 = (Button) findViewById(R.id.register2);
-        Button verifyButton2 = (Button) findViewById(R.id.verify2);
-        Button viewDataButton = (Button) findViewById(R.id.view_data);
+        Button registerButton1 = findViewById(R.id.register1);
+        Button verifyButton1 = findViewById(R.id.verify1);
+        Button registerButton2 = findViewById(R.id.register2);
+        Button verifyButton2 = findViewById(R.id.verify2);
+        Button registerButton3 = findViewById(R.id.register3);
+        Button verifyButton3 = findViewById(R.id.verify3);
+        Button viewDataButton = findViewById(R.id.view_data);
 
         registerButton1.setOnClickListener(this);
         registerButton2.setOnClickListener(this);
+        registerButton3.setOnClickListener(this);
         viewDataButton.setOnClickListener(this);
         verifyButton1.setOnClickListener(this);
         verifyButton2.setOnClickListener(this);
+        verifyButton3.setOnClickListener(this);
         initDatabase();
 
 
@@ -106,23 +110,7 @@ public class MainActivityfdt extends AppCompatActivity implements View.OnClickLi
                     ToastUtil.showToast(MainActivityfdt.this, "权限拒绝", 0);
                 }
             });
-        }/* else if (id == R.id.verify) {
-            requestCameraPermission(new PermissionHelper.RequestListener() {
-                @Override
-                public void onGranted() {
-                    Intent intent = new Intent(MainActivityfdt.this,
-                            DetectActivity.class);
-                    intent.putExtra("flag", DetectActivity.FLAG_VERIFY);
-                    startActivityForResult(intent,
-                            DetectActivity.FLAG_VERIFY);
-                }
-
-                @Override
-                public void onDenied() {
-                    ToastUtil.showToast(MainActivityfdt.this, "权限拒绝", 0);
-                }
-            });
-        }*/ else if (id == R.id.verify2) {
+        } else if (id == R.id.verify2) {
             requestCameraPermission(new PermissionHelper.RequestListener() {
                 @Override
                 public void onGranted() {
@@ -131,6 +119,38 @@ public class MainActivityfdt extends AppCompatActivity implements View.OnClickLi
                     intent.putExtra("flag", DetectActivity22.FLAG_VERIFY);
                     startActivityForResult(intent,
                             DetectActivity22.FLAG_VERIFY);
+                }
+
+                @Override
+                public void onDenied() {
+                    ToastUtil.showToast(MainActivityfdt.this, "权限拒绝", 0);
+                }
+            });
+        } else if (id == R.id.register3) {
+            requestCameraPermission(new PermissionHelper.RequestListener() {
+                @Override
+                public void onGranted() {
+                    Intent intent = new Intent(MainActivityfdt.this,
+                            DetectActivity31.class);
+                    intent.putExtra("flag", DetectActivity31.FLAG_REGISTER);
+                    startActivityForResult(intent,
+                            DetectActivity31.FLAG_REGISTER);
+                }
+
+                @Override
+                public void onDenied() {
+                    ToastUtil.showToast(MainActivityfdt.this, "权限拒绝", 0);
+                }
+            });
+        } else if (id == R.id.verify3) {
+            requestCameraPermission(new PermissionHelper.RequestListener() {
+                @Override
+                public void onGranted() {
+                    Intent intent = new Intent(MainActivityfdt.this,
+                            DetectActivity32.class);
+                    intent.putExtra("flag", DetectActivity32.FLAG_VERIFY);
+                    startActivityForResult(intent,
+                            DetectActivity32.FLAG_VERIFY);
                 }
 
                 @Override

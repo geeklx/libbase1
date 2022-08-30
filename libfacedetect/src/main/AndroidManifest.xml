@@ -35,6 +35,14 @@
             android:name=".activity.DetectActivity22"
             android:screenOrientation="portrait"
             android:theme="@style/Theme.AppCompat.Light.NoActionBar" />
+        <activity
+            android:name=".activity.DetectActivity31"
+            android:screenOrientation="portrait"
+            android:theme="@style/Theme.AppCompat.Light.NoActionBar" />
+        <activity
+            android:name=".activity.DetectActivity32"
+            android:screenOrientation="portrait"
+            android:theme="@style/Theme.AppCompat.Light.NoActionBar" />
         <activity android:name=".activity.RegisterActivityfdt" />
         <activity
             android:name=".activity.FaceComparisonActivity"

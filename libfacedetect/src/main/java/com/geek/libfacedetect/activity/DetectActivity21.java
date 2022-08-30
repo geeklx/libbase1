@@ -22,6 +22,7 @@ import com.geek.libfacedetect.util.BitmapUtil;
 import com.geek.libfacedetect.util.FaceMatcher;
 
 import org.opencv.android.CameraBridgeViewBase;
+import org.opencv.android.JavaCameraView;
 import org.opencv.android.Utils;
 import org.opencv.core.Core;
 import org.opencv.core.Mat;
@@ -37,14 +38,11 @@ import java.io.FileOutputStream;
 import java.io.InputStream;
 import java.util.List;
 
-import tech.huqi.smartopencv.SmartOpenCV;
-import tech.huqi.smartopencv.core.preview.CameraConfiguration;
-
 public class DetectActivity21 extends AppCompatActivity implements
         CameraBridgeViewBase.CvCameraViewListener2, View.OnClickListener {
     public final static int FLAG_REGISTER = 1;
     public final static int FLAG_VERIFY = 2;
-    private CameraBridgeViewBase cameraView;
+    private JavaCameraView cameraView;
     private CascadeClassifier classifier;
     private CascadeClassifier mJavaDetector, mNoseDetector;
     private Mat mGray;
@@ -121,8 +119,8 @@ public class DetectActivity21 extends AppCompatActivity implements
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         initWindowSettings();
-        setContentView(R.layout.activty_detectfacedetector22);
-        cameraView = (CameraBridgeViewBase) findViewById(R.id.camera_view);
+        setContentView(R.layout.activty_detectfacedetector21);
+        cameraView = findViewById(R.id.camera_view);
         cameraView.setCameraIndex(CameraBridgeViewBase.CAMERA_ID_FRONT);
         cameraView.setCvCameraViewListener(this); // 设置相机监听
         initClassifier();
@@ -130,34 +128,39 @@ public class DetectActivity21 extends AppCompatActivity implements
         Button switchCamera = (Button) findViewById(R.id.switch_camera);
         switchCamera.setOnClickListener(this); // 切换相机镜头，默认后置
         //
-        SmartOpenCV.getInstance().init(cameraView, new CameraConfiguration.Builder()
-                .debug(true)
-                .cameraIndex(1)      // 设置摄像头索引,主要用于多摄像头设备，优先级低于frontCamera
-                .keepScreenOn(false) // 是否保持屏幕常亮
-                .frontCamera(true)   // 是否使用前置摄像头
-                .openCvDefaultDrawStrategy(false)      // 是否使用OpenCV默认的预览图像绘制策略
-                .openCvDefaultPreviewCalculator(false) // 是否使用OpenCV默认的预览帧大小计算策略
-                .landscape(false)     // 是否横屏显示
-                .enableFpsMeter(false) // 开启预览帧率的显示
-                .usbCamera(false)     // 是否使用USB摄像头，当设备接入的是USB摄像头时将其设置为true
-                .bitmapConfig(Bitmap.Config.RGB_565) // 设置预览帧图像格式
-                .maxFrameSize(400, 320)     // 设置预览帧的最大大小
-                .cvCameraViewListener(this) // 设置OpenCV回调监听器
-//                .previewSizeCalculator(new IPreviewSizeCalculator() { // 自定义预览帧大小计算策略
-//                    @Override
-//                    public Size calculateCameraFrameSize(List<Size> supportedSizes, int surfaceWidth, int surfaceHeight) {
-//                        // 若需要根据自己的具体业务场景改写览帧大小，覆写该方法逻辑
-//                        return new Size(1080, 1920);
-//                    }
-//                })
-//                .drawStrategy(new IDrawStrategy() { // 自定义绘制策略
-//                    @Override
-//                    public void drawBitmap(Canvas canvas, Bitmap frameBitmap, int surfaceWidth, int surfaceHeight) {
-//                        // 若需根据自己的具体业务场景绘制预览帧图像，覆写该方法逻辑
-//
-//                    }
-//                })
-                .build());
+        cameraView.disableView();
+        cameraView.setCameraIndex(CameraBridgeViewBase.CAMERA_ID_FRONT);
+        isFrontCamera = true;
+        cameraView.enableView();
+        //
+//        SmartOpenCV.getInstance().init(cameraView, new CameraConfiguration.Builder()
+//                .debug(true)
+//                .cameraIndex(1)      // 设置摄像头索引,主要用于多摄像头设备，优先级低于frontCamera
+//                .keepScreenOn(false) // 是否保持屏幕常亮
+//                .frontCamera(true)   // 是否使用前置摄像头
+//                .openCvDefaultDrawStrategy(false)      // 是否使用OpenCV默认的预览图像绘制策略
+//                .openCvDefaultPreviewCalculator(false) // 是否使用OpenCV默认的预览帧大小计算策略
+//                .landscape(false)     // 是否横屏显示
+//                .enableFpsMeter(false) // 开启预览帧率的显示
+//                .usbCamera(false)     // 是否使用USB摄像头，当设备接入的是USB摄像头时将其设置为true
+//                .bitmapConfig(Bitmap.Config.RGB_565) // 设置预览帧图像格式
+//                .maxFrameSize(400, 320)     // 设置预览帧的最大大小
+//                .cvCameraViewListener(this) // 设置OpenCV回调监听器
+////                .previewSizeCalculator(new IPreviewSizeCalculator() { // 自定义预览帧大小计算策略
+////                    @Override
+////                    public Size calculateCameraFrameSize(List<Size> supportedSizes, int surfaceWidth, int surfaceHeight) {
+////                        // 若需要根据自己的具体业务场景改写览帧大小，覆写该方法逻辑
+////                        return new Size(1080, 1920);
+////                    }
+////                })
+////                .drawStrategy(new IDrawStrategy() { // 自定义绘制策略
+////                    @Override
+////                    public void drawBitmap(Canvas canvas, Bitmap frameBitmap, int surfaceWidth, int surfaceHeight) {
+////                        // 若需根据自己的具体业务场景绘制预览帧图像，覆写该方法逻辑
+////
+////                    }
+////                })
+//                .build());
     }
 
     @Override
@@ -259,7 +262,7 @@ public class DetectActivity21 extends AppCompatActivity implements
         for (Rect faceRect : facesArray) {
             Imgproc.rectangle(mRgba, faceRect.tl(), faceRect.br(), FACE_RECT_COLOR, 3);
 //            Log.e("ssssssssssss", faceRect.height + "");
-            if (faceRect.height > 500 && faceRect.height < 600) {
+            if (faceRect.height > 200 && faceRect.height < 1024) {
                 // 获取并利用message传递当前检测的人脸
                 Imgproc.rectangle(mRgba, faceRect.tl(), faceRect.br(), FACE_RECT_COLOR2, 3);
                 Mat faceMat = new Mat(mRgba, faceRect);

@@ -1,6 +1,6 @@
 package tech.huqi.smartopencv;
 
-import org.opencv.android.CameraBridgeViewBase;
+import org.opencv.android.CameraBridgeViewBase3;
 
 import tech.huqi.smartopencv.core.preview.Camera2Preview;
 import tech.huqi.smartopencv.core.preview.CameraConfiguration;
@@ -14,7 +14,7 @@ public class SmartOpenCV {
     public static final String SDK_VERSION = "1.0.0";
 
     private static SmartOpenCV sInstance;
-    private CameraBridgeViewBase mPreview;
+    private CameraBridgeViewBase3 mPreview;
     private CameraConfiguration mConfiguration;
 
     /**
@@ -34,7 +34,7 @@ public class SmartOpenCV {
     private SmartOpenCV() {
     }
 
-    public void init(CameraBridgeViewBase preview, CameraConfiguration cameraConfiguration) {
+    public void init(CameraBridgeViewBase3 preview, CameraConfiguration cameraConfiguration) {
         if (preview instanceof Camera2Preview) {
             ((Camera2Preview) preview).init(cameraConfiguration);
         } else if (preview instanceof CameraPreview) {

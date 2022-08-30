@@ -29,6 +29,17 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="@string/verify2" />
+    <Button
+        android:id="@+id/register3"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/register3" />
+
+    <Button
+        android:id="@+id/verify3"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/verify3" />
 
     <Button
         android:id="@+id/view_data"

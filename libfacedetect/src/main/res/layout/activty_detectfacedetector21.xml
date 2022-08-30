@@ -11,6 +11,13 @@
         android:layout_height="match_parent"
         android:layout_weight="1" />
 
+    <!--    <tech.huqi.smartopencv.core.preview.CameraPreview-->
+    <!--        android:id="@+id/camera_view"-->
+    <!--        android:layout_width="0dp"-->
+    <!--        android:layout_height="match_parent"-->
+    <!--        android:layout_weight="1" />-->
+
+
     <Button
         android:id="@+id/switch_camera"
         android:layout_width="43dp"

@@ -1,7 +1,7 @@
 package tech.huqi.smartopencv.core.bridge;
 
-import static org.opencv.android.CameraBridgeViewBase.CAMERA_ID_BACK;
-import static org.opencv.android.CameraBridgeViewBase.CAMERA_ID_FRONT;
+import static org.opencv.android.CameraBridgeViewBase3.CAMERA_ID_BACK;
+import static org.opencv.android.CameraBridgeViewBase3.CAMERA_ID_FRONT;
 import static tech.huqi.smartopencv.core.preview.CameraConfiguration.DEFAULT_BITMAP_CONFIG;
 
 import android.content.Context;
@@ -11,9 +11,9 @@ import android.graphics.Rect;
 import android.util.Log;
 import android.view.SurfaceHolder;
 
-import org.opencv.android.CameraBridgeViewBase;
-import org.opencv.android.CameraBridgeViewBase.CvCameraViewFrame;
-import org.opencv.android.CameraBridgeViewBase.CvCameraViewListener2;
+import org.opencv.android.CameraBridgeViewBase3;
+import org.opencv.android.CameraBridgeViewBase3.CvCameraViewFrame;
+import org.opencv.android.CameraBridgeViewBase3.CvCameraViewListener2;
 import org.opencv.android.FpsMeter;
 import org.opencv.android.Utils;
 import org.opencv.core.Mat;
@@ -28,7 +28,7 @@ import tech.huqi.smartopencv.utils.Util;
  */
 
 /**
- * CameraBridgeViewBase的装饰类，提供了改写OpenCV{@link CameraBridgeViewBase}类的关键函数的实现
+ * CameraBridgeViewBase3的装饰类，提供了改写OpenCV{@link CameraBridgeViewBase3}类的关键函数的实现
  */
 public abstract class CameraBridgeViewWrapper implements ICameraViewBridge, ICameraView {
     private static final String TAG = "CameraBridgeViewWrapper";
@@ -39,12 +39,12 @@ public abstract class CameraBridgeViewWrapper implements ICameraViewBridge, ICam
     private FpsMeter mFpsMeter;
     private SurfaceHolder mSurfaceHolder;
     /**
-     * 预览帧图像，宽与高等于{@link CameraBridgeViewBase#mFrameWidth}或{@link CameraBridgeViewBase#mFrameHeight}
+     * 预览帧图像，宽与高等于{@link CameraBridgeViewBase3# mFrameWidth}或{@link CameraBridgeViewBase3# mFrameHeight}
      * 最大值为相机支持的最大预览宽高
      */
     private Bitmap mCacheBitmap;
     private CvCameraViewListener2 mListener;
-    protected CameraBridgeViewBase mBase;
+    protected CameraBridgeViewBase3 mBase;
     protected boolean isUseFrontCamera = false;
     protected boolean isSetLandscape;
     protected boolean isUsbCamera;
@@ -53,7 +53,7 @@ public abstract class CameraBridgeViewWrapper implements ICameraViewBridge, ICam
     private Mat mConvertGrayMat;
     private int mCameraId;
 
-    public CameraBridgeViewWrapper(CameraBridgeViewBase base, SurfaceHolder holder) {
+    public CameraBridgeViewWrapper(CameraBridgeViewBase3 base, SurfaceHolder holder) {
         mBase = base;
         mSurfaceHolder = holder;
     }
@@ -84,7 +84,7 @@ public abstract class CameraBridgeViewWrapper implements ICameraViewBridge, ICam
     }
 
     /**
-     * Mock and enhance OpenCV{@link CameraBridgeViewBase#deliverAndDrawFrame(CvCameraViewFrame)}实现
+     * Mock and enhance OpenCV{@link CameraBridgeViewBase3# deliverAndDrawFrame(CvCameraViewFrame)}实现
      *
      * @param frame
      */
@@ -161,12 +161,12 @@ public abstract class CameraBridgeViewWrapper implements ICameraViewBridge, ICam
     }
 
     /**
-     * Mock and enhance OpenCV{@link CameraBridgeViewBase#AllocateCache()}
+     * Mock and enhance OpenCV{@link CameraBridgeViewBase3# AllocateCache()}
      *
-     * @param frameWidth  预览宽，在允许横竖屏切换且横屏情况下等于{@link CameraBridgeViewBase#mFrameWidth}
-     *                    其余情况等于{@link CameraBridgeViewBase#mFrameHeight}
-     * @param frameHeight 预览高，在允许横竖屏切换且横屏情况下等于{@link CameraBridgeViewBase#mFrameHeight}
-     *                    其余情况等于{@link CameraBridgeViewBase#mFrameWidth}
+     * @param frameWidth  预览宽，在允许横竖屏切换且横屏情况下等于{@link CameraBridgeViewBase3# mFrameWidth}
+     *                    其余情况等于{@link CameraBridgeViewBase3# mFrameHeight}
+     * @param frameHeight 预览高，在允许横竖屏切换且横屏情况下等于{@link CameraBridgeViewBase3# mFrameHeight}
+     *                    其余情况等于{@link CameraBridgeViewBase3# mFrameWidth}
      */
     @Override
     public void AllocateCache(int frameWidth, int frameHeight) {
@@ -198,20 +198,20 @@ public abstract class CameraBridgeViewWrapper implements ICameraViewBridge, ICam
         return JavaCameraFrame.getInstance().setRgba(mConvertRgbaMat).setGray(mConvertGrayMat);
     }
 
-    public void updateCameraBridgeViewBaseMembers(CameraBridgeViewBaseMembers members) {
+    public void updateCameraBridgeViewBase3Members(CameraBridgeViewBase3Members members) {
         mScale = members.scale;
         mFrameWidth = members.frameWidth;
         mFrameHeight = members.frameHeight;
         mFpsMeter = members.fpsMeter;
     }
 
-    public static class CameraBridgeViewBaseMembers {
+    public static class CameraBridgeViewBase3Members {
         float scale;
         int frameWidth;
         int frameHeight;
         FpsMeter fpsMeter;
 
-        public CameraBridgeViewBaseMembers(int frameWidth, int frameHeight, float scale,
+        public CameraBridgeViewBase3Members(int frameWidth, int frameHeight, float scale,
                                            FpsMeter fpsMeter) {
             this.scale = scale;
             this.frameWidth = frameWidth;

@@ -2,7 +2,7 @@ package tech.huqi.smartopencv.core.preview;
 
 import android.content.Context;
 
-import org.opencv.android.CameraBridgeViewBase;
+import org.opencv.android.CameraBridgeViewBase3;
 
 import tech.huqi.smartopencv.draw.DefaultDrawStrategy;
 import tech.huqi.smartopencv.draw.DefaultFrameSizeCalculator;
@@ -18,12 +18,12 @@ public class CameraPreviewManager extends CameraPreviewAdapter {
     boolean isUseOpenCvDefaultDrawStrategy;
     boolean isUseOpenCvDefaultFrameSizeCalculator;
 
-    CameraBridgeViewBase mBase;
+    CameraBridgeViewBase3 mBase;
     IDrawStrategy drawStrategy = new DefaultDrawStrategy();
     IPreviewSizeCalculator cameraFrameSizeCalculator;
 
 
-    public CameraPreviewManager(Context context, CameraBridgeViewBase base) {
+    public CameraPreviewManager(Context context, CameraBridgeViewBase3 base) {
         mBase = base;
         cameraFrameSizeCalculator = new DefaultFrameSizeCalculator(context);
     }

@@ -1,12 +1,12 @@
 package tech.huqi.smartopencv.core.cv;
 
-import org.opencv.android.CameraBridgeViewBase;
+import org.opencv.android.CameraBridgeViewBase3;
 import org.opencv.core.Mat;
 
 /**
  * Created by hzhuqi on 2019/9/4
  */
-public final class JavaCameraFrame implements CameraBridgeViewBase.CvCameraViewFrame {
+public final class JavaCameraFrame implements CameraBridgeViewBase3.CvCameraViewFrame {
     private static JavaCameraFrame sInstance;
     private Mat mRgba;
     private Mat mGray;

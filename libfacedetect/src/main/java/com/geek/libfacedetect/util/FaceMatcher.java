@@ -29,8 +29,8 @@ public class FaceMatcher {
     public final int width = 500;
     public final int height = 500;
     public final int NO_MATCHER = -1;
-    private final int MAX_COUNTER = 45;
-    private final double MY_SIMILARITY = 0.8;
+    private final int MAX_COUNTER = 145;
+    private final double MY_SIMILARITY = 0.5453346280277906;
     private List<String> mPathList;
 
     public FaceMatcher(List<UserInfo> users) {

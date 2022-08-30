@@ -2,8 +2,10 @@
     <string name="app_name">FaceDetector</string>
     <string name="register">识别注册</string>
     <string name="register2">识别注册2</string>
+    <string name="register3">识别注册3</string>
     <string name="verify">验证匹配</string>
     <string name="verify2">验证匹配2</string>
+    <string name="verify3">验证匹配3</string>
     <string name="view_data">查看数据</string>
     <string name="description">拍照要求:\n1. 图像保证自然光亮度，无炫光，无夜晚灯光散射，无闪光灯高光照射等。
 \n2.  拍摄背景以纯色最优，建议红色背景，图像清晰，人脸占图像60%以上。

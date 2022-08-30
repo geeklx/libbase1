@@ -5,9 +5,9 @@ import android.graphics.Bitmap;
 import android.graphics.Canvas;
 import android.util.AttributeSet;
 
-import org.opencv.android.JavaCameraView;
+import org.opencv.android.JavaCameraView3;
 
-import tech.huqi.smartopencv.core.bridge.CameraBridgeViewWrapper.CameraBridgeViewBaseMembers;
+import tech.huqi.smartopencv.core.bridge.CameraBridgeViewWrapper.CameraBridgeViewBase3Members;
 import tech.huqi.smartopencv.core.bridge.CameraViewBridgeImpl;
 import tech.huqi.smartopencv.core.preview.CameraConfiguration;
 import tech.huqi.smartopencv.core.preview.CameraPreview;
@@ -16,7 +16,7 @@ import tech.huqi.smartopencv.draw.IDrawStrategy;
 /**
  * Created by hzhuqi on 2019/9/3
  */
-public class JavaCameraViewWrapper extends JavaCameraView implements ICameraView {
+public class JavaCameraViewWrapper extends JavaCameraView3 implements ICameraView {
     private static final String TAG = "JavaCameraViewWrapper";
     private CameraViewBridgeImpl mCameraViewBridgeImpl;
 
@@ -55,8 +55,8 @@ public class JavaCameraViewWrapper extends JavaCameraView implements ICameraView
     // NOTE: On Android 4.1.x the function must be called before SurfaceTexture constructor!
     @Override
     protected void AllocateCache() {
-        CameraBridgeViewBaseMembers members = new CameraBridgeViewBaseMembers(mFrameWidth, mFrameHeight, mScale, mFpsMeter);
-        mCameraViewBridgeImpl.updateCameraBridgeViewBaseMembers(members);
+        CameraBridgeViewBase3Members members = new CameraBridgeViewBase3Members(mFrameWidth, mFrameHeight, mScale, mFpsMeter);
+        mCameraViewBridgeImpl.updateCameraBridgeViewBase3Members(members);
         mCameraViewBridgeImpl.AllocateCache(mFrameWidth, mFrameHeight);
     }
 
