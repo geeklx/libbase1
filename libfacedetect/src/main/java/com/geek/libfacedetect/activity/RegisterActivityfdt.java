@@ -1,8 +1,10 @@
 package com.geek.libfacedetect.activity;
 
 import android.annotation.SuppressLint;
+import android.content.res.Resources;
 import android.graphics.Bitmap;
 import android.os.Bundle;
+import android.os.Looper;
 import android.text.TextUtils;
 import android.util.Log;
 import android.view.View;
@@ -22,6 +24,8 @@ import com.geek.libfacedetect.util.ToastUtil;
 import org.opencv.android.Utils;
 import org.opencv.core.Mat;
 
+import me.jessyan.autosize.AutoSizeCompat;
+
 /**
  * 注册页
  * Created by Luke on 2017/8/21.
@@ -37,6 +41,16 @@ public class RegisterActivityfdt extends AppCompatActivity {
     private Button register;
     private ImageView imageView;
     private UserInfo user;
+
+    @Override
+    public Resources getResources() {
+        //需要升级到 v1.1.2 及以上版本才能使用 AutoSizeCompat
+        if (Looper.myLooper()==Looper.getMainLooper()){
+            AutoSizeCompat.autoConvertDensityOfGlobal((super.getResources()));//如果没有自定义需求用这个方法
+            AutoSizeCompat.autoConvertDensity((super.getResources()), 667, false);//如果有自定义需求就用这个方法
+        }
+        return super.getResources();
+    }
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {

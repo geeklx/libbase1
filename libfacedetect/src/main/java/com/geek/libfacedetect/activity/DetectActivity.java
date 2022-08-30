@@ -4,6 +4,7 @@ import android.annotation.SuppressLint;
 import android.content.Context;
 import android.content.Intent;
 import android.content.pm.ActivityInfo;
+import android.content.res.Resources;
 import android.graphics.Bitmap;
 import android.os.Bundle;
 import android.os.Handler;
@@ -38,6 +39,8 @@ import java.io.FileOutputStream;
 import java.io.IOException;
 import java.io.InputStream;
 import java.util.List;
+
+import me.jessyan.autosize.AutoSizeCompat;
 
 public class DetectActivity extends AppCompatActivity implements
         CvCameraViewListener2 {
@@ -105,6 +108,16 @@ public class DetectActivity extends AppCompatActivity implements
 
     static {
         System.loadLibrary("opencv_java3");
+    }
+
+    @Override
+    public Resources getResources() {
+        //需要升级到 v1.1.2 及以上版本才能使用 AutoSizeCompat
+        if (Looper.myLooper() == Looper.getMainLooper()) {
+            AutoSizeCompat.autoConvertDensityOfGlobal((super.getResources()));//如果没有自定义需求用这个方法
+            AutoSizeCompat.autoConvertDensity((super.getResources()), 667, false);//如果有自定义需求就用这个方法
+        }
+        return super.getResources();
     }
 
     @Override

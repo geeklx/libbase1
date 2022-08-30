@@ -2,7 +2,9 @@ package com.geek.libfacedetect.activity;
 
 import android.Manifest;
 import android.content.Intent;
+import android.content.res.Resources;
 import android.os.Bundle;
+import android.os.Looper;
 import android.view.View;
 import android.widget.Button;
 
@@ -14,6 +16,8 @@ import com.geek.libfacedetect.db.DatabaseHelper;
 import com.geek.libfacedetect.db.UserInfo;
 import com.geek.libfacedetect.util.PermissionHelper;
 import com.geek.libfacedetect.util.ToastUtil;
+
+import me.jessyan.autosize.AutoSizeCompat;
 
 /**
  * @author fosung
@@ -43,7 +47,19 @@ public class MainActivityfdt extends AppCompatActivity implements View.OnClickLi
         verifyButton3.setOnClickListener(this);
         initDatabase();
 
+        //
 
+
+    }
+
+    @Override
+    public Resources getResources() {
+        //需要升级到 v1.1.2 及以上版本才能使用 AutoSizeCompat
+        if (Looper.myLooper() == Looper.getMainLooper()) {
+            AutoSizeCompat.autoConvertDensityOfGlobal((super.getResources()));//如果没有自定义需求用这个方法
+            AutoSizeCompat.autoConvertDensity((super.getResources()), 667, false);//如果有自定义需求就用这个方法
+        }
+        return super.getResources();
     }
 
     // 初始化数据库

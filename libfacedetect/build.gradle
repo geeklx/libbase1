@@ -6,4 +6,6 @@ dependencies {
     implementation 'com.github.CymChad:BaseRecyclerViewAdapterHelper:2.9.40'
     implementation 'com.blankj:utilcodex:1.30.6'
     implementation 'org.jooq:joor:0.9.7'
+    implementation 'com.github.JessYanCoding:AndroidAutoSize:v1.2.1'
+
 }
