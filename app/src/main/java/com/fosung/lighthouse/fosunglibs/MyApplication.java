@@ -3,6 +3,8 @@ package com.fosung.lighthouse.fosunglibs;
 import android.app.Application;
 
 import com.blankj.utilcode.util.SPUtils;
+import com.blankj.utilcode.util.Utils;
+import com.geek.libutils.data.MmkvUtils;
 
 import me.jessyan.autosize.AutoSize;
 import me.jessyan.autosize.AutoSizeConfig;
@@ -20,6 +22,9 @@ public class MyApplication extends Application {
         super.onCreate();
 //        ApplicationUtils.init(this);
         //
+        Utils.init(Utils.getApp());// com.blankj:utilcode:1.17.3
+        MmkvUtils.getInstance().get("");
+        MmkvUtils.getInstance().get_demo();
         AutoSize.initCompatMultiProcess(this);
         AutoSizeConfig.getInstance()
                 .setPrivateFontScale(SPUtils.getInstance().getFloat("textSizef", 0f))

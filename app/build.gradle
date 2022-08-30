@@ -87,8 +87,8 @@ dependencies {
 
 //    implementation 'com.pgyersdk:sdk:4.2.1'
 //    implementation project(':libbase')
-//    implementation project(':libgeek')
-    implementation project(':libfacedetect')
+    implementation project(':libgeek')
+//    implementation project(':libfacedetect')
 //    implementation 'com.github.geeklx:fosunglibs:1.0.8'
     implementation 'com.github.geeklx.libbase2:libutils:2.1.4'
 
