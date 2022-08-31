@@ -3,9 +3,11 @@ package com.geek.libfacedetect.activity;
 import android.annotation.SuppressLint;
 import android.content.Context;
 import android.content.Intent;
+import android.content.res.Resources;
 import android.graphics.Bitmap;
 import android.os.Bundle;
 import android.os.Handler;
+import android.os.Looper;
 import android.os.Message;
 import android.util.Log;
 import android.view.View;
@@ -17,6 +19,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import com.geek.libfacedetect.R;
 import com.geek.libfacedetect.db.DatabaseHelper;
 import com.geek.libfacedetect.db.UserInfo;
+import com.geek.libfacedetect.util.BitmapUtil;
 import com.geek.libfacedetect.util.FaceMatcher;
 
 import org.opencv.android.CameraBridgeViewBase;
@@ -35,7 +38,9 @@ import java.io.FileOutputStream;
 import java.io.InputStream;
 import java.util.List;
 
-public class DetectActivity2 extends AppCompatActivity implements
+import me.jessyan.autosize.AutoSizeCompat;
+
+public class DetectActivity22 extends AppCompatActivity implements
         CameraBridgeViewBase.CvCameraViewListener2, View.OnClickListener {
     public final static int FLAG_REGISTER = 1;
     public final static int FLAG_VERIFY = 2;
@@ -50,7 +55,7 @@ public class DetectActivity2 extends AppCompatActivity implements
     List<UserInfo> userList;
     private Bitmap mDetectedFace;
     private FaceMatcher matcher;
-    private Handler mHandler = new Handler() {
+    private Handler mHandler = new Handler(Looper.myLooper()) {
         @SuppressLint("LongLogTag")
         @Override
         public void handleMessage(Message msg) {
@@ -63,10 +68,11 @@ public class DetectActivity2 extends AppCompatActivity implements
                         if (result == matcher.UNFINISHED) {
                             mDetectedFace = null;
                         } else if (result == matcher.NO_MATCHER) {
-                            Log.e("ssssssssssssmDetectedFace", mDetectedFace.getByteCount() + "");
-                            intent = new Intent(DetectActivity2.this,
+//                            Log.e("ssssssssssssmDetectedFace", mDetectedFace.getByteCount() + "");
+                            intent = new Intent(DetectActivity22.this,
                                     RegisterActivityfdt.class);
-                            intent.putExtra("Face", mDetectedFace);
+                            intent.putExtra("Face", "bitmap");
+                            BitmapUtil.saveBitmap2file(mDetectedFace, "bitmap");
                             startActivity(intent);
                             finish();
                         } else {
@@ -79,6 +85,10 @@ public class DetectActivity2 extends AppCompatActivity implements
                 case FLAG_VERIFY:
                     if (mDetectedFace == null) {
                         mDetectedFace = (Bitmap) msg.obj;
+                        //
+                        Mat testMat = new Mat();
+                        Utils.bitmapToMat(mDetectedFace, testMat);
+                        Log.e("sssssssssssss-人脸矩阵传值前", testMat.width() + "," + testMat.height());
                         int result = matcher.histogramMatch(mDetectedFace);
                         if (result == matcher.UNFINISHED) {
                             mDetectedFace = null;
@@ -106,10 +116,20 @@ public class DetectActivity2 extends AppCompatActivity implements
     }
 
     @Override
+    public Resources getResources() {
+        //需要升级到 v1.1.2 及以上版本才能使用 AutoSizeCompat
+        if (Looper.myLooper()==Looper.getMainLooper()){
+            AutoSizeCompat.autoConvertDensityOfGlobal((super.getResources()));//如果没有自定义需求用这个方法
+            AutoSizeCompat.autoConvertDensity((super.getResources()), 667, false);//如果有自定义需求就用这个方法
+        }
+        return super.getResources();
+    }
+
+    @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         initWindowSettings();
-        setContentView(R.layout.activty_detect2facedetector);
+        setContentView(R.layout.activty_detectfacedetector22);
         cameraView = (CameraBridgeViewBase) findViewById(R.id.camera_view);
         cameraView.setCameraIndex(CameraBridgeViewBase.CAMERA_ID_FRONT);
         cameraView.setCvCameraViewListener(this); // 设置相机监听
@@ -117,6 +137,12 @@ public class DetectActivity2 extends AppCompatActivity implements
         cameraView.enableView();
         Button switchCamera = (Button) findViewById(R.id.switch_camera);
         switchCamera.setOnClickListener(this); // 切换相机镜头，默认后置
+        //
+        cameraView.disableView();
+        cameraView.setCameraIndex(CameraBridgeViewBase.CAMERA_ID_FRONT);
+        isFrontCamera = true;
+        cameraView.enableView();
+
     }
 
     @Override
@@ -169,7 +195,7 @@ public class DetectActivity2 extends AppCompatActivity implements
             e.printStackTrace();
         }
 //        cameraView.enableView();
-        DatabaseHelper helper = new DatabaseHelper(DetectActivity2.this);
+        DatabaseHelper helper = new DatabaseHelper(DetectActivity22.this);
         userList = helper.query();
         matcher = new FaceMatcher(userList);
         helper.close();
@@ -217,16 +243,17 @@ public class DetectActivity2 extends AppCompatActivity implements
 //        Scalar faceRectColor = new Scalar(0, 255, 0, 255);
         for (Rect faceRect : facesArray) {
             Imgproc.rectangle(mRgba, faceRect.tl(), faceRect.br(), FACE_RECT_COLOR, 3);
-            Log.e("sssssssssssss", faceRect.height + "");
-            if (faceRect.height > 500 && faceRect.height < 600) {
+//            Log.e("sssssssssssss", faceRect.height + "");
+            if (faceRect.height > 200 && faceRect.height < 1024) {
                 // 获取并利用message传递当前检测的人脸
                 Imgproc.rectangle(mRgba, faceRect.tl(), faceRect.br(), FACE_RECT_COLOR2, 3);
                 Mat faceMat = new Mat(mRgba, faceRect);
-                Log.e("sssssssssssss", faceMat.width() + "," + faceMat.height());
-                Imgproc.resize(faceMat, faceMat, new Size(320, 320));
+                Log.e("sssssssssssss-获取人脸矩阵", faceMat.width() + "," + faceMat.height());
+                Imgproc.resize(faceMat, faceMat, new Size(matcher.width, matcher.height));
+//                Imgproc.resize(faceMat, faceMat, new Size(faceMat.width(), faceMat.height()));
                 Bitmap bitmap = Bitmap.createBitmap(faceMat.width(),
                         faceMat.height(), Bitmap.Config.ARGB_8888);
-                Log.e("ssssssssssssbitmap", bitmap.getByteCount() + "");
+//                Log.e("ssssssssssssbitmap", bitmap.getByteCount() + "");
                 Utils.matToBitmap(faceMat, bitmap);
                 Message message = Message.obtain();
                 message.what = getIntent().getIntExtra("flag", 0);

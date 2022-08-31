@@ -1,38 +1,55 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:orientation="vertical">
+    android:layout_height="match_parent">
 
-    <Button
-        android:id="@+id/register"
+    <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="@string/register"
-        android:visibility="gone" />
+        android:layout_height="match_parent"
+        android:orientation="vertical">
 
-    <Button
-        android:id="@+id/register2"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="@string/register2" />
+        <Button
+            android:id="@+id/register1"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="识别注册1"
+            android:visibility="visible" />
 
-    <Button
-        android:id="@+id/verify"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="@string/verify"
-        android:visibility="gone" />
+        <Button
+            android:id="@+id/verify1"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="验证匹配1"
+            android:visibility="visible" />
 
-    <Button
-        android:id="@+id/verify2"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="@string/verify2" />
+        <Button
+            android:id="@+id/register2"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/register2" />
 
-    <Button
-        android:id="@+id/view_data"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="@string/view_data" />
-</LinearLayout>
+        <Button
+            android:id="@+id/verify2"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/verify2" />
+
+        <Button
+            android:id="@+id/register3"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/register3" />
+
+        <Button
+            android:id="@+id/verify3"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/verify3" />
+
+        <Button
+            android:id="@+id/view_data"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/view_data" />
+    </LinearLayout>
+</ScrollView>

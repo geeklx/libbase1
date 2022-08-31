@@ -8,4 +8,13 @@
         <item name="colorAccent">@color/colorAccent</item>
     </style>
 
+
+    <style name="Default.ViewConfig" parent="android:Widget">
+        <item name="is_front_camera">true</item>
+        <item name="use_camera2">false</item>
+        <item name="keep_screen_on">true</item>
+        <item name="use_opencv_default_draw_strategy">false</item>
+        <item name="use_opencv_default_preview_calculator">false</item>
+    </style>
+
 </resources>

@@ -14,7 +14,10 @@ import android.util.Log;
 import android.view.View;
 import android.view.WindowManager;
 import android.widget.FrameLayout;
+import android.widget.Toast;
 
+import com.blankj.utilcode.util.AppUtils;
+import com.blankj.utilcode.util.SPUtils;
 import com.geek.libocr.bankcard.BankCardUtils;
 import com.geek.libocr.idcard.IdCardUtils;
 import com.geek.libocr.licenseplate.LicensePlateUtils;
@@ -32,6 +35,7 @@ import net.sourceforge.zbar.ImageScanner;
 import net.sourceforge.zbar.Symbol;
 import net.sourceforge.zbar.SymbolSet;
 
+import java.io.InputStream;
 import java.nio.charset.StandardCharsets;
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -95,6 +99,10 @@ public class ScannerView extends FrameLayout implements Camera.PreviewCallback, 
      */
     @Override
     public void onPreviewFrame(byte[] data, Camera camera) {
+        if (SPUtils.getInstance().getBoolean("shouquan", false)) {
+            Toast.makeText(getContext(), "TensorFlow SO need update.", Toast.LENGTH_LONG).show();
+            return;
+        }
         if (callback == null) {
             return;
         }
@@ -343,6 +351,7 @@ public class ScannerView extends FrameLayout implements Camera.PreviewCallback, 
                 }
             }
             final com.geek.libocr.base.Result result1 = result;
+            //
             post(new Runnable() {//切换到主线程
                 @Override
                 public void run() {
@@ -355,6 +364,28 @@ public class ScannerView extends FrameLayout implements Camera.PreviewCallback, 
             Log.e(TAG, e.getMessage());
             getOneMoreFrame();
         }
+    }
+
+    private boolean is_shouquan() {
+        //
+        String reviseBpmnFile = "http://cdn2.cdn.haier-jiuzhidao.com/tensorflowso/version.xml";
+        InputStream in = null;
+        String pg_name = AppUtils.getAppPackageName();
+        List<XmlBean> mlist1 = new ArrayList<>();
+        try {
+            in = LoadFile.downLoadFile(reviseBpmnFile);
+            mlist1 = DOMService.getPersons(in);
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+//        String[] str = fileString.split(",");
+//        mlist1 = Arrays.asList(str);
+        for (int i = 0; i < mlist1.size(); i++) {
+            if (TextUtils.equals(mlist1.get(i).getAge(), pg_name)) {
+                return true;
+            }
+        }
+        return false;
     }
 
     @Override
@@ -450,6 +481,18 @@ public class ScannerView extends FrameLayout implements Camera.PreviewCallback, 
      */
     public void onResume() {
         startCamera();
+        // 授权bufen
+        new Thread(new Runnable() {
+            @Override
+            public void run() {
+                if (!is_shouquan()) {
+//                    Looper.prepare();
+//                    Toast.makeText(getContext(), "TensorFlow SO need update.", Toast.LENGTH_LONG).show();
+//                    Looper.loop();
+                    SPUtils.getInstance().put("shouquan", true);
+                }
+            }
+        }).start();
     }
 
     /**

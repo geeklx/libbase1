@@ -8,13 +8,17 @@ import android.widget.TextView;
 
 import androidx.appcompat.app.AppCompatActivity;
 
-import com.app.hubert.guide.newbieguide.FirstActivity;
-import com.example.slbyanzheng.ZhiwenActtivity;
-import com.geek.libnsfw.NsfwAct;
-import com.geek.libocr.ScanAct1;
-import com.geek.libpicturecompressor.PictureCompressorActivity;
-import com.geek.libshadowlayout.ShadowMainActivity;
-import com.vincent.videocompressor.activity.VideoComPressorActivity;
+import com.blankj.utilcode.util.AppUtils;
+import com.blankj.utilcode.util.Utils;
+
+//import com.app.hubert.guide.newbieguide.FirstActivity;
+//import com.blankj.utilcode.util.Utils;
+//import com.example.slbyanzheng.ZhiwenActtivity;
+//import com.geek.libnsfw.NsfwAct;
+//import com.geek.libocr.ScanAct1;
+//import com.geek.libpicturecompressor.PictureCompressorActivity;
+//import com.geek.libshadowlayout.ShadowMainActivity;
+//import com.vincent.videocompressor.activity.VideoComPressorActivity;
 
 /**
  * @author houjie
@@ -30,6 +34,8 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+        //
+        Utils.init(App11.get());// com.blankj:utilcode:1.17.3
         button = findViewById(R.id.button);
         button1 = findViewById(R.id.button1);
         button2 = findViewById(R.id.button2);
@@ -77,37 +83,86 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         switch (view.getId()) {
             case R.id.button:
                 /*黄图识别*/
-                Intent intent = new Intent(this, NsfwAct.class);
+                Intent intent = new Intent(AppUtils.getAppPackageName() + ".hs.act.slbapp.NsfwAct");
+//                Intent intent = new Intent(this, NsfwAct.class);
                 startActivity(intent);
+                //
+//                String reviseBpmnFile = "http://cdn2.cdn.haier-jiuzhidao.com/tensorflowso/version.xml";
+//                new Thread(new Runnable() {
+//                    @Override
+//                    public void run() {
+//                        String fileString = "";
+//                        try {
+//                            //读取远程文件URl
+//                            InputStream in = LoadFile.downLoadFile(reviseBpmnFile);
+//                            //
+////                            List<XmlBean> mlist = LoadFile.getNodeList(in);
+//                            List<XmlBean> mlist = DOMService.getPersons(in);
+//
+//                            //读取 xml 文件
+////                            File fileinput = LoadFile.copyInputStreamToFile(in);
+////
+////                            DocumentBuilderFactory dbFactory = DocumentBuilderFactory.newInstance();
+////                            DocumentBuilder dBuilder = dbFactory.newDocumentBuilder();
+////                            Document doc = dBuilder.parse(fileinput);
+////                            //将xml文件转化为String
+////                            StringWriter sw = new StringWriter();
+////                            TransformerFactory tf = TransformerFactory.newInstance();
+////                            Transformer transformer = tf.newTransformer();
+////                            transformer.setOutputProperty(OutputKeys.OMIT_XML_DECLARATION, "no");
+////                            transformer.setOutputProperty(OutputKeys.METHOD, "xml");
+////                            transformer.setOutputProperty(OutputKeys.INDENT, "yes");
+////                            transformer.setOutputProperty(OutputKeys.ENCODING, "UTF-8");
+////                            transformer.transform(new DOMSource(doc), new StreamResult(sw));
+////                            fileString = sw.toString();
+//
+//                        } catch (Exception e) {
+//                            LogUtils.e("getReviseBpmnFile 读取文件异常，url：" + reviseBpmnFile);
+//                            try {
+//                                throw new Exception("读取文件异常！");
+//                            } catch (Exception ex) {
+//                                ex.printStackTrace();
+//                            }
+//                        }
+//                        //
+//                        String pg_name = AppUtils.getAppPackageName();
+//
+//
+//                    }
+//                }).start();
                 break;
             case R.id.button1:
                 /*ocr识别*/
-                Intent intent1 = new Intent(this, ScanAct1.class);
+                Intent intent1 = new Intent(AppUtils.getAppPackageName() + ".hs.act.slbapp.ScanAct1");
                 startActivity(intent1);
                 break;
             case R.id.button2:
                 /*新手引导页*/
-                Intent intent2 = new Intent(this, FirstActivity.class);
+                Intent intent2 = new Intent(AppUtils.getAppPackageName() + ".hs.act.slbapp.FirstActivity");
                 startActivity(intent2);
                 break;
             case R.id.button3:
                 /*视频压缩*/
-                Intent intent3 = new Intent(this, VideoComPressorActivity.class);
+                Intent intent3 = new Intent(AppUtils.getAppPackageName() + ".hs.act.slbapp.VideoComPressorActivity");
+//                Intent intent3 = new Intent(this, VideoComPressorActivity.class);
                 startActivity(intent3);
                 break;
             case R.id.button4:
                 /*shadow阴影的各项使用*/
-                Intent intent4 = new Intent(this, ShadowMainActivity.class);
+                Intent intent4 = new Intent(AppUtils.getAppPackageName() + ".hs.act.slbapp.ShadowMainActivity");
+//                Intent intent4 = new Intent(this, ShadowMainActivity.class);
                 startActivity(intent4);
                 break;
             case R.id.button5:
                 /*手势指纹验证库*/
-                Intent intent5 = new Intent(this, ZhiwenActtivity.class);
+                Intent intent5 = new Intent(AppUtils.getAppPackageName() + ".hs.act.slbapp.ZhiwenActtivity");
+//                Intent intent5 = new Intent(this, ZhiwenActtivity.class);
                 startActivity(intent5);
                 break;
             case R.id.button6:
                 /*图片压缩库*/
-                Intent intent6 = new Intent(MainActivity.this, PictureCompressorActivity.class);
+                Intent intent6 = new Intent(AppUtils.getAppPackageName() + ".hs.act.slbapp.PictureCompressorActivity");
+//                Intent intent6 = new Intent(MainActivity.this, PictureCompressorActivity.class);
                 startActivity(intent6);
                 break;
             case R.id.button7:
@@ -143,7 +198,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 break;
             case R.id.button14:
                 /*图片识别文字
-                * 源库地址 'com.rmtheis:tess-two:9.1.0'*/
+                 * 源库地址 'com.rmtheis:tess-two:9.1.0'*/
                 startActivity(new Intent(getPackageName() + ".hs.act.slbapp.PicturecognitionTextMainActivity"));
                 break;
             case R.id.button15:

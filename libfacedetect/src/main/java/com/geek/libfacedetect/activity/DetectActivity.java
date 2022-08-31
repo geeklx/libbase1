@@ -1,11 +1,14 @@
 package com.geek.libfacedetect.activity;
 
+import android.annotation.SuppressLint;
 import android.content.Context;
 import android.content.Intent;
 import android.content.pm.ActivityInfo;
+import android.content.res.Resources;
 import android.graphics.Bitmap;
 import android.os.Bundle;
 import android.os.Handler;
+import android.os.Looper;
 import android.os.Message;
 import android.util.Log;
 import android.view.WindowManager;
@@ -37,6 +40,8 @@ import java.io.IOException;
 import java.io.InputStream;
 import java.util.List;
 
+import me.jessyan.autosize.AutoSizeCompat;
+
 public class DetectActivity extends AppCompatActivity implements
         CvCameraViewListener2 {
     private static final Scalar FACE_RECT_COLOR = new Scalar(0, 255, 0, 255);
@@ -51,7 +56,8 @@ public class DetectActivity extends AppCompatActivity implements
     List<UserInfo> userList;
     private Bitmap mDetectedFace;
     private FaceMatcher matcher;
-    private Handler mHandler = new Handler() {
+    private Handler mHandler = new Handler(Looper.myLooper()) {
+        @SuppressLint("LongLogTag")
         @Override
         public void handleMessage(Message msg) {
             Intent intent;
@@ -63,7 +69,7 @@ public class DetectActivity extends AppCompatActivity implements
                         if (result == matcher.UNFINISHED) {
                             mDetectedFace = null;
                         } else if (result == matcher.NO_MATCHER) {
-                            Log.e("ssssssssssssmDetectedFace",mDetectedFace.getByteCount()+"");
+                            Log.e("ssssssssssssmDetectedFace", mDetectedFace.getByteCount() + "");
                             intent = new Intent(DetectActivity.this,
                                     RegisterActivityfdt.class);
                             intent.putExtra("Face", mDetectedFace);
@@ -102,6 +108,16 @@ public class DetectActivity extends AppCompatActivity implements
 
     static {
         System.loadLibrary("opencv_java3");
+    }
+
+    @Override
+    public Resources getResources() {
+        //需要升级到 v1.1.2 及以上版本才能使用 AutoSizeCompat
+        if (Looper.myLooper() == Looper.getMainLooper()) {
+            AutoSizeCompat.autoConvertDensityOfGlobal((super.getResources()));//如果没有自定义需求用这个方法
+            AutoSizeCompat.autoConvertDensity((super.getResources()), 667, false);//如果有自定义需求就用这个方法
+        }
+        return super.getResources();
     }
 
     @Override
@@ -220,7 +236,7 @@ public class DetectActivity extends AppCompatActivity implements
                 Imgproc.resize(faceMat, faceMat, new Size(320, 320));
                 Bitmap bitmap = Bitmap.createBitmap(faceMat.width(),
                         faceMat.height(), Bitmap.Config.ARGB_8888);
-                Log.e("ssssssssssssbitmap",bitmap.getByteCount()+"");
+                Log.e("ssssssssssssbitmap", bitmap.getByteCount() + "");
                 Utils.matToBitmap(faceMat, bitmap);
                 Message message = Message.obtain();
                 message.what = getIntent().getIntExtra("flag", 0);

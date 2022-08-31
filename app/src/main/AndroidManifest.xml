@@ -3,8 +3,11 @@
     xmlns:tools="http://schemas.android.com/tools"
     package="com.fosung.lighthouse.fosunglibs">
 
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE"></uses-permission>
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE"></uses-permission>
+
     <application
-        android:name=".MyApplication"
+        android:name="com.fosung.lighthouse.fosunglibs.MyApplication"
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
         android:label="@string/app_fosunglibs"
@@ -12,14 +15,35 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.Fosunglibs"
+        android:usesCleartextTraffic="true"
         tools:replace="android:allowBackup,android:label,android:theme">
         <activity
-            android:name=".MainActivity"
+            android:name="com.fosung.lighthouse.fosunglibs.MainActivity"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+        <!-- 这个 Demo 主要展示副单位的用法, 如果只使用副单位 (pt、in、mm) 就可以直接以像素作为单位填写设计图的尺寸, 不需再把像素转化为 dp-->
+        <!--下面是美工根据iphoneX给出的px-->
+        <meta-data
+            android:name="design_width_in_dp"
+            android:value="375" />
+        <meta-data
+            android:name="design_height_in_dp"
+            android:value="667" />
+        <!--适配华为刘海屏-->
+        <meta-data
+            android:name="android.notch_support"
+            android:value="true" />
+        <!--适配小米（xiaomi）刘海屏-->
+        <meta-data
+            android:name="notch.config"
+            android:value="portrait|landscape" />
+        <!--允许绘制到oppo、vivo刘海屏机型的刘海区域 -->
+        <meta-data
+            android:name="android.max_aspect"
+            android:value="2.8" />
     </application>
 </manifest>
