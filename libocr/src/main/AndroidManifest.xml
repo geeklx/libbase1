@@ -17,7 +17,7 @@
             android:name=".ScanAct1"
             android:exported="true">
             <intent-filter>
-                <action android:name="${applicationId}.hs.act.slbapp.LocActivity" />
+                <action android:name="${applicationId}.hs.act.slbapp.ScanAct1" />
                 <category android:name="android.intent.category.DEFAULT" />
             </intent-filter>
         </activity>

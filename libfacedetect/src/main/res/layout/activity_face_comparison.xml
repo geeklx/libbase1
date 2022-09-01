@@ -1,0 +1,123 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/rootview"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#E60000"
+    android:fitsSystemWindows="true"
+    android:orientation="vertical">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20mm">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="20mm"
+            android:drawablePadding="15mm"
+            android:gravity="center"
+            android:text="人脸验证"
+            android:textColor="#FFFFFF"
+            android:textSize="20sp" />
+
+
+        <TextView
+            android:id="@+id/personal"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            android:layout_marginRight="20mm"
+            android:background="@drawable/item_type_press"
+            android:paddingLeft="25mm"
+            android:paddingTop="8mm"
+            android:paddingRight="25mm"
+            android:paddingBottom="8mm"
+            android:text="返        回"
+            android:textColor="#FFFFFF"
+            android:textSize="20sp" />
+
+        <TextView
+            android:id="@+id/detail_back"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_marginRight="20mm"
+            android:layout_toLeftOf="@+id/personal"
+            android:background="@drawable/item_type_press"
+            android:paddingLeft="35mm"
+            android:paddingTop="8mm"
+            android:paddingRight="25mm"
+            android:paddingBottom="8mm"
+            android:text="重新验证"
+            android:textColor="#FFFFFF"
+            android:textSize="20sp"
+            android:visibility="visible" />
+
+
+    </RelativeLayout>
+
+    <FrameLayout
+        android:id="@+id/navigation"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginTop="10mm"
+        android:background="@drawable/item_void_light_special">
+
+        <SurfaceView
+            android:id="@+id/preview"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginRight="400mm" />
+
+        <TextureView
+            android:id="@+id/rView"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginRight="400mm" />
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="right"
+            android:orientation="vertical"
+            android:visibility="gone"
+            tools:visibility="visible">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="识别结果："
+                android:textColor="#FFFFFF"
+                android:textSize="40sp" />
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/listView"
+                android:layout_width="400mm"
+                android:layout_height="wrap_content"
+                android:layout_margin="10mm"
+                android:background="@drawable/ic_ver_bg" />
+        </LinearLayout>
+
+        <TextView
+            android:id="@+id/tv_info"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="right"
+            android:background="@drawable/bg_face"
+            android:lineSpacingExtra="10mm"
+            android:paddingLeft="60mm"
+            android:paddingTop="15mm"
+            android:paddingRight="60mm"
+            android:paddingBottom="15mm"
+            android:textColor="#ffff3e3e"
+            android:textSize="30sp"
+            android:visibility="gone"
+            tools:visibility="visible" />
+    </FrameLayout>
+
+
+</LinearLayout>
