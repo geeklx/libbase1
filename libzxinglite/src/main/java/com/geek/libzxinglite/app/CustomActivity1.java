@@ -65,7 +65,8 @@ public class CustomActivity1 extends AppCompatActivity implements OnCaptureCallb
         mCaptureHelper = new CaptureHelper1(this, surfaceView, viewfinderView, ivTorch);
         mCaptureHelper.setOnCaptureCallback(this);
         mCaptureHelper.onCreate();
-        mCaptureHelper.vibrate(true)
+        mCaptureHelper.playBeep(true)//是否开启音效
+                .vibrate(true)//是否震动
                 .fullScreenScan(true)//全屏扫码
 //                .supportAutoZoom(false)//设置支持缩放
 
