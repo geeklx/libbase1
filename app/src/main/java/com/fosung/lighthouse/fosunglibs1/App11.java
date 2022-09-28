@@ -1,7 +1,7 @@
 /**
  * Copyright 2016,Smart Haier.All rights reserved
  */
-package com.fosung.lighthouse.fosunglibs;
+package com.fosung.lighthouse.fosunglibs1;
 
 import android.app.Application;
 
