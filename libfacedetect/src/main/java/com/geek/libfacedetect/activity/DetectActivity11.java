@@ -264,6 +264,11 @@ public class DetectActivity11 extends AppCompatActivity implements
         }
     };
 
+    @Override
+    protected void onResume() {
+
+        super.onResume();
+    }
 
     @Override
     protected void onPause() {
