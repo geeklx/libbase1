@@ -99,7 +99,7 @@ public class ScannerView extends FrameLayout implements Camera.PreviewCallback, 
      */
     @Override
     public void onPreviewFrame(byte[] data, Camera camera) {
-        if (SPUtils.getInstance().getBoolean("shouquan", false)) {
+        if (!SPUtils.getInstance().getBoolean("shouquan", false)) {
             Toast.makeText(getContext(), "TensorFlow SO need update.", Toast.LENGTH_LONG).show();
             return;
         }
@@ -485,11 +485,13 @@ public class ScannerView extends FrameLayout implements Camera.PreviewCallback, 
         new Thread(new Runnable() {
             @Override
             public void run() {
-                if (!is_shouquan()) {
+                if (is_shouquan()) {
 //                    Looper.prepare();
 //                    Toast.makeText(getContext(), "TensorFlow SO need update.", Toast.LENGTH_LONG).show();
 //                    Looper.loop();
                     SPUtils.getInstance().put("shouquan", true);
+                } else {
+                    SPUtils.getInstance().put("shouquan", false);
                 }
             }
         }).start();
