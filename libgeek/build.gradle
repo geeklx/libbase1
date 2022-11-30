@@ -16,6 +16,7 @@ dependencies {
     api project(':libprogressbar')
     api project(':libpicturerecognitiontext')
     api project(':libzxinglite')
+    api project(':libEncryption')
 //    api project(':libsupertextview')
 //    api project(':libgoodview')
 
