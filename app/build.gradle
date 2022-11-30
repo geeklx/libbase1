@@ -91,5 +91,5 @@ dependencies {
 //    implementation project(':libfacedetect')
 //    implementation 'com.github.geeklx:fosunglibs:1.0.8'
     implementation 'com.github.geeklx.libbase2:libutils:2.1.4'
-
+//    implementation 'com.github.geeklx.libbase2:libgeek:2.2.2'//核心库
 }
