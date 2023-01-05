@@ -19,5 +19,6 @@ dependencies {
     api project(':libEncryption')
 //    api project(':libsupertextview')
 //    api project(':libgoodview')
+    api project(':libmlkitscanner')
 
 }

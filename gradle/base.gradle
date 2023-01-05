@@ -8,7 +8,7 @@ android {
         minSdkVersion config.minSdkVersion
         targetSdkVersion config.targetSdkVersion
         multiDexEnabled true
-        renderscriptTargetApi 19
+        renderscriptTargetApi 21
         renderscriptSupportModeEnabled true
         vectorDrawables.useSupportLibrary = true
 //        javaCompileOptions { annotationProcessorOptions { includeCompileClasspath = true } }

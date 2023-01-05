@@ -136,6 +136,13 @@
                 android:layout_height="wrap_content"
                 android:gravity="center"
                 android:text="多种解密格式工具类" />
+            <Button
+                android:id="@+id/button17"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:text="MLKit扫描库" />
+
         </LinearLayout>
     </ScrollView>
 </androidx.constraintlayout.widget.ConstraintLayout>
