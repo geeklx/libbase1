@@ -26,7 +26,7 @@ import com.blankj.utilcode.util.Utils;
  */
 public class MainActivity extends AppCompatActivity implements View.OnClickListener {
     private Button button, button1, button2, button3, button4, button5, button6, button7, button8, button9,
-            button10, button11, button12, button13, button14, button15, button16;
+            button10, button11, button12, button13, button14, button15, button16,button17;
 
     private TextView tv1;
 
@@ -53,6 +53,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         button14 = findViewById(R.id.button14);
         button15 = findViewById(R.id.button15);
         button16 = findViewById(R.id.button16);
+        button17 = findViewById(R.id.button17);
         button.setOnClickListener(this);
         button1.setOnClickListener(this);
         button2.setOnClickListener(this);
@@ -70,6 +71,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         button14.setOnClickListener(this);
         button15.setOnClickListener(this);
         button16.setOnClickListener(this);
+        button17.setOnClickListener(this);
 //        new PgyerSDKManager.Init()
 //                .setContext(getApplicationContext()) //设置上下问对象
 //                .start();
@@ -212,6 +214,11 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 /*加密解密工具类
                  *项目地址: https://github.com/shouzhong/EncryptionUtils*/
                 startActivity(new Intent(getPackageName() + ".hs.act.slbapp.SampleActivity"));
+                break;
+            case R.id.button17:
+                /*mlkit扫码新库
+                 *项目地址: https://github.com/maning0303/MNMLKitScanner*/
+                startActivity(new Intent(getPackageName() + ".hs.act.slbapp.MlkitMainActivity"));
                 break;
             default:
                 break;
