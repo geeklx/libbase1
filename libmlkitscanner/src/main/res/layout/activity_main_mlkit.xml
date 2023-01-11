@@ -16,7 +16,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginBottom="10dp"
-            android:background="@color/colorPrimary"
+            android:background="#6200EE"
             android:text="默认扫描"
             android:textColor="#FFFFFF" />
 
@@ -24,7 +24,7 @@
             android:id="@+id/btn_scan_custom"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:background="@color/colorPrimary"
+            android:background="#6200EE"
             android:text="自定义扫描"
             android:textColor="#FFFFFF" />
 
@@ -40,7 +40,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="10dp"
-            android:background="@color/colorPrimary"
+            android:background="#6200EE"
             android:onClick="createQRImage"
             android:text="生成二维码"
             android:textColor="#FFFFFF" />
