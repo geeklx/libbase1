@@ -28,6 +28,8 @@ import com.geek.libmlkitscanner.utils.ZXingUtils;
 
 import java.util.ArrayList;
 
+
+//https://github.com/ITxiaoguang/MLKitScanner
 public class MlkitMainActivity extends AppCompatActivity implements View.OnClickListener {
 
     private Button btnScanDefault;

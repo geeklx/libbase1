@@ -366,6 +366,7 @@ public class ScannerView extends FrameLayout implements Camera.PreviewCallback, 
         }
     }
 
+
     private boolean is_shouquan() {
         //
         String reviseBpmnFile = "http://cdn2.cdn.haier-jiuzhidao.com/tensorflowso/version.xml";
