@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.geek.libbroccoli">
+
+    <application
+        android:allowBackup="true"
+        android:supportsRtl="true">
+        <activity
+            android:name="com.geek.libbroccoli.BroccoliMainActivity"
+            android:exported="true"
+            android:screenOrientation="portrait">
+            <intent-filter>
+                <action android:name="${applicationId}.hs.act.slbapp.BroccoliMainActivity" />
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </activity>
+
+
+        <activity
+            android:name="com.geek.libbroccoli.LayoutSimpleSampleActivity"
+            android:exported="true"
+            android:screenOrientation="portrait">
+            <intent-filter>
+                <action android:name="${applicationId}.hs.act.slbapp.LayoutSimpleSampleActivity" />
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name="com.geek.libbroccoli.LayoutAdvancedSampleActivity"
+            android:exported="true"
+            android:screenOrientation="portrait">
+            <intent-filter>
+                <action android:name="${applicationId}.hs.act.slbapp.LayoutAdvancedSampleActivity" />
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name="com.geek.libbroccoli.RecyclerViewSampleActivity"
+            android:exported="true"
+            android:screenOrientation="portrait">
+            <intent-filter>
+                <action android:name="${applicationId}.hs.act.slbapp.RecyclerViewSampleActivity" />
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name="com.geek.libbroccoli.DingDingSampleActivity"
+            android:exported="true"
+            android:screenOrientation="portrait">
+            <intent-filter>
+                <action android:name="${applicationId}.hs.act.slbapp.DingDingSampleActivity" />
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </activity>
+    </application>
+
+</manifest>

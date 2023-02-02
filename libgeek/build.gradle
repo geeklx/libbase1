@@ -20,5 +20,6 @@ dependencies {
 //    api project(':libsupertextview')
 //    api project(':libgoodview')
     api project(':libmlkitscanner')
+    api project(':libBroccoli')
 
 }
