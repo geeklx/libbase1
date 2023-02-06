@@ -9,3 +9,7 @@ dependencies {
     implementation 'com.github.JessYanCoding:AndroidAutoSize:v1.2.1'
 
 }
+
+android {
+    namespace 'com.geek.libfacedetect'
+}

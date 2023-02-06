@@ -11,3 +11,7 @@ dependencies {
 //    // https://github.com/SherlockGougou/BigImageViewPager
 //    api 'com.github.SherlockGougou:BigImageViewPager:androidx-6.1.6'
 }
+
+android {
+    namespace 'com.geek.libocr'
+}

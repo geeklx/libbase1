@@ -22,3 +22,7 @@ dependencies {
     api project(':libmlkitscanner')
 
 }
+
+android {
+    namespace 'com.geek.libgeek'
+}

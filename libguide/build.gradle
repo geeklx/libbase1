@@ -6,3 +6,7 @@ dependencies {
     implementation librarys.baseadapter
     implementation 'com.airbnb.android:lottie:3.0.7'
 }
+
+android {
+    namespace 'com.app.hubert.guide'
+}

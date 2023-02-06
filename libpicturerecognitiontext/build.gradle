@@ -12,3 +12,7 @@ dependencies {
     api 'com.rmtheis:tess-two:6.2.0@aar'
 //    implementation 'com.rmtheis:tess-two:9.1.0'
 }
+
+android {
+    namespace 'com.geek.libpicturerecognitiontext'
+}
