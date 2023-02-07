@@ -23,3 +23,7 @@ dependencies {
     api project(':libBroccoli')
 
 }
+
+android {
+    namespace 'com.geek.libgeek'
+}

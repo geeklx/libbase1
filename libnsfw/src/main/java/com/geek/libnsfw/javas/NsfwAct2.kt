@@ -13,6 +13,7 @@ import androidx.core.app.ActivityCompat
 import androidx.core.content.ContextCompat
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
+import com.blankj.utilcode.util.AppUtils
 import com.geek.libnsfw.R
 import com.luck.picture.lib.PictureSelector
 import com.luck.picture.lib.config.PictureConfig
@@ -36,6 +37,13 @@ class NsfwAct2 : AppCompatActivity(), View.OnClickListener {
     @SuppressLint("SetTextI18n")
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
+//        lifecycleScope.launch(Dispatchers.IO) {
+//            NSFWHelper.getNSFWScore(BitmapFactory.decodeFile(file.path)).let { result ->
+//                withContext(Dispatchers.Main) {
+//                    onResult(result)
+//                }
+//            }
+//        }
         setContentView(R.layout.activity_mainnsfw2)
         tv_version = findViewById(R.id.tv_version)
         rv = findViewById(R.id.rv)
@@ -44,7 +52,8 @@ class NsfwAct2 : AppCompatActivity(), View.OnClickListener {
         initNsfwHelper()
         initAdapter()
         initClickListener()
-        tv_version?.text = "当前版本：${this.packageManager.getPackageInfo(packageName, 0).versionName}"
+//        tv_version?.text = "当前版本：${this.packageManager.getPackageInfo(packageName, 0).versionName}"
+        tv_version?.text = "当前版本：${AppUtils.getAppVersionName(packageName)}"
         if (ContextCompat.checkSelfPermission(
                 this,
                 Manifest.permission.WRITE_EXTERNAL_STORAGE

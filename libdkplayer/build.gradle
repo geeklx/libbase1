@@ -3,38 +3,63 @@ apply from: "${rootDir.path}/gradle/base.gradle"
 def librarys = rootProject.ext.dependencies //依赖
 //repositories { flatDir { dirs 'libs' } }
 dependencies {
+    implementation librarys.design
+    implementation librarys.appcompatV7
+    implementation librarys.supportannotations
+    implementation librarys.recyclerviewv7
+    implementation librarys.swiperefreshlayout
+    implementation librarys.viewpager2
+    implementation librarys.gsonJson
     implementation librarys.blankj
     implementation librarys.glide47
-    implementation librarys.XXPermissions
-//    api project(':zdkplayer:dkplayer-java')
-//    api project(':zdkplayer:dkplayer-ui')
-//    api project(':zdkplayer:dkplayer-players:ijkexo')
-//    api project(':zdkplayer:dkplayer-videocache')
-    api 'com.github.ctiao:DanmakuFlameMaster:0.9.25'
-    api 'com.github.ctiao:ndkbitmap-armv7a:0.9.21'
-    api 'com.github.wseemann:FFmpegMediaMetadataRetriever-core:1.0.15'
-    api 'com.github.wseemann:FFmpegMediaMetadataRetriever-native:1.0.15'
+    implementation librarys.multidexVersion
 //    api 'com.aliyun.sdk.android:AliyunPlayer:4.5.0-full'
 //    api 'com.alivc.conan:AlivcConan:0.9.5'
     // 解决冲突bufen
     api 'cn.jzvd:jiaozivideoplayer:7.5.0'
-    api "com.google.android.exoplayer:exoplayer:2.16.1"
+//    api "com.google.android.exoplayer:exoplayer:2.16.1"
 //    api 'com.google.android.exoplayer:exoplayer-ui:2.13.2'
 //    api "com.google.android.exoplayer:exoplayer-core:2.13.2"
 //    api "com.google.android.exoplayer:exoplayer-dash:2.13.2"
 //    api "com.google.android.exoplayer:exoplayer-smoothstreaming:2.13.2"
 //    api "com.google.android.exoplayer:exoplayer-hls:2.13.2"
-    api "com.google.android.exoplayer:exoplayer-rtsp:2.16.1"
-    api "com.google.android.exoplayer:extension-rtmp:2.16.1"
-    api "com.github.CarGuo:GSYIjkJava:1.0.0"
-    api('com.github.CarGuo.GSYVideoPlayer:GSYVideoPlayer:v8.1.9-release-jitpack') {
+//    api "com.google.android.exoplayer:exoplayer-rtsp:2.18.2"
+//    api "com.google.android.exoplayer:extension-rtmp:2.18.2"
+//    api "com.github.CarGuo:GSYIjkJava:1.0.0"
+//    api('com.github.CarGuo.GSYVideoPlayer:GSYVideoPlayer:v8.1.9-release-jitpack') {
+    api('com.github.CarGuo.GSYVideoPlayer:GSYVideoPlayer:v8.3.4-release-jitpack') {
 //        exclude module: 'gsyVideoPlayer-armv5'
 //        exclude module: 'gsyVideoPlayer-armv7a'
 //        exclude module: 'gsyVideoPlayer-armv64'
 //        exclude module: 'gsyVideoPlayer-x86'
 //        exclude module: 'gsyVideoPlayer-x86_64'
         exclude group: 'com.github.CarGuo', module: 'GSYIjkJava'
-        exclude group: 'com.google.android.exoplayer', module: 'exoplayer'
-        exclude group: 'com.google.android.exoplayer', module: 'extension-rtmp'
+//        exclude group: 'com.google.android.exoplayer', module: 'exoplayer'
+//        exclude group: 'com.google.android.exoplayer', module: 'extension-rtmp'
     }
+    //
+    implementation "androidx.core:core-ktx:1.7.0"
+    implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk7:1.6.21"
+    annotationProcessor 'com.github.bumptech.glide:compiler:4.11.0'
+    implementation 'com.github.ctiao:DanmakuFlameMaster:0.9.25'
+    implementation 'com.github.ctiao:ndkbitmap-armv7a:0.9.21'
+    implementation "androidx.activity:activity-ktx:1.4.0"
+    implementation "androidx.lifecycle:lifecycle-viewmodel:2.4.0"
+    implementation 'androidx.lifecycle:lifecycle-viewmodel-ktx:2.4.0'
+    // 必选，内部默认使用系统mediaplayer进行解码
+    api 'xyz.doikki.android.dkplayer:dkplayer-java:3.3.7'
+    // 可选，包含StandardVideoController的实现
+    api 'xyz.doikki.android.dkplayer:dkplayer-ui:3.3.7'
+    // 可选，使用exoplayer进行解码
+    api 'xyz.doikki.android.dkplayer:player-exo:3.3.7'
+    // 可选，使用ijkplayer进行解码
+//    api('xyz.doikki.android.dkplayer:player-ijk:3.3.7') {
+//        exclude group: 'tv.danmaku.ijk.media', module: 'ijkplayer-java'
+//    }
+    // 可选，如需要缓存或者抖音预加载功能请引入此库
+//    api 'xyz.doikki.android.dkplayer:videocache:3.3.7'
+}
+
+android {
+    namespace 'xyz.doikki.dkplayer'
 }

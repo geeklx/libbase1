@@ -6,3 +6,7 @@ dependencies {
     implementation librarys.glide47
 //    implementation 'com.github.bumptech.glide:glide:4.9.0'
 }
+
+android {
+    namespace 'com.geek.libshadowlayout'
+}

@@ -6,3 +6,7 @@ dependencies {
     implementation librarys.constraintlayout
     implementation librarys.blankj
 }
+
+android {
+    namespace 'com.geek.libviewpagerbottomsheet'
+}

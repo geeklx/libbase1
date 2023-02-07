@@ -8,3 +8,7 @@ dependencies {
     implementation librarys.rxJava2
     implementation librarys.rxandroid2
 }
+
+android {
+    namespace 'com.geek.libpicturecompressor'
+}

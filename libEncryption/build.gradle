@@ -4,3 +4,7 @@ def librarys = rootProject.ext.dependencies //依赖
 dependencies {
     implementation fileTree(dir: 'libs', include: ['*.jar'])
 }
+
+android {
+    namespace 'com.geek.libencryption'
+}

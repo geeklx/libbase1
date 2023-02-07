@@ -8,3 +8,7 @@ dependencies {
     implementation librarys.blankj
     api 'com.white:progressview:1.0.1'
 }
+
+android {
+    namespace 'com.geek.libprogressbar'
+}
