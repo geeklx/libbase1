@@ -9,6 +9,7 @@ import android.widget.TextView;
 import androidx.appcompat.app.AppCompatActivity;
 
 import com.blankj.utilcode.util.AppUtils;
+import com.blankj.utilcode.util.ToastUtils;
 import com.blankj.utilcode.util.Utils;
 
 //import com.app.hubert.guide.newbieguide.FirstActivity;
@@ -26,7 +27,7 @@ import com.blankj.utilcode.util.Utils;
  */
 public class MainActivity extends AppCompatActivity implements View.OnClickListener {
     private Button button, button1, button2, button3, button4, button5, button6, button7, button8, button9,
-            button10, button11, button12, button13, button14, button15, button16,button17,button18;
+            button10, button11, button12, button13, button14, button15, button16,button17,button18,button19;
 
     private TextView tv1;
 
@@ -55,6 +56,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         button16 = findViewById(R.id.button16);
         button17 = findViewById(R.id.button17);
         button18 = findViewById(R.id.button18);
+        button19 = findViewById(R.id.button19);
         button.setOnClickListener(this);
         button1.setOnClickListener(this);
         button2.setOnClickListener(this);
@@ -74,6 +76,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         button16.setOnClickListener(this);
         button17.setOnClickListener(this);
         button18.setOnClickListener(this);
+        button19.setOnClickListener(this);
 //        new PgyerSDKManager.Init()
 //                .setContext(getApplicationContext()) //设置上下问对象
 //                .start();
@@ -226,6 +229,11 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 /*布局预加载占位效果
                  *项目地址: https://github.com/zhang779/Preloader*/
                 startActivity(new Intent(getPackageName() + ".hs.act.slbapp.BroccoliMainActivity"));
+                break; case R.id.button19:
+                /*人脸识别库
+                 *项目地址: https://github.com/FaceOnLive/Mask-Aware-Face-Recognition-SDK-Android*/
+//                startActivity(new Intent(getPackageName() + ".hs.act.slbapp.FaceMainActivity"));
+                ToastUtils.showLong("研发中......");
                 break;
             default:
                 break;
