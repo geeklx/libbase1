@@ -12,6 +12,14 @@
         android:padding="10dp">
 
         <Button
+            android:id="@+id/btn_scan_default0"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="10dp"
+            android:background="#6200EE"
+            android:text="适配低端手机"
+            android:textColor="#FFFFFF" />
+        <Button
             android:id="@+id/btn_scan_default"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"

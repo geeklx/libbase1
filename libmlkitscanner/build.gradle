@@ -12,15 +12,27 @@ android {
 dependencies {
     implementation fileTree(dir: 'libs', include: ['*.jar'])
     def camerax_version = "1.2.0"
-    api 'com.google.mlkit:barcode-scanning:17.0.2'
-    implementation "androidx.camera:camera-core:${camerax_version}"
-    implementation "androidx.camera:camera-camera2:${camerax_version}"
-    implementation "androidx.camera:camera-lifecycle:${camerax_version}"
-    implementation "androidx.camera:camera-view:${camerax_version}"
+    api 'com.google.mlkit:barcode-scanning:17.0.3'
+    api "androidx.camera:camera-core:${camerax_version}"
+    api "androidx.camera:camera-camera2:${camerax_version}"
+    api "androidx.camera:camera-lifecycle:${camerax_version}"
+    api "androidx.camera:camera-view:${camerax_version}"
     implementation "androidx.lifecycle:lifecycle-viewmodel:2.4.0"
     implementation 'androidx.lifecycle:lifecycle-viewmodel-ktx:2.4.0'
     implementation 'com.google.zxing:core:3.3.3'
 
     api 'com.github.duanhong169:colorpicker:1.1.6'
     api 'com.github.duanhong169:checkerboarddrawable:1.0.2'
+    //
+//    api 'com.github.jenly1314.MLKit:mlkit-camera-core:1.2.0'
+//    api 'com.github.jenly1314.MLKit:mlkit-barcode-scanning:1.2.0'
+    api('com.github.jenly1314.MLKit:mlkit-camera-core:1.2.0') {
+        exclude group: 'androidx.camera', module: 'camera-core'
+        exclude group: 'androidx.camera', module: 'camera-camera2'
+        exclude group: 'androidx.camera', module: 'camera-lifecycle'
+        exclude group: 'androidx.camera', module: 'camera-view'
+    }
+    api('com.github.jenly1314.MLKit:mlkit-barcode-scanning:1.2.0') {
+        exclude group: 'com.google.mlkit', module: 'barcode-scanning'
+    }
 }
