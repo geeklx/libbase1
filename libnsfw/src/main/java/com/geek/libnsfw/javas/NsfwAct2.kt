@@ -15,11 +15,12 @@ import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.blankj.utilcode.util.AppUtils
 import com.geek.libnsfw.R
-import com.luck.picture.lib.PictureSelector
+import com.luck.picture.lib.basic.PictureSelector
 import com.luck.picture.lib.config.PictureConfig
 import com.luck.picture.lib.config.PictureMimeType
+import com.luck.picture.lib.config.SelectMimeType
 import com.luck.picture.lib.entity.LocalMedia
-import com.luck.picture.lib.listener.OnResultCallbackListener
+import com.luck.picture.lib.interfaces.OnResultCallbackListener
 
 
 class NsfwAct2 : AppCompatActivity(), View.OnClickListener {
@@ -75,26 +76,25 @@ class NsfwAct2 : AppCompatActivity(), View.OnClickListener {
             }
             R.id.bt_sc_from_other -> {
                 PictureSelector.create(this)
-                    .openGallery(PictureMimeType.ofImage())//全部.ofAll()、图片.、视频.ofVideo()、音频.ofAudio()
-                    .maxSelectNum(20)// 最大图片选择数量 int
-                    .minSelectNum(1)// 最小选择数量 int
-                    .imageSpanCount(3)// 每行显示个数 int
-                    .selectionMode(PictureConfig.MULTIPLE)// 多选 or 单选  or PictureConfig.SINGLE
+                    .openGallery(SelectMimeType.ofImage())//全部.ofAll()、图片.、视频.ofVideo()、音频.ofAudio()
+                    .setMaxSelectNum(20)// 最大图片选择数量 int
+                    .setMinSelectNum(1)// 最小选择数量 int
+                    .setImageSpanCount(3)// 每行显示个数 int
+                    .setSelectionMode(PictureConfig.ALL)// 多选 or 单选  or PictureConfig.SINGLE
                     .isPreviewImage(true)// 是否可预览图片 true or false
-                    .isCamera(false)// 是否显示拍照按钮 true or false
-                    .isZoomAnim(true)// 图片列表点击 缩放效果 默认true
-                    .selectionData(selectList)
+                    .isDisplayCamera(false)// 是否显示拍照按钮 true or false
+                    .isSelectZoomAnim(true)// 图片列表点击 缩放效果 默认true
+                    .setSelectedData(selectList)
 //                    .sizeMultiplier(0.5f)// glide 加载图片大小 0~1之间 如设置 .glideOverride()无效
-                    .isPreviewEggs(true)// 预览图片时 是否增强左右滑动图片体验(图片滑动一半即可看到上一张是否选中) true or false
-                    .imageEngine(GlideEngineNsfw.createGlideEngine())// 外部传入图片加载引擎，必传项
+                    .isPreviewImage(true)// 预览图片时 是否增强左右滑动图片体验(图片滑动一半即可看到上一张是否选中) true or false
+                    .setImageEngine(GlideEngineNsfw.createGlideEngine())// 外部传入图片加载引擎，必传项
 //                    .forResult(0x01);//结果回调onActivityResult code
                     .forResult(object : OnResultCallbackListener<LocalMedia?> {
                         //                        fun onResult(result: ArrayList<LocalMedia?>?) {
 //                            if (selectList != null && selectList?.size ?: 0 > 0)
 //                                reScFromImgs(selectList!!)
 //                        }
-                        override fun onResult(result: MutableList<LocalMedia?>?) {
-//                            TODO("Not yet implemented")
+                        override fun onResult(result: java.util.ArrayList<LocalMedia?>?) {
                             if (result != null && result.size > 0)
                                 reScFromImgs(result)
                         }

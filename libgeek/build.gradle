@@ -3,22 +3,23 @@ apply from: "${rootDir.path}/gradle/base.gradle"
 def librarys = rootProject.ext.dependencies //
 dependencies {
     //
+    api project(':libBroccoli')
     api project(':libdkplayer')
-    api project(':libocr')
-    api project(':libnsfw')
+    api project(':libEncryption')
     api project(':libfacedetect')
-    api project(':libyanzheng')
+    api project(':libguide')
+    api project(':libmlkitscanner')
+    api project(':libnsfw')
+    api project(':libocr')
+    api project(':libpicturecompressor')
+    api project(':libpicturerecognitiontext')
+    api project(':libprogressbar')
     api project(':libshadowlayout')
     api project(':libvideocompressor')
-    api project(':libguide')
-    api project(':libpicturecompressor')
     api project(':libviewpagerbottomsheet')
-    api project(':libprogressbar')
-    api project(':libpicturerecognitiontext')
+    api project(':libyanzheng')
     api project(':libzxinglite')
-    api project(':libEncryption')
-    api project(':libmlkitscanner')
-    api project(':libBroccoli')
+    //
 //    api project(':libsupertextview')
 //    api project(':libgoodview')
 

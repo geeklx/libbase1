@@ -152,9 +152,9 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 break;
             case R.id.button3:
                 /*视频压缩*/
-                Intent intent3 = new Intent(AppUtils.getAppPackageName() + ".hs.act.slbapp.VideoComPressorActivity");
+//                Intent intent3 = new Intent(AppUtils.getAppPackageName() + ".hs.act.slbapp.VideoComPressorActivity");
 //                Intent intent3 = new Intent(this, VideoComPressorActivity.class);
-                startActivity(intent3);
+//                startActivity(intent3);
                 break;
             case R.id.button4:
                 /*shadow阴影的各项使用*/

@@ -38,6 +38,10 @@ constraintlayout                  : "androidx.constraintlayout:constraintlayout:
 multidexVersion                   : "androidx.multidex:multidex:2.0.1",
 swiperefreshlayout                : "androidx.swiperefreshlayout:swiperefreshlayout:1.1.0",
 viewpager2                        : "androidx.viewpager2:viewpager2:1.0.0",
+cameracore                        : "androidx.camera:camera-core:1.2.0",
+cameracamera2                     : "androidx.camera:camera-camera2:1.2.0",
+cameralifecycle                   : "androidx.camera:camera-lifecycle:1.2.0",
+cameraview                        : "androidx.camera:camera-view:1.2.0",
 // ------------- Android老版本 -------------
 //s2upportV4                        : "com.android.support:support-v4:${supportLibVersion}",
 //a2ppcompatV7                      : "com.android.support:appcompat-v7:${supportLibVersion}",
