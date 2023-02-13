@@ -28,7 +28,7 @@ public class MlkitMainActivity1 extends AppCompatActivity {
         tv1.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                ScanManager1.startScan(MlkitMainActivity1.this, new MNScanCallback() {
+                ScanManager1.startScan(MlkitMainActivity1.this, new ScanCallback1() {
                     @Override
                     public void onActivityResult(int resultCode, Intent data) {
                         if (data == null) {
@@ -47,12 +47,17 @@ public class MlkitMainActivity1 extends AppCompatActivity {
             case ScanManager1.RESULT_SUCCESS:
                 ArrayList<String> results = data.getStringArrayListExtra(ScanManager1.INTENT_KEY_RESULT_SUCCESS);
                 StringBuilder resultStr = new StringBuilder();
+                String aaaa = "";
                 for (int i = 0; i < results.size(); i++) {
                     resultStr.append("第" + (i + 1) + "条：");
                     resultStr.append(results.get(i));
                     resultStr.append("\n");
+                    if (i==0){
+                        aaaa = resultStr.toString();
+                    }
                 }
                 Toast.makeText(MlkitMainActivity1.this, resultStr.toString(), Toast.LENGTH_LONG).show();
+                tv1.setText(aaaa);
                 break;
             case ScanManager1.RESULT_FAIL:
                 String resultError = data.getStringExtra(ScanManager1.INTENT_KEY_RESULT_ERROR);

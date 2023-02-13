@@ -50,7 +50,8 @@
         <activity
             android:name="com.geek.libmlkitscanner.new60.QRCodeAct1"
             android:exported="true"
-            android:screenOrientation="portrait">
+            android:screenOrientation="portrait"
+            android:theme="@style/MNScanCaptureTheme">
             <intent-filter>
                 <action android:name="${applicationId}.hs.act.slbapp.QRCodeAct1" />
                 <category android:name="android.intent.category.DEFAULT" />

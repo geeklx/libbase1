@@ -28,10 +28,10 @@ public class ScanManager1 {
 //        startScan(activity, null, scanCallback);
 //    }
 
-    public static void startScan(Activity activity, MNScanCallback scanCallback) {
+    public static void startScan(Activity activity, ScanCallback1 scanCallback) {
         Intent intent = new Intent(activity.getApplicationContext(), QRCodeAct1.class);
 //        intent.putExtra(ScanManager.INTENT_KEY_CONFIG_MODEL, mnScanConfig);
-        ActResultRequest actResultRequest = new ActResultRequest(activity);
+        ActResultRequest1 actResultRequest = new ActResultRequest1(activity);
         actResultRequest.startForResult(intent, scanCallback);
         activity.overridePendingTransition(R.anim.anim_bottom_in, android.R.anim.fade_out);
     }

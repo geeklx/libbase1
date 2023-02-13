@@ -64,7 +64,9 @@ public abstract class BaseCameraScanActivity1<T> extends AppCompatActivity imple
      * 初始化CameraScan
      */
     public void initCameraScan() {
-        mCameraScan = createCameraScan(previewView).setAnalyzer(createAnalyzer()).setOnScanResultCallback(this);
+        mCameraScan = createCameraScan(previewView)
+                .setAnalyzer(createAnalyzer())
+                .setOnScanResultCallback(this);
     }
 
 
@@ -136,7 +138,7 @@ public abstract class BaseCameraScanActivity1<T> extends AppCompatActivity imple
      * @return
      */
     public int getLayoutId() {
-        return R.layout.ml_camera_scan;
+        return R.layout.ml_camera_scan2;
     }
 
 

@@ -14,5 +14,5 @@ dependencies {
     implementation fileTree(dir: 'libs', include: ['*.jar'])
     implementation "pub.devrel:easypermissions:3.0.0"
     implementation librarys.appcompatV7
-    implementation 'com.google.zxing:core:3.3.3'
+    implementation 'com.google.zxing:core:3.3.3'// 3.5.1
 }

@@ -65,6 +65,8 @@ public abstract class QRCodeCameraScanActivity1 extends BaseCameraScanActivity1<
     protected ImageView ivResult;
     protected LinearLayout btn_close;
     protected LinearLayout btn_photo;
+    protected LinearLayout ll_scan_history;
+
 
     public int getLayoutId() {
         return R.layout.qrcode_scan_activity;
@@ -94,6 +96,8 @@ public abstract class QRCodeCameraScanActivity1 extends BaseCameraScanActivity1<
         ivResult = findViewById(R.id.ivResult);
         btn_close = findViewById(R.id.btn_close);
         btn_photo = findViewById(R.id.btn_photo);
+        ll_scan_history = findViewById(R.id.ll_scan_history);
+
         btn_close.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -334,7 +338,7 @@ public abstract class QRCodeCameraScanActivity1 extends BaseCameraScanActivity1<
     @Override
     public void initCameraScan() {
         super.initCameraScan();
-        getCameraScan().setPlayBeep(true).setVibrate(true).setCameraConfig(new ResolutionCameraConfig(this));//设置CameraConfig
+        getCameraScan().setPlayBeep(true).setVibrate(true).setCameraConfig(new ResolutionCameraConfig1(this));//设置CameraConfig
     }
 
 

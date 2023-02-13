@@ -17,10 +17,10 @@ dependencies {
     api project(':libpicturerecognitiontext')
     api project(':libzxinglite')
     api project(':libEncryption')
-//    api project(':libsupertextview')
-//    api project(':libgoodview')
     api project(':libmlkitscanner')
     api project(':libBroccoli')
+//    api project(':libsupertextview')
+//    api project(':libgoodview')
 
 }
 
