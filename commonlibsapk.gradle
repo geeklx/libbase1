@@ -6,10 +6,10 @@ if (config.isMIMode.toBoolean()) {
     apply plugin: 'com.android.library'
 }
 android {
-    compileOptions {
-        sourceCompatibility JavaVersion.VERSION_1_8
-        targetCompatibility JavaVersion.VERSION_1_8
-    }
+//    compileOptions {
+//        sourceCompatibility JavaVersion.VERSION_1_8
+//        targetCompatibility JavaVersion.VERSION_1_8
+//    }
     dexOptions {
         jumboMode = true
     }

@@ -177,7 +177,7 @@ class NsfwAct2 : AppCompatActivity(), View.OnClickListener {
     }
 
     override fun onBackPressed() {
-        finish()
+        super.onBackPressed()
     }
 
     override fun onDestroy() {
