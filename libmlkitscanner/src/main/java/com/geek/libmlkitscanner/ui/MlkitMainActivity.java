@@ -30,6 +30,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import com.geek.libmlkitscanner.MNScanManager;
 import com.geek.libmlkitscanner.R;
 import com.geek.libmlkitscanner.callback.act.MNScanCallback;
+import com.geek.libmlkitscanner.new60.MlkitMainActivity1;
 import com.geek.libmlkitscanner.utils.ZXingUtils;
 
 import java.io.ByteArrayOutputStream;
@@ -47,6 +48,7 @@ import cc.shinichi.library.tool.ui.ToastUtil;
 //https://github.com/ITxiaoguang/MLKitScanner
 public class MlkitMainActivity extends AppCompatActivity implements View.OnClickListener {
 
+    private Button btn_scan_default0;
     private Button btnScanDefault;
     private Button btnScanCustom;
     private TextView tvResults;
@@ -74,8 +76,10 @@ public class MlkitMainActivity extends AppCompatActivity implements View.OnClick
     }
 
     private void initView() {
+        btn_scan_default0 = (Button) findViewById(R.id.btn_scan_default0);
         btnScanDefault = (Button) findViewById(R.id.btn_scan_default);
         btnScanCustom = (Button) findViewById(R.id.btn_scan_custom);
+        btn_scan_default0.setOnClickListener(this);
         btnScanDefault.setOnClickListener(this);
         btnScanCustom.setOnClickListener(this);
         tvResults = (TextView) findViewById(R.id.tv_results);
@@ -183,7 +187,10 @@ public class MlkitMainActivity extends AppCompatActivity implements View.OnClick
                     handlerResult(resultCode, data);
                 }
             });
-        } else if (view.getId() == R.id.btn_scan_custom) {
+        } else if (view.getId() == R.id.btn_scan_default0) {
+            //适配低端手机
+            startActivity(new Intent(this, MlkitMainActivity1.class));
+        }else if (view.getId() == R.id.btn_scan_custom) {
             //跳转到自定义界面
             startActivity(new Intent(this, CustomConfigActivity.class));
         }

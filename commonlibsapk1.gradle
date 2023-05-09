@@ -2,10 +2,10 @@ apply plugin: 'com.android.application'
 def config = rootProject.ext //配置
 def librarys = config.dependencies //
 android {
-    compileOptions {
-        sourceCompatibility JavaVersion.VERSION_1_8
-        targetCompatibility JavaVersion.VERSION_1_8
-    }
+//    compileOptions {
+//        sourceCompatibility JavaVersion.VERSION_1_8
+//        targetCompatibility JavaVersion.VERSION_1_8
+//    }
     dexOptions {
         jumboMode = true
     }

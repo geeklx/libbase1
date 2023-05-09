@@ -35,7 +35,7 @@ public class PicturecognitionTextMainActivity extends AppCompatActivity implemen
         if (id == R.id.button) {
             startActivity(new Intent(getPackageName() + ".hs.act.slbapp.PicturecognitionTextActivity"));
         } else if (id == R.id.button1) {
-            startActivity(new Intent(getPackageName() + ".hs.act.slbapp.PicturecognitionTextActivity1"));
+//            startActivity(new Intent(getPackageName() + ".hs.act.slbapp.PicturecognitionTextActivity1"));
         }
     }
 }

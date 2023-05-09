@@ -12,6 +12,7 @@ pluginManagement {
             url 'http://maven.aliyun.com/nexus/content/repositories/releases/'
         }
         maven { url 'https://maven.aliyun.com/repository/public' }
+        maven { url "https://frontjs-static.pgyer.com/dist/sdk/pgyersdk" }  //主力仓库
     }
 }
 dependencyResolutionManagement {
@@ -28,6 +29,7 @@ dependencyResolutionManagement {
             url 'http://maven.aliyun.com/nexus/content/repositories/releases/'
         }
         maven { url 'https://maven.aliyun.com/repository/public' }
+        maven { url "https://frontjs-static.pgyer.com/dist/sdk/pgyersdk" }  //主力仓库
     }
 }
 rootProject.name = "libbase1"
@@ -47,21 +49,22 @@ include ':libsCenterNew',
 
 // commonlibs
 include ':libgeek'
-include ':libocr'
-include ':libyanzheng'
+include ':libBroccoli'
 include ':libdkplayer'
+include ':libEncryption'
+include ':libfacedetect'
+include ':libguide'
+include ':libmlkitscanner'
+include ':libnsfw'
+include ':libocr'
+include ':libpicturecompressor'
+include ':libpicturerecognitiontext'
+include ':libprogressbar'
 include ':libshadowlayout'
 include ':libvideocompressor'
-include ':libnsfw'
-include ':libguide'
-include ':libpicturecompressor'
+include ':libviewpagerbottomsheet'
+include ':libyanzheng'
+include ':libzxinglite'
+//
 //include ':libsupertextview'
 //include ':libgoodview'
-include ':libfacedetect'
-include ':libviewpagerbottomsheet'
-include ':libprogressbar'
-include ':libpicturerecognitiontext'
-include ':libzxinglite'
-include ':libEncryption'
-include ':libmlkitscanner'
-include ':libBroccoli'

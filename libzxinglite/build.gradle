@@ -4,15 +4,15 @@ apply plugin: 'kotlin-kapt'
 apply from: "${rootDir.path}/gradle/base.gradle"
 def librarys = rootProject.ext.dependencies //依赖
 android {
-    compileOptions {
-        sourceCompatibility JavaVersion.VERSION_11
-        targetCompatibility JavaVersion.VERSION_11
-    }
+//    compileOptions {
+//        sourceCompatibility JavaVersion.VERSION_11
+//        targetCompatibility JavaVersion.VERSION_11
+//    }
     namespace 'com.geek.libzxinglite'
 }
 dependencies {
     implementation fileTree(dir: 'libs', include: ['*.jar'])
     implementation "pub.devrel:easypermissions:3.0.0"
     implementation librarys.appcompatV7
-    implementation 'com.google.zxing:core:3.3.3'
+    implementation 'com.google.zxing:core:3.3.3'// 3.5.1
 }

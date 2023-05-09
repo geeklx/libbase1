@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <androidx.camera.view.PreviewView
+        android:id="@+id/previewView"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent" />
+
+    <ImageView
+        android:id="@+id/ivResult"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent" />
+
+    <com.king.mlkit.vision.barcode.ViewfinderView
+        android:id="@+id/viewfinderView"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        app:frameRatio="0.9"
+        app:viewfinderStyle="popular" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <View
+            android:id="@+id/fakeStatusBar"
+            android:layout_width="match_parent"
+            android:layout_height="30dp"
+            android:background="#00000000"
+            tools:ignore="MissingConstraints" />
+
+        <!--功能菜单-->
+        <include layout="@layout/action_scan_menu" />
+
+    </LinearLayout>
+</FrameLayout>

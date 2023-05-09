@@ -27,6 +27,7 @@ dependencies {
 //    api "com.google.android.exoplayer:extension-rtmp:2.18.2"
 //    api "com.github.CarGuo:GSYIjkJava:1.0.0"
 //    api('com.github.CarGuo.GSYVideoPlayer:GSYVideoPlayer:v8.1.9-release-jitpack') {
+    api "com.github.CarGuo:GSYIjkJava:1.0.0"
     api('com.github.CarGuo.GSYVideoPlayer:GSYVideoPlayer:v8.3.4-release-jitpack') {
 //        exclude module: 'gsyVideoPlayer-armv5'
 //        exclude module: 'gsyVideoPlayer-armv7a'
@@ -51,7 +52,7 @@ dependencies {
     // 可选，包含StandardVideoController的实现
     api 'xyz.doikki.android.dkplayer:dkplayer-ui:3.3.7'
     // 可选，使用exoplayer进行解码
-    api 'xyz.doikki.android.dkplayer:player-exo:3.3.7'
+//    api 'xyz.doikki.android.dkplayer:player-exo:3.3.7'
     // 可选，使用ijkplayer进行解码
 //    api('xyz.doikki.android.dkplayer:player-ijk:3.3.7') {
 //        exclude group: 'tv.danmaku.ijk.media', module: 'ijkplayer-java'
