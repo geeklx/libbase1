@@ -4,6 +4,8 @@ import android.app.Application;
 
 import com.blankj.utilcode.util.SPUtils;
 import com.blankj.utilcode.util.Utils;
+import com.geek.libscreen.VApplication;
+import com.geek.libscreen.mmkv.MmkvUtils;
 
 import me.jessyan.autosize.AutoSize;
 import me.jessyan.autosize.AutoSizeConfig;
@@ -31,5 +33,11 @@ public class MyApplication extends Application {
                 .getUnitsManager()
                 .setSupportDP(true)
                 .setSupportSubunits(Subunits.MM);
+        VApplication.init(this);
+        configmmkv();
+    }
+    protected void configmmkv() {
+        MmkvUtils.getInstance().get("");
+        MmkvUtils.getInstance().get_demo();
     }
 }

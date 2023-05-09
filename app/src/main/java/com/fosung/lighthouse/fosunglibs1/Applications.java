@@ -2,6 +2,9 @@ package com.fosung.lighthouse.fosunglibs1;
 
 import android.app.Application;
 
+import com.geek.libscreen.VApplication;
+import com.geek.libscreen.mmkv.MmkvUtils;
+
 //import com.geek.libnsfw.ktl.NSFWHelper;
 
 
