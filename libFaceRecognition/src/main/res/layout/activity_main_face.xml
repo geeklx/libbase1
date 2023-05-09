@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+
+        <Button
+            android:id="@+id/btnRegister"
+            android:layout_width="160dp"
+            android:layout_height="80dp"
+            android:layout_marginTop="30dp"
+            android:layout_centerHorizontal="true"
+            android:text="录入人脸" />
+
+        <Button
+            android:id="@+id/btnVerify"
+            android:layout_width="160dp"
+            android:layout_height="80dp"
+            android:layout_below="@+id/btnRegister"
+            android:layout_marginTop="30dp"
+            android:layout_centerHorizontal="true"
+            android:text="识别人脸" />
+
+        <Button
+            android:id="@+id/btnUser"
+            android:layout_width="160dp"
+            android:layout_height="80dp"
+            android:layout_below="@+id/btnVerify"
+            android:layout_marginTop="30dp"
+            android:layout_centerHorizontal="true"
+            android:text="用户人脸信息" />
+
+    </RelativeLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

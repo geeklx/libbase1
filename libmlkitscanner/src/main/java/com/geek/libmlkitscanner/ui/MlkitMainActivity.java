@@ -1,14 +1,20 @@
 package com.geek.libmlkitscanner.ui;
 
 import android.Manifest;
+import android.content.ContentValues;
+import android.content.Context;
 import android.content.Intent;
 import android.content.pm.PackageManager;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
 import android.graphics.Color;
+import android.net.Uri;
 import android.os.Build;
 import android.os.Bundle;
+import android.provider.MediaStore;
 import android.text.TextUtils;
+import android.util.Base64;
+import android.util.Log;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.Button;
@@ -26,7 +32,16 @@ import com.geek.libmlkitscanner.R;
 import com.geek.libmlkitscanner.callback.act.MNScanCallback;
 import com.geek.libmlkitscanner.utils.ZXingUtils;
 
+import java.io.ByteArrayOutputStream;
+import java.io.File;
+import java.io.FileNotFoundException;
+import java.io.FileOutputStream;
+import java.io.IOException;
+import java.io.OutputStream;
 import java.util.ArrayList;
+
+import cc.shinichi.library.ImagePreview;
+import cc.shinichi.library.tool.ui.ToastUtil;
 
 
 //https://github.com/ITxiaoguang/MLKitScanner
@@ -190,6 +205,7 @@ public class MlkitMainActivity extends AppCompatActivity implements View.OnClick
                     resultStr.append("\n");
                 }
                 tvResults.setText(resultStr.toString());
+                Log.e("----saomiao----", "handlerResult: "+resultStr.toString());
                 break;
             case MNScanManager.RESULT_FAIL:
                 String resultError = data.getStringExtra(MNScanManager.INTENT_KEY_RESULT_ERROR);
@@ -218,17 +234,41 @@ public class MlkitMainActivity extends AppCompatActivity implements View.OnClick
         Bitmap logo = null;
         Bitmap foreground_bitmap = null;
         if (checkbox.isChecked()) {
-            logo = BitmapFactory.decodeResource(getResources(), R.drawable.ic_wx);
+            logo = BitmapFactory.decodeResource(getResources(), R.drawable.ic_launcher);
         }
         if (checkbox2.isChecked()) {
             foreground_bitmap = BitmapFactory.decodeResource(getResources(), R.drawable.tmp);
         }
-        qrImage = ZXingUtils.createQRCodeImage(str, 500, margin, color_black, color_white, error_correction_level, logo, foreground_bitmap);
+        qrImage = ZXingUtils.createQRCodeImage(str, 600, margin, color_black, color_white, error_correction_level, logo, foreground_bitmap);
         if (qrImage != null) {
             imageView.setImageBitmap(qrImage);
         } else {
             Toast.makeText(this, "生成失败", Toast.LENGTH_SHORT).show();
         }
 
+        findViewById(R.id.btn_saveiamge).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                saveImage29(qrImage);
+            }
+        });
+
     }
+
+    private void saveImage29(Bitmap toBitmap) {
+        //开始一个新的进程执行保存图片的操作
+        Uri insertUri = getContentResolver().insert(MediaStore.Images.Media.EXTERNAL_CONTENT_URI, new ContentValues());
+        //使用use可以自动关闭流
+        try {
+            OutputStream outputStream = getContentResolver().openOutputStream(insertUri, "rw");
+            if (toBitmap.compress(Bitmap.CompressFormat.JPEG, 80, outputStream)) {
+                ToastUtil.getInstance().showLong(this,"保存成功");
+            } else {
+                ToastUtil.getInstance().showLong(this,"保存失败");
+            }
+        } catch (FileNotFoundException e) {
+            e.printStackTrace();
+        }
+    }
+
 }

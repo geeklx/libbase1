@@ -1,0 +1,4 @@
+<resources>
+    <string name="name_should_not_be_empty">请输入名称</string>
+    <string name="duplicated_name">重复的名称！</string>
+</resources>
