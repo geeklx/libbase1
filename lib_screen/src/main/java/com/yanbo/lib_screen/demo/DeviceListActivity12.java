@@ -1,4 +1,4 @@
-package com.geek.videodlnascreen;
+package com.yanbo.lib_screen.demo;
 
 import android.app.Activity;
 import android.content.Intent;
@@ -17,6 +17,7 @@ import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.alibaba.fastjson.JSON;
+import com.yanbo.lib_screen.R;
 import com.yanbo.lib_screen.entity.ClingDevice;
 import com.yanbo.lib_screen.entity.ProjectionState;
 import com.yanbo.lib_screen.entity.RemoteItem1;
@@ -30,6 +31,7 @@ import org.greenrobot.eventbus.EventBus;
 import org.greenrobot.eventbus.Subscribe;
 import org.greenrobot.eventbus.ThreadMode;
 
+import java.util.ArrayList;
 import java.util.List;
 
 /**
@@ -68,6 +70,7 @@ public class DeviceListActivity12 extends AppCompatActivity {
         showloading();
         layoutManager = new LinearLayoutManager(this);
         adapter = new ClingDeviceAdapter(this);
+//        adapter = new ClingDeviceAdapter1(new ArrayList<ClingDevice>());
         recyclerView.setAdapter(adapter);
         recyclerView.setLayoutManager(layoutManager);
         llJingzhitoup.setVisibility(View.GONE);

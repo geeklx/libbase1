@@ -14,6 +14,33 @@
     <application
         android:allowBackup="true"
         android:supportsRtl="true">
+        <activity
+            android:name=".demo.DlnaMainActivity"
+            android:exported="true"
+            android:screenOrientation="portrait">
+            <intent-filter>
+                <action android:name="${applicationId}.hs.act.slbapp.DlnaMainActivity" />
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name=".demo.DeviceListActivity12"
+            android:exported="true"
+            android:screenOrientation="portrait">
+            <intent-filter>
+                <action android:name="${applicationId}.hs.act.slbapp.DeviceListActivity1" />
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name=".demo.MediaPlayActivity1"
+            android:exported="true"
+            android:screenOrientation="portrait">
+            <intent-filter>
+                <action android:name="${applicationId}.hs.act.slbapp.MediaPlayActivity1" />
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </activity>
         <service
             android:name=".service.ClingService"
             android:exported="false" />

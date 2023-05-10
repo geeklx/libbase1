@@ -1,4 +1,4 @@
-package com.geek.videodlnascreen;
+package com.yanbo.lib_screen.demo;
 
 import android.content.Context;
 import android.view.LayoutInflater;
@@ -9,6 +9,7 @@ import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.yanbo.lib_screen.R;
 import com.yanbo.lib_screen.entity.ClingDevice;
 import com.yanbo.lib_screen.listener.ItemClickListener;
 

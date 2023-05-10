@@ -1,4 +1,4 @@
-package com.geek.videodlnascreen;
+package com.yanbo.lib_screen.demo;
 
 import android.app.Activity;
 import android.content.Intent;
@@ -14,6 +14,7 @@ import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import com.yanbo.lib_screen.R;
 import com.yanbo.lib_screen.callback.ControlCallback;
 import com.yanbo.lib_screen.entity.AVTransportInfo;
 import com.yanbo.lib_screen.entity.ProjectionState;

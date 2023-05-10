@@ -1,4 +1,4 @@
-package com.geek.videodlnascreen;
+package com.yanbo.lib_screen.demo;
 
 import android.widget.ImageView;
 import android.widget.TextView;
@@ -7,6 +7,7 @@ import androidx.annotation.Nullable;
 
 import com.chad.library.adapter.base.BaseQuickAdapter;
 import com.chad.library.adapter.base.BaseViewHolder;
+import com.yanbo.lib_screen.R;
 import com.yanbo.lib_screen.entity.ClingDevice;
 import com.yanbo.lib_screen.listener.ItemClickListener;
 

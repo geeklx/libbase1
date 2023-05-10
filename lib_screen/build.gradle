@@ -19,7 +19,9 @@ android {
     dependencies {
         implementation fileTree(dir: 'libs', include: ['*.jar'])
         implementation 'androidx.appcompat:appcompat:1.2.0'
+        implementation 'androidx.recyclerview:recyclerview:1.2.1'
         testImplementation 'junit:junit:4.12'
+        implementation 'com.github.CymChad:BaseRecyclerViewAdapterHelper:2.9.40'
         api 'com.alibaba:fastjson:1.2.70'
         api 'com.tencent:mmkv-static:1.2.9'
 
