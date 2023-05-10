@@ -23,7 +23,7 @@ public class VIntents {
     /**
      * Prefix for all intents created
      */
-    public static final String INTENT_PREFIX = "com.yanbo.lib_screen.";
+    public static final String INTENT_PREFIX = "com.yanbo.libscreen.";
 
     /**
      * Prefix for all extra data added to intents
