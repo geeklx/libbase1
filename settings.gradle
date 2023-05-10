@@ -71,7 +71,7 @@ include ':libvideocompressor'
 include ':libviewpagerbottomsheet'
 include ':libyanzheng'
 include ':libzxinglite'
-include ':lib_screen'
+//include ':lib_screen'
 //include ':libvdeodlnascreen'
 //
 //include ':libsupertextview'
