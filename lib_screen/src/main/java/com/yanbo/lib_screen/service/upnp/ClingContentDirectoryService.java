@@ -1,18 +1,9 @@
-<<<<<<<< HEAD:lib_screen/src/main/java/com/yanbo/lib_screen/service/upnp/ClingContentDirectoryService.java
 package com.yanbo.lib_screen.service.upnp;
 
 
 import com.yanbo.lib_screen.VApplication;
 import com.yanbo.lib_screen.database.MediaContentDao;
 import com.yanbo.lib_screen.entity.VItem;
-========
-package com.geek.lib_screen.service.upnp;
-
-
-import com.geek.lib_screen.VApplication;
-import com.geek.lib_screen.database.MediaContentDao;
-import com.geek.lib_screen.entity.VItem;
->>>>>>>> 50f42b5b88681741d4c35c65f2b3458cb68b4a82:lib_screen/src/main/java/com/geek/lib_screen/service/upnp/ClingContentDirectoryService.java
 
 import org.fourthline.cling.support.contentdirectory.AbstractContentDirectoryService;
 import org.fourthline.cling.support.contentdirectory.ContentDirectoryErrorCode;

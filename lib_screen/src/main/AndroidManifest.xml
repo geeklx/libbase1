@@ -1,11 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-<<<<<<< HEAD
     package="com.yanbo.lib_screen">
-=======
-  >
-
->>>>>>> 50f42b5b88681741d4c35c65f2b3458cb68b4a82
 
     <uses-permission android:name="android.permission.INTERNET" />
     <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
@@ -15,24 +10,10 @@
     <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
     <uses-permission android:name="android.permission.READ_PHONE_STATE" />
     <uses-permission android:name="android.permission.WAKE_LOCK" />
-<<<<<<< HEAD
 
     <application
         android:allowBackup="true"
         android:supportsRtl="true">
-        <uses-library
-            android:name="org.eclipse.jetty"
-            android:required="false" />
-=======
-    <application>
-
-        <activity android:name=".demo.MainActivity"/>
-        <activity android:name=".demo.DeviceListActivity" />
-        <activity android:name=".demo.DeviceListActivity1" />
-        <activity android:name=".demo.MediaPlayActivity" />
-        <activity android:name=".demo.MediaPlayActivity1" />
->>>>>>> 50f42b5b88681741d4c35c65f2b3458cb68b4a82
-
         <service
             android:name=".service.ClingService"
             android:exported="false" />

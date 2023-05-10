@@ -1,23 +1,12 @@
-<<<<<<<< HEAD:lib_screen/src/main/java/com/yanbo/lib_screen/service/ClingService.java
 package com.yanbo.lib_screen.service;
-========
-package com.geek.lib_screen.service;
->>>>>>>> 50f42b5b88681741d4c35c65f2b3458cb68b4a82:lib_screen/src/main/java/com/geek/lib_screen/service/ClingService.java
 
 import android.content.Intent;
 import android.os.IBinder;
 
-<<<<<<<< HEAD:lib_screen/src/main/java/com/yanbo/lib_screen/service/ClingService.java
 import com.yanbo.lib_screen.service.upnp.AndroidJettyServletContainer;
 import com.yanbo.lib_screen.service.upnp.ClingContentDirectoryService;
 import com.yanbo.lib_screen.utils.LogUtils;
 import com.yanbo.lib_screen.utils.VMNetwork;
-========
-import com.geek.lib_screen.service.upnp.AndroidJettyServletContainer;
-import com.geek.lib_screen.service.upnp.ClingContentDirectoryService;
-import com.geek.lib_screen.utils.LogUtils;
-import com.geek.lib_screen.utils.VMNetwork;
->>>>>>>> 50f42b5b88681741d4c35c65f2b3458cb68b4a82:lib_screen/src/main/java/com/geek/lib_screen/service/ClingService.java
 
 import org.fourthline.cling.UpnpServiceConfiguration;
 import org.fourthline.cling.android.AndroidUpnpServiceConfiguration;
@@ -90,8 +79,8 @@ public class ClingService extends AndroidUpnpServiceImpl {
             e.printStackTrace();
         }
 
-        LogUtils.d(TAG, "MediaServer device created! name:%s, manufacturer:%s, model:%s"+"      "+
-                details.getFriendlyName()+"      "+ details.getManufacturerDetails().getManufacturer()+"      "+
+        LogUtils.d(TAG, "MediaServer device created! name:%s, manufacturer:%s, model:%s" + "      " +
+                details.getFriendlyName() + "      " + details.getManufacturerDetails().getManufacturer() + "      " +
                 details.getModelDetails().getModelName());
     }
 

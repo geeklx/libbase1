@@ -1,8 +1,4 @@
-<<<<<<<< HEAD:lib_screen/src/main/java/com/yanbo/lib_screen/utils/VMFile.java
 package com.yanbo.lib_screen.utils;
-========
-package com.geek.lib_screen.utils;
->>>>>>>> 50f42b5b88681741d4c35c65f2b3458cb68b4a82:lib_screen/src/main/java/com/geek/lib_screen/utils/VMFile.java
 
 import android.annotation.TargetApi;
 import android.content.ContentUris;
@@ -17,11 +13,8 @@ import android.os.Environment;
 import android.provider.DocumentsContract;
 import android.provider.MediaStore;
 
-<<<<<<<< HEAD:lib_screen/src/main/java/com/yanbo/lib_screen/utils/VMFile.java
+
 import com.yanbo.lib_screen.VApplication;
-========
-import com.geek.lib_screen.VApplication;
->>>>>>>> 50f42b5b88681741d4c35c65f2b3458cb68b4a82:lib_screen/src/main/java/com/geek/lib_screen/utils/VMFile.java
 
 import java.io.File;
 import java.io.FileInputStream;

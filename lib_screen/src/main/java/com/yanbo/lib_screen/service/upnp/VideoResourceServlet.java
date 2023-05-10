@@ -13,11 +13,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-<<<<<<<< HEAD:lib_screen/src/main/java/com/yanbo/lib_screen/service/upnp/VideoResourceServlet.java
 package com.yanbo.lib_screen.service.upnp;
-========
-package com.geek.lib_screen.service.upnp;
->>>>>>>> 50f42b5b88681741d4c35c65f2b3458cb68b4a82:lib_screen/src/main/java/com/geek/lib_screen/service/upnp/VideoResourceServlet.java
 
 import android.content.ContentUris;
 import android.database.Cursor;
@@ -25,13 +21,8 @@ import android.net.Uri;
 import android.provider.MediaStore;
 import android.util.Log;
 
-<<<<<<<< HEAD:lib_screen/src/main/java/com/yanbo/lib_screen/service/upnp/VideoResourceServlet.java
 import com.yanbo.lib_screen.VApplication;
 import com.yanbo.lib_screen.utils.VMFile;
-========
-import com.geek.lib_screen.VApplication;
-import com.geek.lib_screen.utils.VMFile;
->>>>>>>> 50f42b5b88681741d4c35c65f2b3458cb68b4a82:lib_screen/src/main/java/com/geek/lib_screen/service/upnp/VideoResourceServlet.java
 
 import org.eclipse.jetty.servlet.DefaultServlet;
 import org.eclipse.jetty.util.resource.FileResource;
@@ -52,8 +43,8 @@ public class VideoResourceServlet extends DefaultServlet {
 
             Uri uri = ContentUris.withAppendedId(MediaStore.Video.Media.EXTERNAL_CONTENT_URI, Long.parseLong(id));
             Cursor cursor = VApplication.getContext()
-                                        .getContentResolver()
-                                        .query(uri, null, null, null, null);
+                    .getContentResolver()
+                    .query(uri, null, null, null, null);
             cursor.moveToFirst();
             String path = cursor.getString(cursor.getColumnIndexOrThrow(MediaStore.Video.Media.DATA));
             File file = new File(path);

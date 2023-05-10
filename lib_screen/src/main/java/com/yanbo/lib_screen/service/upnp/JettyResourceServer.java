@@ -13,17 +13,10 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-<<<<<<<< HEAD:lib_screen/src/main/java/com/yanbo/lib_screen/service/upnp/JettyResourceServer.java
 package com.yanbo.lib_screen.service.upnp;
 
 
 import com.yanbo.lib_screen.VConstants;
-========
-package com.geek.lib_screen.service.upnp;
-
-
-import com.geek.lib_screen.VConstants;
->>>>>>>> 50f42b5b88681741d4c35c65f2b3458cb68b4a82:lib_screen/src/main/java/com/geek/lib_screen/service/upnp/JettyResourceServer.java
 
 import org.eclipse.jetty.server.Server;
 import org.eclipse.jetty.servlet.ServletContextHandler;

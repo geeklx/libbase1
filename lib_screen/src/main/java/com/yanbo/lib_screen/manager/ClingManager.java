@@ -1,8 +1,4 @@
-<<<<<<<< HEAD:lib_screen/src/main/java/com/yanbo/lib_screen/manager/ClingManager.java
 package com.yanbo.lib_screen.manager;
-========
-package com.geek.lib_screen.manager;
->>>>>>>> 50f42b5b88681741d4c35c65f2b3458cb68b4a82:lib_screen/src/main/java/com/geek/lib_screen/manager/ClingManager.java
 
 import android.content.ComponentName;
 import android.content.Context;
@@ -10,7 +6,6 @@ import android.content.Intent;
 import android.content.ServiceConnection;
 import android.os.IBinder;
 
-<<<<<<<< HEAD:lib_screen/src/main/java/com/yanbo/lib_screen/manager/ClingManager.java
 import com.yanbo.lib_screen.VApplication;
 import com.yanbo.lib_screen.callback.ContentBrowseCallback;
 import com.yanbo.lib_screen.entity.RemoteItem1;
@@ -19,16 +14,6 @@ import com.yanbo.lib_screen.listener.ClingRegistryListener;
 import com.yanbo.lib_screen.service.ClingService;
 import com.yanbo.lib_screen.service.SystemService;
 import com.yanbo.lib_screen.utils.LogUtils;
-========
-import com.geek.lib_screen.VApplication;
-import com.geek.lib_screen.callback.ContentBrowseCallback;
-import com.geek.lib_screen.entity.RemoteItem;
-import com.geek.lib_screen.event.DIDLEvent;
-import com.geek.lib_screen.listener.ClingRegistryListener;
-import com.geek.lib_screen.service.ClingService;
-import com.geek.lib_screen.service.SystemService;
-import com.geek.lib_screen.utils.LogUtils;
->>>>>>>> 50f42b5b88681741d4c35c65f2b3458cb68b4a82:lib_screen/src/main/java/com/geek/lib_screen/manager/ClingManager.java
 
 import org.fourthline.cling.controlpoint.ControlPoint;
 import org.fourthline.cling.model.action.ActionInvocation;
@@ -61,7 +46,7 @@ public class ClingManager {
     private SystemService systemService;
 
     private Item localItem;
-    private RemoteItem remoteItem;
+    private RemoteItem1 remoteItem;
 
     /**
      * 私有构造方法
@@ -119,11 +104,11 @@ public class ClingManager {
         return localItem;
     }
 
-    public RemoteItem getRemoteItem() {
+    public RemoteItem1 getRemoteItem() {
         return remoteItem;
     }
 
-    public void setRemoteItem(RemoteItem remoteItem) {
+    public void setRemoteItem(RemoteItem1 remoteItem) {
         this.remoteItem = remoteItem;
         this.localItem = null;
         ControlManager.getInstance().setState(ControlManager.CastState.STOPED);
@@ -216,8 +201,8 @@ public class ClingManager {
         controlPoint.execute(new ContentBrowseCallback(service, containerId) {
             @Override
             public void received(ActionInvocation actionInvocation, DIDLContent didl) {
-                LogUtils.e("Load local content! containers:%d, items:%d", didl.getContainers().size()+"    "+
-                        didl.getItems().size()+"  ");
+                LogUtils.e("Load local content! containers:%d, items:%d", didl.getContainers().size() + "    " +
+                        didl.getItems().size() + "  ");
                 DIDLEvent event = new DIDLEvent();
                 event.content = didl;
                 EventBus.getDefault().post(event);

@@ -1,4 +1,3 @@
-<<<<<<<< HEAD:lib_screen/src/main/java/com/yanbo/lib_screen/manager/ControlManager.java
 package com.yanbo.lib_screen.manager;
 
 
@@ -17,23 +16,6 @@ import com.yanbo.lib_screen.mmkv.MmkvUtils;
 import com.yanbo.lib_screen.utils.ClingUtil;
 import com.yanbo.lib_screen.utils.LogUtils;
 import com.yanbo.lib_screen.utils.VMDate;
-========
-package com.geek.lib_screen.manager;
-
-
-import com.geek.lib_screen.VError;
-import com.geek.lib_screen.callback.AVTransportCallback;
-import com.geek.lib_screen.callback.ControlCallback;
-import com.geek.lib_screen.callback.RenderingControlCallback;
-import com.geek.lib_screen.entity.AVTransportInfo;
-import com.geek.lib_screen.entity.ClingDevice;
-import com.geek.lib_screen.entity.RemoteItem;
-import com.geek.lib_screen.entity.RenderingControlInfo;
-import com.geek.lib_screen.event.ControlEvent;
-import com.geek.lib_screen.utils.ClingUtil;
-import com.geek.lib_screen.utils.LogUtils;
-import com.geek.lib_screen.utils.VMDate;
->>>>>>>> 50f42b5b88681741d4c35c65f2b3458cb68b4a82:lib_screen/src/main/java/com/geek/lib_screen/manager/ControlManager.java
 
 import org.fourthline.cling.controlpoint.ControlPoint;
 import org.fourthline.cling.model.action.ActionInvocation;
@@ -105,11 +87,11 @@ public class ControlManager {
      *
      * @param item 需要投屏播放的本地资源对象
      */
-    public void newPlayCast(final Item item, final ControlCallback callback) {
+    public void newPlayCast(final Item item, final String definitiontype, final ControlCallback callback) {
         stopCast(new ControlCallback() {
             @Override
             public void onSuccess() {
-                setAVTransportURI(item, new ControlCallback() {
+                setAVTransportURI(item, definitiontype, new ControlCallback() {
                     @Override
                     public void onSuccess() {
                         playCast(callback);
@@ -134,11 +116,11 @@ public class ControlManager {
      *
      * @param item 需要投屏的远程网络资源对象
      */
-    public void newPlayCast(final RemoteItem item, final ControlCallback callback) {
+    public void newPlayCast(final RemoteItem1 item, final String definitiontype, final ControlCallback callback) {
         stopCast(new ControlCallback() {
             @Override
             public void onSuccess() {
-                setAVTransportURI(item, new ControlCallback() {
+                setAVTransportURI(item, definitiontype, new ControlCallback() {
                     @Override
                     public void onSuccess() {
                         playCast(callback);
@@ -170,7 +152,7 @@ public class ControlManager {
         controlPoint.execute(new Play(instanceId, avtService) {
             @Override
             public void success(ActionInvocation invocation) {
-                LogUtils.i("","播放成功");
+                LogUtils.i("", "播放成功");
                 callback.onSuccess();
             }
 
@@ -194,7 +176,7 @@ public class ControlManager {
         controlPoint.execute(new Pause(instanceId, avtService) {
             @Override
             public void success(ActionInvocation invocation) {
-                LogUtils.i("","暂停成功");
+                LogUtils.i("", "暂停成功");
                 callback.onSuccess();
             }
 
@@ -218,7 +200,7 @@ public class ControlManager {
         controlPoint.execute(new Stop(instanceId, avtService) {
             @Override
             public void success(ActionInvocation invocation) {
-                LogUtils.i("","停止投屏 success");
+                LogUtils.i("", "停止投屏 success");
                 callback.onSuccess();
             }
 
@@ -269,7 +251,7 @@ public class ControlManager {
         controlPoint.execute(new SetVolume(instanceId, rcService, volume) {
             @Override
             public void success(ActionInvocation invocation) {
-                LogUtils.d(" ","设置音量 success");
+                LogUtils.d(" ", "设置音量 success");
                 callback.onSuccess();
             }
 
@@ -293,7 +275,7 @@ public class ControlManager {
         controlPoint.execute(new SetMute(instanceId, rcService, mute) {
             @Override
             public void success(ActionInvocation invocation) {
-                LogUtils.d("","静音 success");
+                LogUtils.d("", "静音 success");
                 callback.onSuccess();
             }
 
@@ -310,7 +292,7 @@ public class ControlManager {
      *
      * @param item 需要投屏的资源
      */
-    public void setAVTransportURI(Item item, final ControlCallback callback) {
+    public void setAVTransportURI(Item item, final String definitiontype, final ControlCallback callback) {
         if (checkAVTService()) {
             callback.onError(VError.SERVICE_IS_NULL, "服务为空");
             return;
@@ -335,7 +317,7 @@ public class ControlManager {
 
             @Override
             public void failure(ActionInvocation invocation, UpnpResponse operation, String msg) {
-                LogUtils.e("setAVTransportURI - error %s url:%s", msg+"   URL   "+uri);
+                LogUtils.e("setAVTransportURI - error %s url:%s", msg + "   URL   " + uri);
                 callback.onError(VError.UNKNOWN, msg);
             }
         });
@@ -344,25 +326,35 @@ public class ControlManager {
     /**
      * 设置远程资源音视频传输 URI
      */
-    public void setAVTransportURI(RemoteItem item, final ControlCallback callback) {
+    public void setAVTransportURI(RemoteItem1 item, final String definitiontype, final ControlCallback callback) {
         if (checkAVTService()) {
             callback.onError(VError.SERVICE_IS_NULL, "service is null");
             return;
         }
         String metadata = ClingUtil.getItemMetadata(item);
-        LogUtils.i("metadata: " , metadata);
-        final String uri = item.getUrl();
+        LogUtils.i("metadata: ", metadata);
+        String uri = null;
+        if (definitiontype.equals("gq")) {
+            uri = item.getHighurl();
+        } else if (definitiontype.equals("zgq")) {
+            uri = item.getQuasihighurl();
+        } else if (definitiontype.equals("bq")) {
+            uri = item.getStandardurl();
+        }
         ControlPoint controlPoint = ClingManager.getInstance().getControlPoint();
-        controlPoint.execute(new SetAVTransportURI(instanceId, avtService, item.getUrl(), metadata) {
+        final String finalUri = uri;
+        ProjectionState projectionState = new ProjectionState(finalUri, definitiontype, true);
+        MmkvUtils.getInstance().set_common_json("projectionState", JSON.toJSONString(projectionState), ProjectionState.class);
+        controlPoint.execute(new SetAVTransportURI(instanceId, avtService, finalUri, metadata) {
             @Override
             public void success(ActionInvocation invocation) {
-                LogUtils.i("setAVTransportURI success url:%s", uri);
+                LogUtils.i("setAVTransportURI success url:%s", finalUri);
                 callback.onSuccess();
             }
 
             @Override
             public void failure(ActionInvocation invocation, UpnpResponse operation, String msg) {
-                LogUtils.e("setAVTransportURI - error %s url:%s", msg+"   URL   "+uri);
+                LogUtils.e("setAVTransportURI - error %s url:%s", msg + "   URL   " + finalUri);
                 callback.onError(VError.UNKNOWN, msg);
             }
         });
@@ -374,7 +366,7 @@ public class ControlManager {
     public void initScreenCastCallback() {
         unInitScreenCastCallback();
         isScreenCast = true;
-        LogUtils.d("","initScreenCastCallback");
+        LogUtils.d("", "initScreenCastCallback");
         new Thread(new Runnable() {
             @Override
             public void run() {
@@ -410,7 +402,7 @@ public class ControlManager {
         rcCallback = new RenderingControlCallback(rcService) {
             @Override
             protected void received(RenderingControlInfo info) {
-                LogUtils.d("RenderingControlCallback received: mute:%b, volume:%d", info.isMute()+"   volume  "+info
+                LogUtils.d("RenderingControlCallback received: mute:%b, volume:%d", info.isMute() + "   volume  " + info
                         .getVolume());
                 ControlEvent event = new ControlEvent();
                 event.setRcInfo(info);
@@ -424,7 +416,7 @@ public class ControlManager {
      * 取消初始化投屏相关回调
      */
     public void unInitScreenCastCallback() {
-        LogUtils.d("","unInitScreenCastCallback");
+        LogUtils.d("", "unInitScreenCastCallback");
         absTimeStr = "00:00:00";
         absTime = 0;
         trackDurationStr = "00:00:00";
@@ -462,12 +454,12 @@ public class ControlManager {
                         unInitScreenCastCallback();
                     }
                 }
-                LogUtils.d("getPositionInfo success positionInfo:" , positionInfo.toString());
+                LogUtils.d("getPositionInfo success positionInfo:", positionInfo.toString());
             }
 
             @Override
             public void failure(ActionInvocation invocation, UpnpResponse operation, String msg) {
-                LogUtils.e("E","getPositionInfo failed");
+                LogUtils.e("E", "getPositionInfo failed");
             }
         });
     }
@@ -506,12 +498,12 @@ public class ControlManager {
                 ControlEvent event = new ControlEvent();
                 event.setAvtInfo(info);
                 EventBus.getDefault().post(event);
-                LogUtils.d("getTransportInfo success transportInfo:" , ts.getValue());
+                LogUtils.d("getTransportInfo success transportInfo:", ts.getValue());
             }
 
             @Override
             public void failure(ActionInvocation invocation, UpnpResponse operation, String msg) {
-                LogUtils.e("E","getTransportInfo failed");
+                LogUtils.e("E", "getTransportInfo failed");
             }
         });
     }
@@ -533,7 +525,7 @@ public class ControlManager {
                 ControlEvent event = new ControlEvent();
                 event.setRcInfo(info);
                 EventBus.getDefault().post(event);
-                LogUtils.d("getVolume success volume:" , currentVolume);
+                LogUtils.d("getVolume success volume:", currentVolume);
             }
 
             @Override

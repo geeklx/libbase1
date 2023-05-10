@@ -1,14 +1,7 @@
-<<<<<<<< HEAD:lib_screen/src/main/java/com/yanbo/lib_screen/callback/BaseSubscriptionCallback.java
 package com.yanbo.lib_screen.callback;
 
 
 import com.yanbo.lib_screen.utils.LogUtils;
-========
-package com.geek.lib_screen.callback;
-
-
-import com.geek.lib_screen.utils.LogUtils;
->>>>>>>> 50f42b5b88681741d4c35c65f2b3458cb68b4a82:lib_screen/src/main/java/com/geek/lib_screen/callback/BaseSubscriptionCallback.java
 
 import org.fourthline.cling.controlpoint.SubscriptionCallback;
 import org.fourthline.cling.model.gena.CancelReason;
@@ -43,19 +36,21 @@ public abstract class BaseSubscriptionCallback extends SubscriptionCallback {
 
     @Override
     protected void failed(GENASubscription subscription, UpnpResponse responseStatus, Exception exception, String defaultMsg) {
-        LogUtils.d("","SubscriptionCallback failed");
+        LogUtils.d("", "SubscriptionCallback failed");
     }
 
     @Override
     protected void ended(GENASubscription subscription, CancelReason reason, UpnpResponse responseStatus) {
-        LogUtils.d("","SubscriptionCallback ended");
+        LogUtils.d("", "SubscriptionCallback ended");
     }
 
     @Override
-    protected void established(GENASubscription subscription) {}
+    protected void established(GENASubscription subscription) {
+    }
 
     @Override
-    protected void eventsMissed(GENASubscription subscription, int numberOfMissedEvents) {}
+    protected void eventsMissed(GENASubscription subscription, int numberOfMissedEvents) {
+    }
 
     @Override
     protected void eventReceived(GENASubscription subscription) {

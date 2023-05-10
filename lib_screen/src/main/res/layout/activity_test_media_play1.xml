@@ -269,8 +269,6 @@
                         android:layout_height="48dp"
                         android:layout_centerVertical="true"
                         android:layout_marginLeft="24dp"
-                        android:layout_toRightOf="@id/img_play"
-                        android:src="@mipmap/ic_launcher_round"
                         android:visibility="invisible" />
 
                     <ImageView
@@ -279,8 +277,6 @@
                         android:layout_height="48dp"
                         android:layout_centerVertical="true"
                         android:layout_marginRight="24dp"
-                        android:layout_toLeftOf="@id/img_play"
-                        android:src="@mipmap/ic_launcher_round"
                         android:visibility="invisible" />
                 </RelativeLayout>
             </LinearLayout>

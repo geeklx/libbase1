@@ -1,19 +1,10 @@
-<<<<<<<< HEAD:lib_screen/src/main/java/com/yanbo/lib_screen/manager/DeviceManager.java
 package com.yanbo.lib_screen.manager;
-========
-package com.geek.lib_screen.manager;
->>>>>>>> 50f42b5b88681741d4c35c65f2b3458cb68b4a82:lib_screen/src/main/java/com/geek/lib_screen/manager/DeviceManager.java
 
 
 import androidx.annotation.NonNull;
 
-<<<<<<<< HEAD:lib_screen/src/main/java/com/yanbo/lib_screen/manager/DeviceManager.java
 import com.yanbo.lib_screen.entity.ClingDevice;
 import com.yanbo.lib_screen.event.DeviceEvent;
-========
-import com.geek.lib_screen.entity.ClingDevice;
-import com.geek.lib_screen.event.DeviceEvent;
->>>>>>>> 50f42b5b88681741d4c35c65f2b3458cb68b4a82:lib_screen/src/main/java/com/geek/lib_screen/manager/DeviceManager.java
 
 import org.fourthline.cling.model.meta.Device;
 import org.fourthline.cling.model.types.DeviceType;

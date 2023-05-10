@@ -1,15 +1,7 @@
-<<<<<<<< HEAD:lib_screen/src/main/java/com/yanbo/lib_screen/utils/ClingUtil.java
 package com.yanbo.lib_screen.utils;
 
 
 import com.yanbo.lib_screen.entity.RemoteItem1;
-========
-package com.geek.lib_screen.utils;
-
-
-
-import com.geek.lib_screen.entity.RemoteItem;
->>>>>>>> 50f42b5b88681741d4c35c65f2b3458cb68b4a82:lib_screen/src/main/java/com/geek/lib_screen/utils/ClingUtil.java
 
 import org.fourthline.cling.support.model.ProtocolInfo;
 import org.fourthline.cling.support.model.Res;
@@ -28,9 +20,9 @@ public class ClingUtil {
     /**
      * 获取 Item 资源的 metadata
      */
-    public static String getItemMetadata(RemoteItem remoteItem) {
+    public static String getItemMetadata(RemoteItem1 remoteItem) {
         Res itemRes = new Res(new MimeType(ProtocolInfo.WILDCARD, ProtocolInfo.WILDCARD), remoteItem
-                .getSize(), remoteItem.getUrl());
+                .getSize(), remoteItem.getHighurl());
         itemRes.setDuration(remoteItem.getDuration());
         itemRes.setResolution(remoteItem.getResolution());
         VideoItem item = new VideoItem(remoteItem.getId(), "0", remoteItem.getTitle(), remoteItem.getCreator(), itemRes);
@@ -70,7 +62,7 @@ public class ClingUtil {
                 protocolInfo = String.format("protocolInfo=\"%s:%s:%s:%s\"", pi.getProtocol(), pi.getNetwork(), pi
                         .getContentFormatMimeType(), pi.getAdditionalInfo());
             }
-            LogUtils.i("protocolInfo: " ,protocolInfo);
+            LogUtils.i("protocolInfo: ", protocolInfo);
 
             // resolution, extra info, not adding yet
             String resolution = "";

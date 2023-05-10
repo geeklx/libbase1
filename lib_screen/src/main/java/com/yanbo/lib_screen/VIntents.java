@@ -13,11 +13,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-<<<<<<<< HEAD:lib_screen/src/main/java/com/yanbo/lib_screen/VIntents.java
 package com.yanbo.lib_screen;
-========
-package com.geek.lib_screen;
->>>>>>>> 50f42b5b88681741d4c35c65f2b3458cb68b4a82:lib_screen/src/main/java/com/geek/lib_screen/VIntents.java
 
 import android.content.Intent;
 

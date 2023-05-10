@@ -1,8 +1,4 @@
-<<<<<<<< HEAD:lib_screen/src/main/java/com/yanbo/lib_screen/service/SystemService.java
 package com.yanbo.lib_screen.service;
-========
-package com.geek.lib_screen.service;
->>>>>>>> 50f42b5b88681741d4c35c65f2b3458cb68b4a82:lib_screen/src/main/java/com/geek/lib_screen/service/SystemService.java
 
 import android.app.Service;
 import android.content.Intent;
@@ -10,15 +6,9 @@ import android.os.Binder;
 import android.os.IBinder;
 import android.util.Log;
 
-<<<<<<<< HEAD:lib_screen/src/main/java/com/yanbo/lib_screen/service/SystemService.java
 import com.yanbo.lib_screen.VIntents;
 import com.yanbo.lib_screen.manager.ControlManager;
 import com.yanbo.lib_screen.service.upnp.JettyResourceServer;
-========
-import com.geek.lib_screen.VIntents;
-import com.geek.lib_screen.manager.ControlManager;
-import com.geek.lib_screen.service.upnp.JettyResourceServer;
->>>>>>>> 50f42b5b88681741d4c35c65f2b3458cb68b4a82:lib_screen/src/main/java/com/geek/lib_screen/service/SystemService.java
 
 import org.fourthline.cling.controlpoint.ControlPoint;
 import org.fourthline.cling.controlpoint.SubscriptionCallback;

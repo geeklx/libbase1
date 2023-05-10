@@ -13,11 +13,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-<<<<<<<< HEAD:lib_screen/src/main/java/com/yanbo/lib_screen/service/upnp/AndroidJettyServletContainer.java
 package com.yanbo.lib_screen.service.upnp;
-========
-package com.geek.lib_screen.service.upnp;
->>>>>>>> 50f42b5b88681741d4c35c65f2b3458cb68b4a82:lib_screen/src/main/java/com/geek/lib_screen/service/upnp/AndroidJettyServletContainer.java
 
 import org.eclipse.jetty.server.AbstractHttpConnection;
 import org.eclipse.jetty.server.Connector;

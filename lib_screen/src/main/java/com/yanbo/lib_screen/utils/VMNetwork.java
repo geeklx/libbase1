@@ -1,8 +1,4 @@
-<<<<<<<< HEAD:lib_screen/src/main/java/com/yanbo/lib_screen/utils/VMNetwork.java
 package com.yanbo.lib_screen.utils;
-========
-package com.geek.lib_screen.utils;
->>>>>>>> 50f42b5b88681741d4c35c65f2b3458cb68b4a82:lib_screen/src/main/java/com/geek/lib_screen/utils/VMNetwork.java
 
 import android.content.Context;
 import android.net.ConnectivityManager;
@@ -10,11 +6,7 @@ import android.net.NetworkInfo;
 import android.net.wifi.WifiInfo;
 import android.net.wifi.WifiManager;
 
-<<<<<<<< HEAD:lib_screen/src/main/java/com/yanbo/lib_screen/utils/VMNetwork.java
 import com.yanbo.lib_screen.VApplication;
-========
-import com.geek.lib_screen.VApplication;
->>>>>>>> 50f42b5b88681741d4c35c65f2b3458cb68b4a82:lib_screen/src/main/java/com/geek/lib_screen/utils/VMNetwork.java
 
 import java.net.InetAddress;
 import java.net.UnknownHostException;

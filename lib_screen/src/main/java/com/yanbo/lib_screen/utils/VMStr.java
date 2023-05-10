@@ -1,12 +1,7 @@
-<<<<<<<< HEAD:lib_screen/src/main/java/com/yanbo/lib_screen/utils/VMStr.java
 package com.yanbo.lib_screen.utils;
 
-import com.yanbo.lib_screen.VApplication;
-========
-package com.geek.lib_screen.utils;
 
-import com.geek.lib_screen.VApplication;
->>>>>>>> 50f42b5b88681741d4c35c65f2b3458cb68b4a82:lib_screen/src/main/java/com/geek/lib_screen/utils/VMStr.java
+import com.yanbo.lib_screen.VApplication;
 
 import java.util.Arrays;
 import java.util.List;
@@ -22,7 +17,7 @@ public class VMStr {
     /**
      * 字符串转数组
      *
-     * @param string 字符串
+     * @param string    字符串
      * @param separator 分隔符
      * @return 数组
      */
@@ -33,7 +28,7 @@ public class VMStr {
     /**
      * 字符串数组转字符串
      *
-     * @param array 字符串数组
+     * @param array     字符串数组
      * @param separator 分隔符
      * @return 字符串
      */
@@ -54,7 +49,7 @@ public class VMStr {
     /**
      * 集合转字符串拼接
      *
-     * @param list 集合
+     * @param list     集合
      * @param splitStr 分隔符
      */
     public static String list2Str(List<String> list, String splitStr) {

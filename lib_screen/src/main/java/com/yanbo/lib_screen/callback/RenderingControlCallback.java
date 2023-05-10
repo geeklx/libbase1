@@ -1,16 +1,8 @@
-<<<<<<<< HEAD:lib_screen/src/main/java/com/yanbo/lib_screen/callback/RenderingControlCallback.java
 package com.yanbo.lib_screen.callback;
 
 
 import com.yanbo.lib_screen.entity.RenderingControlInfo;
 import com.yanbo.lib_screen.utils.LogUtils;
-========
-package com.geek.lib_screen.callback;
-
-
-import com.geek.lib_screen.entity.RenderingControlInfo;
-import com.geek.lib_screen.utils.LogUtils;
->>>>>>>> 50f42b5b88681741d4c35c65f2b3458cb68b4a82:lib_screen/src/main/java/com/geek/lib_screen/callback/RenderingControlCallback.java
 
 import org.fourthline.cling.model.meta.Service;
 import org.fourthline.cling.support.lastchange.EventedValue;
@@ -65,7 +57,7 @@ public abstract class RenderingControlCallback extends BaseSubscriptionCallback 
                 info.setPresetNameList(obj.toString());
             }
         }
-        LogUtils.d("RenderingControlCallback onReceived:", "  info.isMute===  "+info.isMute() +"  info.getVolume===  "+info.getVolume());
+        LogUtils.d("RenderingControlCallback onReceived:", "  info.isMute===  " + info.isMute() + "  info.getVolume===  " + info.getVolume());
         received(info);
     }
 

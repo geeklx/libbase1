@@ -1,16 +1,8 @@
-<<<<<<<< HEAD:lib_screen/src/main/java/com/yanbo/lib_screen/callback/AVTransportCallback.java
 package com.yanbo.lib_screen.callback;
 
 
 import com.yanbo.lib_screen.entity.AVTransportInfo;
 import com.yanbo.lib_screen.utils.LogUtils;
-========
-package com.geek.lib_screen.callback;
-
-
-import com.geek.lib_screen.entity.AVTransportInfo;
-import com.geek.lib_screen.utils.LogUtils;
->>>>>>>> 50f42b5b88681741d4c35c65f2b3458cb68b4a82:lib_screen/src/main/java/com/geek/lib_screen/callback/AVTransportCallback.java
 
 import org.fourthline.cling.model.meta.Service;
 import org.fourthline.cling.support.avtransport.lastchange.AVTransportLastChangeParser;
@@ -47,7 +39,7 @@ public abstract class AVTransportCallback extends BaseSubscriptionCallback {
         EventedValue value = values.get(0);
         String name = value.getName();
         Object obj = value.getValue();
-        LogUtils.d("AVTransportCallback onReceived:", "name==  "+name+"   obj==  "+obj.toString()+"   values size==  "+ values.size());
+        LogUtils.d("AVTransportCallback onReceived:", "name==  " + name + "   obj==  " + obj.toString() + "   values size==  " + values.size());
 
         if (AVT_STATE.equals(name)) {
             info.setState(value.getValue().toString());

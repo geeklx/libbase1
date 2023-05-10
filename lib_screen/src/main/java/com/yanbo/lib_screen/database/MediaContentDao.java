@@ -13,29 +13,18 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-<<<<<<<< HEAD:lib_screen/src/main/java/com/yanbo/lib_screen/database/MediaContentDao.java
 package com.yanbo.lib_screen.database;
-========
-package com.geek.lib_screen.database;
->>>>>>>> 50f42b5b88681741d4c35c65f2b3458cb68b4a82:lib_screen/src/main/java/com/geek/lib_screen/database/MediaContentDao.java
 
 import android.content.ContentResolver;
 import android.content.Context;
 import android.database.Cursor;
-import android.provider.MediaStore;
 import android.provider.MediaStore.Audio;
 import android.provider.MediaStore.Images;
 import android.provider.MediaStore.Video;
 
-<<<<<<<< HEAD:lib_screen/src/main/java/com/yanbo/lib_screen/database/MediaContentDao.java
 import com.yanbo.lib_screen.VConstants;
 import com.yanbo.lib_screen.entity.VItem;
 import com.yanbo.lib_screen.utils.VMNetwork;
-========
-import com.geek.lib_screen.VConstants;
-import com.geek.lib_screen.entity.VItem;
-import com.geek.lib_screen.utils.VMNetwork;
->>>>>>>> 50f42b5b88681741d4c35c65f2b3458cb68b4a82:lib_screen/src/main/java/com/geek/lib_screen/database/MediaContentDao.java
 
 import org.fourthline.cling.model.ModelUtil;
 import org.fourthline.cling.support.model.PersonWithRole;
@@ -109,11 +98,11 @@ public class MediaContentDao {
         }
 
         while (cur.moveToNext()) {
-            String id = String.valueOf(cur.getInt(cur.getColumnIndex(MediaStore.Images.Media._ID)));
-            String title = cur.getString(cur.getColumnIndex(MediaStore.Images.Media.TITLE));
+            String id = String.valueOf(cur.getInt(cur.getColumnIndex(Images.Media._ID)));
+            String title = cur.getString(cur.getColumnIndex(Images.Media.TITLE));
             String creator = cur.getString(cur.getColumnIndexOrThrow(Images.Media.TITLE));
-            String mimeType = cur.getString(cur.getColumnIndex(MediaStore.Images.Media.MIME_TYPE));
-            long size = cur.getLong(cur.getColumnIndex(MediaStore.Images.Media.SIZE));
+            String mimeType = cur.getString(cur.getColumnIndex(Images.Media.MIME_TYPE));
+            long size = cur.getLong(cur.getColumnIndex(Images.Media.SIZE));
             String data = cur.getString(cur.getColumnIndexOrThrow(Audio.Media.DATA));
             String fileName = data.substring(data.lastIndexOf(File.separator));
             String ext = fileName.substring(fileName.lastIndexOf("."));

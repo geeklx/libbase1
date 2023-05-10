@@ -1,16 +1,8 @@
-<<<<<<<< HEAD:lib_screen/src/main/java/com/yanbo/lib_screen/listener/ClingRegistryListener.java
 package com.yanbo.lib_screen.listener;
 
 
 import com.yanbo.lib_screen.manager.DeviceManager;
 import com.yanbo.lib_screen.utils.LogUtils;
-========
-package com.geek.lib_screen.listener;
-
-
-import com.geek.lib_screen.manager.DeviceManager;
-import com.geek.lib_screen.utils.LogUtils;
->>>>>>>> 50f42b5b88681741d4c35c65f2b3458cb68b4a82:lib_screen/src/main/java/com/geek/lib_screen/listener/ClingRegistryListener.java
 
 import org.fourthline.cling.model.meta.Device;
 import org.fourthline.cling.model.meta.LocalDevice;
@@ -31,7 +23,7 @@ public class ClingRegistryListener extends DefaultRegistryListener {
 
     @Override
     public void remoteDeviceDiscoveryFailed(Registry registry, RemoteDevice device, Exception ex) {
-        LogUtils.e("remoteDeviceDiscoveryFailed %s - %s", device.getDisplayString()+"---"+ ex.toString());
+        LogUtils.e("remoteDeviceDiscoveryFailed %s - %s", device.getDisplayString() + "---" + ex.toString());
 //        onDeviceRemoved(device);
     }
 
