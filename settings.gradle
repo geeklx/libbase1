@@ -69,7 +69,7 @@ include ':libvideocompressor'
 include ':libviewpagerbottomsheet'
 include ':libyanzheng'
 include ':libzxinglite'
-include ':lib_screen'
+include ':libscreen'
 //
 //include ':libsupertextview'
 //include ':libgoodview'

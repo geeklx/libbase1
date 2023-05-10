@@ -11,7 +11,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import com.blankj.utilcode.util.AppUtils;
 import com.blankj.utilcode.util.ToastUtils;
 import com.blankj.utilcode.util.Utils;
-import com.yanbo.lib_screen.demo.DlnaMainActivity;
+import com.yanbo.libscreen.demo.DlnaMainActivity;
 //import com.app.hubert.guide.newbieguide.FirstActivity;
 //import com.blankj.utilcode.util.Utils;
 //import com.example.slbyanzheng.ZhiwenActtivity;

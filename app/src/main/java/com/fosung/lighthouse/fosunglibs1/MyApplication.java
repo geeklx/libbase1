@@ -7,8 +7,8 @@ import androidx.multidex.MultiDex;
 
 import com.blankj.utilcode.util.SPUtils;
 import com.blankj.utilcode.util.Utils;
-import com.yanbo.lib_screen.VApplication;
-import com.yanbo.lib_screen.mmkv.MmkvUtils;
+import com.yanbo.libscreen.VApplication;
+import com.yanbo.libscreen.mmkv.MmkvUtils;
 
 import me.jessyan.autosize.AutoSize;
 import me.jessyan.autosize.AutoSizeConfig;
