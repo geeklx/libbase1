@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="com.geek.libscreen">
+  >
 
 
     <uses-permission android:name="android.permission.INTERNET" />
@@ -12,6 +12,13 @@
     <uses-permission android:name="android.permission.READ_PHONE_STATE" />
     <uses-permission android:name="android.permission.WAKE_LOCK" />
     <application>
+
+        <activity android:name=".demo.MainActivity"/>
+        <activity android:name=".demo.DeviceListActivity" />
+        <activity android:name=".demo.DeviceListActivity1" />
+        <activity android:name=".demo.MediaPlayActivity" />
+        <activity android:name=".demo.MediaPlayActivity1" />
+
         <service
             android:name=".service.ClingService"
             android:exported="false" />

@@ -19,8 +19,8 @@ dependencies {
     api project(':libviewpagerbottomsheet')
     api project(':libyanzheng')
     api project(':libzxinglite')
-    api project(':lib_screen')
-    api project(':libvdeodlnascreen')
+//    api project(':lib_screen')
+//    api project(':libvdeodlnascreen')
     //
 //    api project(':libsupertextview')
 //    api project(':libgoodview')
