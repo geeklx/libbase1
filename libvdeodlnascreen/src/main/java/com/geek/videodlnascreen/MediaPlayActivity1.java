@@ -1,7 +1,6 @@
 package com.geek.videodlnascreen;
 
 import android.app.Activity;
-import android.content.ClipData;
 import android.content.Intent;
 import android.os.Bundle;
 import android.text.TextUtils;
@@ -15,16 +14,16 @@ import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
 
-import com.geek.libscreen.callback.ControlCallback;
-import com.geek.libscreen.entity.AVTransportInfo;
-import com.geek.libscreen.entity.ProjectionState;
-import com.geek.libscreen.entity.RemoteItem1;
-import com.geek.libscreen.entity.RenderingControlInfo;
-import com.geek.libscreen.event.ControlEvent;
-import com.geek.libscreen.manager.ClingManager;
-import com.geek.libscreen.manager.ControlManager;
-import com.geek.libscreen.mmkv.MmkvUtils;
-import com.geek.libscreen.utils.VMDate;
+import com.yanbo.lib_screen.callback.ControlCallback;
+import com.yanbo.lib_screen.entity.AVTransportInfo;
+import com.yanbo.lib_screen.entity.ProjectionState;
+import com.yanbo.lib_screen.entity.RemoteItem1;
+import com.yanbo.lib_screen.entity.RenderingControlInfo;
+import com.yanbo.lib_screen.event.ControlEvent;
+import com.yanbo.lib_screen.manager.ClingManager;
+import com.yanbo.lib_screen.manager.ControlManager;
+import com.yanbo.lib_screen.mmkv.MmkvUtils;
+import com.yanbo.lib_screen.utils.VMDate;
 
 import org.fourthline.cling.support.model.item.Item;
 import org.greenrobot.eventbus.EventBus;

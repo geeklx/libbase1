@@ -1,11 +1,14 @@
 package com.fosung.lighthouse.fosunglibs1;
 
 import android.app.Application;
+import android.content.Context;
+
+import androidx.multidex.MultiDex;
 
 import com.blankj.utilcode.util.SPUtils;
 import com.blankj.utilcode.util.Utils;
-import com.geek.libscreen.VApplication;
-import com.geek.libscreen.mmkv.MmkvUtils;
+import com.yanbo.lib_screen.VApplication;
+import com.yanbo.lib_screen.mmkv.MmkvUtils;
 
 import me.jessyan.autosize.AutoSize;
 import me.jessyan.autosize.AutoSizeConfig;
@@ -36,8 +39,15 @@ public class MyApplication extends Application {
         VApplication.init(this);
         configmmkv();
     }
+
     protected void configmmkv() {
         MmkvUtils.getInstance().get("");
         MmkvUtils.getInstance().get_demo();
+    }
+
+    @Override
+    protected void attachBaseContext(Context base) {
+        super.attachBaseContext(base);
+        MultiDex.install(this);
     }
 }

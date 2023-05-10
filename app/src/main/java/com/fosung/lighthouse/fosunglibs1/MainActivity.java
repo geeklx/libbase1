@@ -11,7 +11,6 @@ import androidx.appcompat.app.AppCompatActivity;
 import com.blankj.utilcode.util.AppUtils;
 import com.blankj.utilcode.util.ToastUtils;
 import com.blankj.utilcode.util.Utils;
-import com.geek.videodlnascreen.DeviceListActivity12;
 import com.geek.videodlnascreen.DlnaMainActivity;
 
 //import com.app.hubert.guide.newbieguide.FirstActivity;

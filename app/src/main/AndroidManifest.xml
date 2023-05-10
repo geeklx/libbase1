@@ -18,6 +18,9 @@
         android:theme="@style/Theme.Fosunglibs"
         android:usesCleartextTraffic="true"
         tools:replace="android:allowBackup,android:label,android:theme">
+        <uses-library
+            android:name="org.eclipse.jetty"
+            android:required="false" />
         <activity
             android:name="com.fosung.lighthouse.fosunglibs1.MainActivity"
             android:exported="true">

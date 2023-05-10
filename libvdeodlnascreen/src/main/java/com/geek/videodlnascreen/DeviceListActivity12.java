@@ -11,31 +11,25 @@ import android.view.animation.RotateAnimation;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
-import android.widget.Toast;
 
-import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.alibaba.fastjson.JSON;
-import com.chad.library.adapter.base.BaseQuickAdapter;
-import com.chad.library.adapter.base.BaseViewHolder;
-import com.geek.libscreen.entity.ClingDevice;
-import com.geek.libscreen.entity.ProjectionState;
-import com.geek.libscreen.entity.RemoteItem1;
-import com.geek.libscreen.event.DeviceEvent;
-import com.geek.libscreen.manager.ClingManager;
-import com.geek.libscreen.manager.DeviceManager;
-import com.geek.libscreen.mmkv.MmkvUtils;
-import com.yanbo.lib_screen.entity.RemoteItem;
+import com.yanbo.lib_screen.entity.ClingDevice;
+import com.yanbo.lib_screen.entity.ProjectionState;
+import com.yanbo.lib_screen.entity.RemoteItem1;
+import com.yanbo.lib_screen.event.DeviceEvent;
 import com.yanbo.lib_screen.listener.ItemClickListener;
+import com.yanbo.lib_screen.manager.ClingManager;
+import com.yanbo.lib_screen.manager.DeviceManager;
+import com.yanbo.lib_screen.mmkv.MmkvUtils;
 
 import org.greenrobot.eventbus.EventBus;
 import org.greenrobot.eventbus.Subscribe;
 import org.greenrobot.eventbus.ThreadMode;
 
-import java.util.ArrayList;
 import java.util.List;
 
 /**

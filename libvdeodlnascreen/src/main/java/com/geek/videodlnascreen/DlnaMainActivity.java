@@ -4,21 +4,13 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
-import android.widget.ImageView;
-import android.widget.TextView;
 
-import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.RecyclerView;
 
-import com.chad.library.adapter.base.BaseQuickAdapter;
-import com.chad.library.adapter.base.BaseViewHolder;
-import com.geek.libscreen.callback.ControlCallback;
-import com.geek.libscreen.entity.ClingDevice;
-import com.geek.libscreen.manager.ClingManager;
-import com.geek.libscreen.manager.ControlManager;
-
-import java.util.List;
+import com.yanbo.lib_screen.callback.ControlCallback;
+import com.yanbo.lib_screen.manager.ClingManager;
+import com.yanbo.lib_screen.manager.ControlManager;
 
 public class DlnaMainActivity extends AppCompatActivity {
     Button button;

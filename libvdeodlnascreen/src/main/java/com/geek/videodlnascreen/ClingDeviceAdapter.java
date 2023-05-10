@@ -9,9 +9,8 @@ import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
-import com.geek.libscreen.entity.ClingDevice;
+import com.yanbo.lib_screen.entity.ClingDevice;
 import com.yanbo.lib_screen.listener.ItemClickListener;
-import com.yanbo.lib_screen.manager.DeviceManager;
 
 import java.util.List;
 
@@ -25,7 +24,7 @@ public class ClingDeviceAdapter extends RecyclerView.Adapter<ClingDeviceAdapter.
 
     private LayoutInflater layoutInflater;
     private List<ClingDevice> clingDevices;
-    private com.yanbo.lib_screen.listener.ItemClickListener clickListener;
+    private ItemClickListener clickListener;
 
     public ClingDeviceAdapter(Context context ) {
         super();

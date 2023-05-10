@@ -7,8 +7,8 @@ import androidx.annotation.Nullable;
 
 import com.chad.library.adapter.base.BaseQuickAdapter;
 import com.chad.library.adapter.base.BaseViewHolder;
-import com.geek.libscreen.entity.ClingDevice;
-import com.geek.libscreen.listener.ItemClickListener;
+import com.yanbo.lib_screen.entity.ClingDevice;
+import com.yanbo.lib_screen.listener.ItemClickListener;
 
 import java.util.List;
 
