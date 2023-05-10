@@ -241,7 +241,8 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
             case R.id.button20:
                 /*投屏库
                  *项目地址: https://github.com/yanbo469/VideoDlnaScreen*/
-                startActivity(new Intent(this, DlnaMainActivity.class));
+                startActivity(new Intent(getPackageName() + ".hs.act.slbapp.DlnaMainActivity"));
+//                startActivity(new Intent(this, DlnaMainActivity.class));
                 break;
             default:
                 break;
