@@ -8,5 +8,5 @@ dependencies {
 }
 
 android {
-    namespace 'com.geek.ncalendar'
+    namespace 'com.geek.libncalendar'
 }

@@ -5,11 +5,11 @@
     android:orientation="vertical">
 
 
-    <com.geek.ncalendar.view.WeekBar
+    <com.geek.libncalendar.view.WeekBar
         android:layout_width="match_parent"
         android:layout_height="wrap_content" />
 
-    <com.geek.ncalendar.calendar.Miui10Calendar
+    <com.geek.libncalendar.calendar.Miui10Calendar
         android:layout_width="match_parent"
         android:layout_height="match_parent">
 
@@ -24,7 +24,7 @@
             android:background="@color/N_hollowCircleColor"
             android:text="我只是一个TextView" />
 
-    </com.geek.ncalendar.calendar.Miui10Calendar>
+    </com.geek.libncalendar.calendar.Miui10Calendar>
 
 
 </LinearLayout>

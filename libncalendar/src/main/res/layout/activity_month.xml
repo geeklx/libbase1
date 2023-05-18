@@ -14,12 +14,12 @@
         android:padding="15dp" />
 
 
-    <com.geek.ncalendar.view.WeekBar
+    <com.geek.libncalendar.view.WeekBar
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="10dp" />
 
-    <com.geek.ncalendar.calendar.MonthCalendar
+    <com.geek.libncalendar.calendar.MonthCalendar
         android:id="@+id/monthCalendar"
         android:layout_width="match_parent"
         android:layout_height="300dp" />

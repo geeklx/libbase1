@@ -82,11 +82,11 @@
     </LinearLayout>
 
 
-    <com.geek.ncalendar.view.WeekBar
+    <com.geek.libncalendar.view.WeekBar
         android:layout_width="match_parent"
         android:layout_height="wrap_content" />
 
-    <com.geek.ncalendar.calendar.Miui9Calendar
+    <com.geek.libncalendar.calendar.Miui9Calendar
         android:id="@+id/miui9Calendar"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
@@ -104,7 +104,7 @@
             android:tag="@string/N_factual_scroll_view" />
 
 
-    </com.geek.ncalendar.calendar.Miui9Calendar>
+    </com.geek.libncalendar.calendar.Miui9Calendar>
 
 
 </LinearLayout>

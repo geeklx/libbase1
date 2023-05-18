@@ -61,11 +61,11 @@
 
 
 
-    <com.geek.ncalendar.view.WeekBar
+    <com.geek.libncalendar.view.WeekBar
         android:layout_width="match_parent"
         android:layout_height="wrap_content" />
 
-    <com.geek.ncalendar.calendar.EmuiCalendar
+    <com.geek.libncalendar.calendar.EmuiCalendar
         android:id="@+id/emuiCalendar"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
@@ -87,7 +87,7 @@
                 android:textSize="13sp" />
 
         </androidx.core.widget.NestedScrollView>
-    </com.geek.ncalendar.calendar.EmuiCalendar>
+    </com.geek.libncalendar.calendar.EmuiCalendar>
 
 
 </LinearLayout>

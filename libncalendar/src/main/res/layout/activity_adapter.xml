@@ -43,13 +43,13 @@
                 android:background="@mipmap/youxz" />
         </LinearLayout>
 
-        <com.geek.ncalendar.view.WeekBar
+        <com.geek.libncalendar.view.WeekBar
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="20dp"
             android:layout_marginBottom="10dp" />
 
-        <com.geek.ncalendar.calendar.MonthCalendar
+        <com.geek.libncalendar.calendar.MonthCalendar
             android:id="@+id/miui10Calendar"
             android:layout_width="match_parent"
             android:layout_height="300dp"

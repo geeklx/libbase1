@@ -25,13 +25,13 @@
 
     </LinearLayout>
 
-    <com.geek.ncalendar.view.WeekBar
+    <com.geek.libncalendar.view.WeekBar
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="50dp"/>
 
 
-    <com.geek.ncalendar.calendar.Miui10Calendar
+    <com.geek.libncalendar.calendar.Miui10Calendar
         android:id="@+id/miui10Calendar"
         android:layout_width="match_parent"
         android:layout_height="match_parent">
@@ -58,7 +58,7 @@
         </androidx.core.widget.NestedScrollView>
 
 
-    </com.geek.ncalendar.calendar.Miui10Calendar>
+    </com.geek.libncalendar.calendar.Miui10Calendar>
 
 
 </LinearLayout>

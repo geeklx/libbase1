@@ -11,8 +11,6 @@ import androidx.appcompat.app.AppCompatActivity;
 import com.blankj.utilcode.util.AppUtils;
 import com.blankj.utilcode.util.ToastUtils;
 import com.blankj.utilcode.util.Utils;
-import com.geek.ncalendar.demo.activity.NcalendarActivity;
-import com.yanbo.libscreen.demo.DlnaMainActivity;
 //import com.app.hubert.guide.newbieguide.FirstActivity;
 //import com.blankj.utilcode.util.Utils;
 //import com.example.slbyanzheng.ZhiwenActtivity;
@@ -251,7 +249,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 /*日历库
                  *项目地址: https://github.com/yannecer/NCalendar*/
                 startActivity(new Intent(getPackageName() + ".hs.act.slbapp.NcalendarActivity"));
-                startActivity(new Intent(this, NcalendarActivity.class));
+//                startActivity(new Intent(this, NcalendarActivity.class));
                 break;
             default:
                 break;

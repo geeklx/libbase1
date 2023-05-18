@@ -5,7 +5,7 @@
 
     android:orientation="vertical">
 
-    <com.geek.ncalendar.calendar.EmuiCalendar
+    <com.geek.libncalendar.calendar.EmuiCalendar
         android:layout_width="match_parent"
         android:layout_height="match_parent">
 
@@ -27,6 +27,6 @@
 
         </androidx.core.widget.NestedScrollView>
 
-    </com.geek.ncalendar.calendar.EmuiCalendar>
+    </com.geek.libncalendar.calendar.EmuiCalendar>
 
 </LinearLayout>
