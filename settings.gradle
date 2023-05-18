@@ -70,6 +70,7 @@ include ':libviewpagerbottomsheet'
 include ':libyanzheng'
 include ':libzxinglite'
 include ':libscreen'
+include ':libncalendar'
 //
 //include ':libsupertextview'
 //include ':libgoodview'

@@ -20,6 +20,7 @@ dependencies {
     api project(':libyanzheng')
     api project(':libzxinglite')
     api project(':libscreen')
+    api project(':libncalendar')
     //
 //    api project(':libsupertextview')
 //    api project(':libgoodview')

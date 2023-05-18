@@ -11,6 +11,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import com.blankj.utilcode.util.AppUtils;
 import com.blankj.utilcode.util.ToastUtils;
 import com.blankj.utilcode.util.Utils;
+import com.geek.ncalendar.demo.activity.NcalendarActivity;
 import com.yanbo.libscreen.demo.DlnaMainActivity;
 //import com.app.hubert.guide.newbieguide.FirstActivity;
 //import com.blankj.utilcode.util.Utils;
@@ -27,7 +28,7 @@ import com.yanbo.libscreen.demo.DlnaMainActivity;
  */
 public class MainActivity extends AppCompatActivity implements View.OnClickListener {
     private Button button, button1, button2, button3, button4, button5, button6, button7, button8, button9,
-            button10, button11, button12, button13, button14, button15, button16, button17, button18, button19, button20;
+            button10, button11, button12, button13, button14, button15, button16, button17, button18, button19, button20,button21;
 
     private TextView tv1;
 
@@ -58,6 +59,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         button18 = findViewById(R.id.button18);
         button19 = findViewById(R.id.button19);
         button20 = findViewById(R.id.button20);
+        button21 = findViewById(R.id.button21);
         button.setOnClickListener(this);
         button1.setOnClickListener(this);
         button2.setOnClickListener(this);
@@ -79,6 +81,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         button18.setOnClickListener(this);
         button19.setOnClickListener(this);
         button20.setOnClickListener(this);
+        button21.setOnClickListener(this);
 //        new PgyerSDKManager.Init()
 //                .setContext(getApplicationContext()) //设置上下问对象
 //                .start();
@@ -243,6 +246,12 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                  *项目地址: https://github.com/yanbo469/VideoDlnaScreen*/
                 startActivity(new Intent(getPackageName() + ".hs.act.slbapp.DlnaMainActivity"));
 //                startActivity(new Intent(this, DlnaMainActivity.class));
+                break;
+                case R.id.button21:
+                /*日历库
+                 *项目地址: https://github.com/yannecer/NCalendar*/
+                startActivity(new Intent(getPackageName() + ".hs.act.slbapp.NcalendarActivity"));
+                startActivity(new Intent(this, NcalendarActivity.class));
                 break;
             default:
                 break;
