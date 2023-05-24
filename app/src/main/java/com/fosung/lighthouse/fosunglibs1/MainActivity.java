@@ -11,6 +11,8 @@ import androidx.appcompat.app.AppCompatActivity;
 import com.blankj.utilcode.util.AppUtils;
 import com.blankj.utilcode.util.ToastUtils;
 import com.blankj.utilcode.util.Utils;
+import com.fosung.lighthouse.fosunglibs1.sm4.SM4Utils;
+import com.lib.aliocr.widget.crop.Log;
 //import com.app.hubert.guide.newbieguide.FirstActivity;
 //import com.blankj.utilcode.util.Utils;
 //import com.example.slbyanzheng.ZhiwenActtivity;
@@ -26,7 +28,7 @@ import com.blankj.utilcode.util.Utils;
  */
 public class MainActivity extends AppCompatActivity implements View.OnClickListener {
     private Button button, button1, button2, button3, button4, button5, button6, button7, button8, button9,
-            button10, button11, button12, button13, button14, button15, button16, button17, button18, button19, button20,button21;
+            button10, button11, button12, button13, button14, button15, button16, button17, button18, button19, button20, button21;
 
     private TextView tv1;
 
@@ -34,6 +36,11 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+        String result = "http://www.abc.com?k=D34D0AQ9tcjXuxVGcsw6WBHIjvADSX+x8Zm7O1jnNcXb/opqDZi+O1rXSjm0wqfw";
+        String s = result.substring(result.lastIndexOf("k=")+2);
+        SM4Utils sm4 = new SM4Utils();
+        String results = sm4.decryptData_ECB(s);
+        Log.e("aaaaa明文1" + results);
         //
         Utils.init(App11.get());// com.blankj:utilcode:1.17.3
         button = findViewById(R.id.button);
@@ -245,7 +252,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 startActivity(new Intent(getPackageName() + ".hs.act.slbapp.DlnaMainActivity"));
 //                startActivity(new Intent(this, DlnaMainActivity.class));
                 break;
-                case R.id.button21:
+            case R.id.button21:
                 /*日历库
                  *项目地址: https://github.com/yannecer/NCalendar*/
                 startActivity(new Intent(getPackageName() + ".hs.act.slbapp.NcalendarActivity"));

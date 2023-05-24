@@ -29,6 +29,15 @@
             android:textColor="#FFFFFF" />
 
         <Button
+            android:id="@+id/btn_scan_defaulttest"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="10dp"
+            android:background="#6200EE"
+            android:text="默认扫描自己拿到结果"
+            android:textColor="#FFFFFF" />
+
+        <Button
             android:id="@+id/btn_scan_custom"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
