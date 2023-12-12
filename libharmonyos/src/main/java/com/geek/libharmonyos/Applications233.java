@@ -1,4 +1,4 @@
-package com.fosung.lighthouse.fosunglibs1;
+package com.geek.libharmonyos;
 
 import android.app.Application;
 
@@ -6,7 +6,7 @@ import ohos.abilityshell.HarmonyApplication;
 
 
 //public class Applications extends Application {
-public class Applications extends HarmonyApplication {
+public class Applications233 extends HarmonyApplication {
 
 
     @Override

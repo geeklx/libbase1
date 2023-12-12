@@ -11,8 +11,6 @@ import androidx.appcompat.app.AppCompatActivity;
 import com.blankj.utilcode.util.AppUtils;
 import com.blankj.utilcode.util.ToastUtils;
 import com.blankj.utilcode.util.Utils;
-import com.geek.videodlnascreen.DeviceListActivity12;
-import com.geek.videodlnascreen.DlnaMainActivity;
 
 //import com.app.hubert.guide.newbieguide.FirstActivity;
 //import com.blankj.utilcode.util.Utils;
@@ -243,7 +241,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
             case R.id.button20:
                 /*投屏库
                  *项目地址: https://github.com/yanbo469/VideoDlnaScreen*/
-                startActivity(new Intent(this, DlnaMainActivity.class));
+//                startActivity(new Intent(this, DlnaMainActivity.class));
                 break;
             default:
                 break;

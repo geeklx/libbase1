@@ -76,3 +76,4 @@ include ':libzxinglite'
 //
 //include ':libsupertextview'
 //include ':libgoodview'
+include ':libharmonyos'
