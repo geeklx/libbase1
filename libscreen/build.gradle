@@ -1,0 +1,41 @@
+apply from: "${rootDir.path}/gradle/publish.gradle"
+apply from: "${rootDir.path}/gradle/base.gradle"
+def librarys = rootProject.ext.dependencies //依赖
+android {
+    packagingOptions {
+        exclude 'META-INF/beans.xml'
+    }
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+        }
+    }
+
+}
+dependencies {
+    implementation fileTree(dir: 'libs', include: ['*.jar'])
+    //common url
+    implementation librarys.constraintlayout
+    implementation librarys.appcompatV7
+    implementation librarys.recyclerviewv7
+    implementation 'androidx.coordinatorlayout:coordinatorlayout:1.2.0'
+    implementation 'com.github.CymChad:BaseRecyclerViewAdapterHelper:2.9.40'
+    implementation 'com.alibaba:fastjson:1.2.70'
+    implementation 'com.tencent:mmkv-static:1.2.9'
+    compileOnly group: 'javax.enterprise', name: 'cdi-api', version: '2.0'
+    // Cling library
+    api 'org.fourthline.cling:cling-core:2.1.1'
+    api 'org.fourthline.cling:cling-support:2.1.1'
+    // Jetty library
+    api 'org.eclipse.jetty:jetty-server:8.1.21.v20160908'
+    api 'org.eclipse.jetty:jetty-servlet:8.1.21.v20160908'
+    api 'org.eclipse.jetty:jetty-client:8.1.21.v20160908'
+
+    // 自己封装的工具库
+    api 'org.greenrobot:eventbus:3.3.1'
+}
+
+android {
+    namespace 'com.yanbo.libscreen'
+}

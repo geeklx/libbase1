@@ -25,6 +25,11 @@
             android:screenOrientation="portrait"
             android:theme="@style/MNScanCaptureTheme" />
         <activity
+            android:name="com.geek.libmlkitscanner.ui.ScanPreviewActivity1"
+            android:exported="true"
+            android:screenOrientation="portrait"
+            android:theme="@style/MNScanCaptureTheme" />
+        <activity
             android:name="com.geek.libmlkitscanner.ui.CustomConfigActivity"
             android:exported="true"
             android:screenOrientation="portrait" />

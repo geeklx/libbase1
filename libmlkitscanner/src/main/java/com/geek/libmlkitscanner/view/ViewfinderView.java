@@ -87,7 +87,8 @@ public final class ViewfinderView extends View {
         Resources resources = getResources();
         maskColor = resources.getColor(R.color.mn_scan_viewfinder_mask);
         laserColor = resources.getColor(R.color.mn_scan_viewfinder_laser);
-        hintMsg = "扫二维码/条形码";
+//        hintMsg = "扫二维码/条形码";
+        hintMsg = "扫二维码";
         //文字
         paintText.setColor(Color.WHITE);
         paintText.setTextSize(CommonUtils.sp2px(getContext(), hintTextSize));

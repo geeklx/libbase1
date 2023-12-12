@@ -3,10 +3,11 @@ package com.fosung.lighthouse.fosunglibs1;
 import android.app.Application;
 
 import ohos.abilityshell.HarmonyApplication;
+//import com.geek.libnsfw.ktl.NSFWHelper;
 
 
-//public class Applications extends Application {
-public class Applications extends HarmonyApplication {
+public class Applications extends Application {
+//public class Applications extends HarmonyApplication {
 
 
     @Override

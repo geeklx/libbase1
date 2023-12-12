@@ -22,6 +22,8 @@ dependencies {
     api project(':libharmonyos')
 //    api project(':lib_screen')
 //    api project(':libvdeodlnascreen')
+    api project(':libscreen')
+    api project(':libncalendar')
     //
 //    api project(':libsupertextview')
 //    api project(':libgoodview')

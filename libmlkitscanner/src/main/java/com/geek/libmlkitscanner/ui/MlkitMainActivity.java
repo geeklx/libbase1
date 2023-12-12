@@ -2,7 +2,6 @@ package com.geek.libmlkitscanner.ui;
 
 import android.Manifest;
 import android.content.ContentValues;
-import android.content.Context;
 import android.content.Intent;
 import android.content.pm.PackageManager;
 import android.graphics.Bitmap;
@@ -13,7 +12,6 @@ import android.os.Build;
 import android.os.Bundle;
 import android.provider.MediaStore;
 import android.text.TextUtils;
-import android.util.Base64;
 import android.util.Log;
 import android.view.View;
 import android.widget.AdapterView;
@@ -33,22 +31,16 @@ import com.geek.libmlkitscanner.callback.act.MNScanCallback;
 import com.geek.libmlkitscanner.new60.MlkitMainActivity1;
 import com.geek.libmlkitscanner.utils.ZXingUtils;
 
-import java.io.ByteArrayOutputStream;
-import java.io.File;
 import java.io.FileNotFoundException;
-import java.io.FileOutputStream;
-import java.io.IOException;
 import java.io.OutputStream;
 import java.util.ArrayList;
-
-import cc.shinichi.library.ImagePreview;
-import cc.shinichi.library.tool.ui.ToastUtil;
 
 
 //https://github.com/ITxiaoguang/MLKitScanner
 public class MlkitMainActivity extends AppCompatActivity implements View.OnClickListener {
 
     private Button btn_scan_default0;
+    private Button btn_scan_defaulttest;
     private Button btnScanDefault;
     private Button btnScanCustom;
     private TextView tvResults;
@@ -77,8 +69,10 @@ public class MlkitMainActivity extends AppCompatActivity implements View.OnClick
 
     private void initView() {
         btn_scan_default0 = (Button) findViewById(R.id.btn_scan_default0);
+        btn_scan_defaulttest = (Button) findViewById(R.id.btn_scan_defaulttest);
         btnScanDefault = (Button) findViewById(R.id.btn_scan_default);
         btnScanCustom = (Button) findViewById(R.id.btn_scan_custom);
+        btn_scan_defaulttest.setOnClickListener(this);
         btn_scan_default0.setOnClickListener(this);
         btnScanDefault.setOnClickListener(this);
         btnScanCustom.setOnClickListener(this);
@@ -190,7 +184,10 @@ public class MlkitMainActivity extends AppCompatActivity implements View.OnClick
         } else if (view.getId() == R.id.btn_scan_default0) {
             //适配低端手机
             startActivity(new Intent(this, MlkitMainActivity1.class));
-        }else if (view.getId() == R.id.btn_scan_custom) {
+        } else if (view.getId() == R.id.btn_scan_defaulttest) {
+            //适配低端手机
+            startActivity(new Intent(this, ScanPreviewActivity1.class));
+        } else if (view.getId() == R.id.btn_scan_custom) {
             //跳转到自定义界面
             startActivity(new Intent(this, CustomConfigActivity.class));
         }
@@ -212,7 +209,7 @@ public class MlkitMainActivity extends AppCompatActivity implements View.OnClick
                     resultStr.append("\n");
                 }
                 tvResults.setText(resultStr.toString());
-                Log.e("----saomiao----", "handlerResult: "+resultStr.toString());
+                Log.e("----saomiao----", "handlerResult: " + resultStr.toString());
                 break;
             case MNScanManager.RESULT_FAIL:
                 String resultError = data.getStringExtra(MNScanManager.INTENT_KEY_RESULT_ERROR);
@@ -269,9 +266,9 @@ public class MlkitMainActivity extends AppCompatActivity implements View.OnClick
         try {
             OutputStream outputStream = getContentResolver().openOutputStream(insertUri, "rw");
             if (toBitmap.compress(Bitmap.CompressFormat.JPEG, 80, outputStream)) {
-                ToastUtil.getInstance().showLong(this,"保存成功");
+                Toast.makeText(this, "保存成功", Toast.LENGTH_LONG);
             } else {
-                ToastUtil.getInstance().showLong(this,"保存失败");
+                Toast.makeText(this, "保存失败", Toast.LENGTH_LONG);
             }
         } catch (FileNotFoundException e) {
             e.printStackTrace();

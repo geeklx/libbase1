@@ -1,9 +1,0 @@
-apply from: "${rootDir.path}/gradle/publish.gradle"
-apply from: "${rootDir.path}/gradle/base.gradle"
-def librarys = rootProject.ext.dependencies //依赖
-dependencies {
-    api project(':lib_screen')
-    compileOnly group: 'javax.enterprise', name: 'cdi-api', version: '2.0'
-    implementation 'com.github.CymChad:BaseRecyclerViewAdapterHelper:2.9.40'
-
-}
