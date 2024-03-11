@@ -83,12 +83,12 @@ public class SimpleCameraX {
 
     private final Bundle mCameraBundle;
 
-    public static SimpleCameraX of() {
-        return new SimpleCameraX();
+    public static SimpleCameraX of(String intent) {
+        return new SimpleCameraX(intent);
     }
 
-    private SimpleCameraX() {
-        mCameraIntent = new Intent("hs.act.slbapp.PictureCameraActivity2");
+    private SimpleCameraX(String intent) {
+        mCameraIntent = new Intent(intent);
         mCameraBundle = new Bundle();
     }
 

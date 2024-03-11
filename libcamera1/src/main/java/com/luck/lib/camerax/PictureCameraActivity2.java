@@ -166,7 +166,12 @@ public class PictureCameraActivity2 extends AppCompatActivity implements IObtain
             public void onPictureSuccess(@NonNull String url) {
 //                handleCameraSuccess();
                 // 打开裁剪bufen
-                setupViews(getIntent());
+                if (!isfistin) {
+                    isfistin = true;
+                    setupViews(getIntent());
+                } else {
+
+                }
                 SelectorConfig selectorConfig = SelectorProviders.getInstance().getSelectorConfig();
 //                setImageData(getIntent(), selectorConfig.getSelectedResult());
                 // 相机事件回调处理
@@ -219,6 +224,8 @@ public class PictureCameraActivity2 extends AppCompatActivity implements IObtain
 
 
     }
+
+    private boolean isfistin;
 
 
     /**
@@ -552,8 +559,8 @@ public class PictureCameraActivity2 extends AppCompatActivity implements IObtain
             mLayoutScale = findViewById(R.id.layout_scale_wheel);
 
             setupAspectRatioWidget(intent);
-            setupRotateWidget();
-            setupScaleWidget();
+            setupRotateWidget();// 横向旋转滚轮bufen
+            setupScaleWidget();// 横向放大缩小滚轮bufen
             setupStatesWrapper();
         }
     }
@@ -748,9 +755,12 @@ public class PictureCameraActivity2 extends AppCompatActivity implements IObtain
         }
 
         LinearLayout wrapperAspectRatioList = findViewById(R.id.layout_aspect_ratio);
+        wrapperAspectRatioList.removeAllViews();
+//        wrapperAspectRatioList.setVisibility(View.VISIBLE);
 
         FrameLayout wrapperAspectRatio;
         AspectRatioTextView aspectRatioTextView;
+        mCropAspectRatioViews = new ArrayList<>();
         LinearLayout.LayoutParams lp = new LinearLayout.LayoutParams(0, ViewGroup.LayoutParams.MATCH_PARENT);
         lp.weight = 1;
         for (AspectRatio aspectRatio : aspectRatioList) {
@@ -764,7 +774,7 @@ public class PictureCameraActivity2 extends AppCompatActivity implements IObtain
             mCropAspectRatioViews.add(wrapperAspectRatio);
         }
 
-        mCropAspectRatioViews.get(aspectRationSelectedByDefault).setSelected(true);
+        mCropAspectRatioViews.get(aspectRationSelectedByDefault).setSelected(true);// 选中原始比例bufen
 
         for (ViewGroup cropAspectRatioView : mCropAspectRatioViews) {
             cropAspectRatioView.setOnClickListener(new View.OnClickListener() {
@@ -971,7 +981,7 @@ public class PictureCameraActivity2 extends AppCompatActivity implements IObtain
         }
 //        ((RelativeLayout) findViewById(R.id.ucrop_photobox)).removeView(mBlockingView);
         ((RelativeLayout) findViewById(R.id.ucrop_photobox)).addView(mBlockingView);
-        //
+        // 重置裁剪页面参数bufen
         rl1.setVisibility(View.VISIBLE);
         mCameraView.setVisibility(View.GONE);
     }

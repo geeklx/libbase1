@@ -46,7 +46,7 @@
         <ImageView
             style="@style/ucrop_ImageViewWidgetIcon"
             android:src="@drawable/ucrop_ic_angle"
-            android:tint="@color/ucrop_color_widget_rotate_angle" />
+            app:tint="@color/ucrop_color_widget_rotate_angle" />
 
     </FrameLayout>
 

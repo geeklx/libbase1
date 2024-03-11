@@ -26,10 +26,12 @@
 
         <include
             android:id="@+id/layout_rotate_wheel"
+            android:visibility="gone"
             layout="@layout/ucrop_layout_rotate_wheel" />
 
         <include
             android:id="@+id/layout_scale_wheel"
+            android:visibility="gone"
             layout="@layout/ucrop_layout_scale_wheel" />
 
     </FrameLayout>
