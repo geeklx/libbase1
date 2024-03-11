@@ -79,4 +79,20 @@ dependencies {
 //    implementation 'com.blankj:utilcodex:1.30.6'
     implementation 'com.github.geeklx.libbase2:libutils:2.5.9'
 //    implementation 'com.github.geeklx.libbase2:libgeek:2.2.2'//核心库
+
+
+    api 'io.github.lucksiege:pictureselector:v3.10.6'
+    // image compress library (Not necessary)
+    api 'io.github.lucksiege:compress:v3.10.6'
+    // uCrop library (Not necessary)
+    api 'io.github.lucksiege:ucrop:v3.10.6'
+    // simple camerax library (Not necessary)
+    api 'io.github.lucksiege:camerax:v3.10.6'
+
+
+
+
+    
+
+
 }
