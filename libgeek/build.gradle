@@ -2,8 +2,8 @@ apply from: "${rootDir.path}/gradle/publish.gradle"
 apply from: "${rootDir.path}/gradle/base.gradle"
 def librarys = rootProject.ext.dependencies //
 dependencies {
+    api project(':libbroccoli1')
     //
-    api project(':libBroccoli')
     api project(':libdkplayer')
     api project(':libEncryption')
     api project(':libfacedetect')
@@ -24,6 +24,7 @@ dependencies {
 //    api project(':libvdeodlnascreen')
     api project(':libscreen')
     api project(':libncalendar')
+    api project(':libcamera1')
     //
 //    api project(':libsupertextview')
 //    api project(':libgoodview')

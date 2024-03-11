@@ -53,7 +53,7 @@ include ':libsCenterNew',
 
 // commonlibs
 include ':libgeek'
-include ':libBroccoli'
+include ':libbroccoli1'
 include ':libdkplayer'
 include ':libEncryption'
 include ':libfacedetect'
@@ -75,3 +75,4 @@ include ':libncalendar'
 //include ':libsupertextview'
 //include ':libgoodview'
 include ':libharmonyos'
+include ':libcamera1'

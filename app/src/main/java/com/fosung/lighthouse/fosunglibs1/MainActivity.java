@@ -45,7 +45,7 @@ import java.util.Date;
  */
 public class MainActivity extends AppCompatActivity implements View.OnClickListener {
     private Button button, button1, button2, button3, button4, button5, button6, button7, button8, button9,
-            button10, button11, button12, button13, button14, button15, button16, button17, button18, button19, button20, button21;
+            button10, button11, button12, button13, button14, button15, button16, button17, button18, button19, button20, button21, button22;
 
     private TextView tv1;
 
@@ -119,6 +119,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         button19 = findViewById(R.id.button19);
         button20 = findViewById(R.id.button20);
         button21 = findViewById(R.id.button21);
+        button22 = findViewById(R.id.button22);
         button.setOnClickListener(this);
         button1.setOnClickListener(this);
         button2.setOnClickListener(this);
@@ -141,6 +142,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         button19.setOnClickListener(this);
         button20.setOnClickListener(this);
         button21.setOnClickListener(this);
+        button22.setOnClickListener(this);
 //        new PgyerSDKManager.Init()
 //                .setContext(getApplicationContext()) //设置上下问对象
 //                .start();
@@ -384,6 +386,14 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 //                startActivity(new Intent(getPackageName() + ".hs.act.slbapp.NcalendarActivity"));
 //                startActivity(new Intent(this, NcalendarActivity.class));
                 qrCode();
+                break;
+            case R.id.button22:
+                /*扫描库
+                 *项目地址: https://github.com/LuckSiege/PictureSelector*/
+//                startActivity(new Intent(getPackageName() + ".hs.act.slbapp.NcalendarActivity"));
+                startActivity(new Intent(getPackageName() + ".hs.act.slbapp.SmCameraAct1"));
+//                startActivity(new Intent(this, NcalendarActivity.class));
+
                 break;
             default:
                 break;
