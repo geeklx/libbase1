@@ -8,7 +8,7 @@
 
     <application>
         <activity
-            android:name=".activity.MainActivityfdt"
+            android:name="com.geek.libfacedetect.activity.MainActivityfdt"
             android:exported="true"
             android:theme="@style/Theme.AppCompat.Light.NoActionBar">
             <intent-filter>
@@ -17,34 +17,34 @@
             </intent-filter>
         </activity>
         <activity
-            android:name=".activity.DetectActivity11"
+            android:name="com.geek.libfacedetect.activity.DetectActivity11"
             android:screenOrientation="landscape"
             android:theme="@style/Theme.AppCompat.Light.NoActionBar" />
         <activity
-            android:name=".activity.DetectActivity12"
+            android:name="com.geek.libfacedetect.activity.DetectActivity12"
             android:screenOrientation="landscape"
             android:theme="@style/Theme.AppCompat.Light.NoActionBar" />
-        <activity android:name=".activity.ViewDataActivityfdt" />
-        <activity android:name=".activity.FdActivity" />
+        <activity android:name="com.geek.libfacedetect.activity.ViewDataActivityfdt" />
+        <activity android:name="com.geek.libfacedetect.activity.FdActivity" />
         <activity
-            android:name=".activity.DetectActivity21"
+            android:name="com.geek.libfacedetect.activity.DetectActivity21"
             android:screenOrientation="portrait"
             android:theme="@style/Theme.AppCompat.Light.NoActionBar" />
         <activity
-            android:name=".activity.DetectActivity22"
+            android:name="com.geek.libfacedetect.activity.DetectActivity22"
             android:screenOrientation="portrait"
             android:theme="@style/Theme.AppCompat.Light.NoActionBar" />
         <activity
-            android:name=".activity.DetectActivity31"
+            android:name="com.geek.libfacedetect.activity.DetectActivity31"
             android:screenOrientation="portrait"
             android:theme="@style/Theme.AppCompat.Light.NoActionBar" />
         <activity
-            android:name=".activity.DetectActivity32"
+            android:name="com.geek.libfacedetect.activity.DetectActivity32"
             android:screenOrientation="portrait"
             android:theme="@style/Theme.AppCompat.Light.NoActionBar" />
-        <activity android:name=".activity.RegisterActivityfdt" />
+        <activity android:name="com.geek.libfacedetect.activity.RegisterActivityfdt" />
         <activity
-            android:name=".activity.FaceComparisonActivity"
+            android:name="com.geek.libfacedetect.activity.FaceComparisonActivity"
             android:exported="true"
             android:screenOrientation="landscape"
             android:theme="@style/Theme.AppCompat.Light.NoActionBar">

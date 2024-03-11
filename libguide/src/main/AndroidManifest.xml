@@ -3,21 +3,21 @@
     <application
         android:allowBackup="true"
         android:supportsRtl="true">
-        <activity android:name=".newbieguide.BieGuideMainActivity" />
-        <activity android:name=".newbieguide.TestFragmentActivity" />
-        <activity android:name=".newbieguide.GridViewActivity" />
+        <activity android:name="com.app.hubert.guide.newbieguide.BieGuideMainActivity" />
+        <activity android:name="com.app.hubert.guide.newbieguide.TestFragmentActivity" />
+        <activity android:name="com.app.hubert.guide.newbieguide.GridViewActivity" />
         <activity
-            android:name=".newbieguide.FirstActivity"
+            android:name="com.app.hubert.guide.newbieguide.FirstActivity"
             android:exported="true">
             <intent-filter>
                 <action android:name="${applicationId}.hs.act.slbapp.FirstActivity" />
                 <category android:name="android.intent.category.DEFAULT" />
             </intent-filter>
         </activity>
-        <activity android:name=".newbieguide.RecyclerViewActivity" />
-        <activity android:name=".newbieguide.SimpleGuideViewActivity" />
-        <activity android:name=".guideview.newguideview.SimpleGuideViewActivity1" />
-        <activity android:name=".newbieguide.ScrollViewActivity" />
+        <activity android:name="com.app.hubert.guide.newbieguide.RecyclerViewActivity" />
+        <activity android:name="com.app.hubert.guide.newbieguide.SimpleGuideViewActivity" />
+        <activity android:name="com.app.hubert.guide.guideview.newguideview.SimpleGuideViewActivity1" />
+        <activity android:name="com.app.hubert.guide.newbieguide.ScrollViewActivity" />
     </application>
 
 </manifest>

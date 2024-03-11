@@ -7,9 +7,6 @@ import com.lib.lock.gesture.content.SPManager;
 import java.util.List;
 
 
-
-
-
 public class PatternHelper {
     public static final int MAX_SIZE = 4;
     public static final int MAX_TIMES = 5;

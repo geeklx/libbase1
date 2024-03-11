@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    tools:context="com.geek.libviewpagerbottomsheet.activity.MainActivitySheet">
+    tools:context="com.geek.libviewpagerbottomsheet.coms.geek.libviewpagerbottomsheet.activity.MainActivitySheet">
 
     <RelativeLayout
         android:layout_width="match_parent"
@@ -72,7 +72,7 @@
             android:background="@color/white"
             android:fillViewport="true"
             android:orientation="vertical"
-            app:layout_behavior="com.geek.libviewpagerbottomsheet.ViewPagerBottomSheetBehavior"
+            app:layout_behavior="com.geek.libviewpagerbottomsheet.coms.geek.libviewpagerbottomsheet.ViewPagerBottomSheetBehavior"
             app:layout_insetEdge="top">
 
             <ImageView

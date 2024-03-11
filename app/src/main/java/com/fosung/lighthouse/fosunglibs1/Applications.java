@@ -1,8 +1,6 @@
 package com.fosung.lighthouse.fosunglibs1;
 
 import android.app.Application;
-
-import ohos.abilityshell.HarmonyApplication;
 //import com.geek.libnsfw.ktl.NSFWHelper;
 
 

@@ -6,6 +6,6 @@ package com.geek.libocr.base;
  */
 public interface IScanner {
 
-    com.geek.libocr.base.Result scan(byte[] data, int width, int height) throws Exception;
+    Result scan(byte[] data, int width, int height) throws Exception;
 
 }

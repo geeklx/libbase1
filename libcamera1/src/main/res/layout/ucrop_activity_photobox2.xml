@@ -56,7 +56,7 @@
                 tools:background="@drawable/ucrop_vector_ic_crop"
                 tools:ignore="ContentDescription,MissingPrefix" />
 
-            <com.yalantis.ucrop.view.UCropView
+            <coms.yalantis.ucrop.view.UCropView
                 android:id="@+id/ucrop"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
@@ -73,7 +73,7 @@
             tools:visibility="visible" />
     </RelativeLayout>
 
-    <com.luck.lib.camerax.CustomCameraView2
+    <coms.luck.lib.camerax.CustomCameraView2
         android:id="@+id/customCameraView1"
         android:layout_width="match_parent"
         android:layout_height="match_parent" />

@@ -25,7 +25,7 @@ import okhttp3.RequestBody;
  * https://github.com/wzx54321/XinFrameworkLib
  */
 
-public class OCRModel implements OcrContact.M{
+public class OCRModel implements OcrContact.M {
 
 
     @Override

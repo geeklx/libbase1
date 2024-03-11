@@ -10,8 +10,6 @@ import retrofit2.http.Body;
 import retrofit2.http.Headers;
 import retrofit2.http.POST;
 
-import static com.lib.aliocr.common.Api.path;
-
 /**
  * 作者：xin on 2018/7/9 0009 15:03
  * <p>
@@ -22,7 +20,7 @@ import static com.lib.aliocr.common.Api.path;
 public interface MyApiManager {
 
 
-    @POST(path)
+    @POST(Api.path)
     @Headers({"Authorization: APPCODE " + Api.APPCODE})
     Observable<RepOutput> authCard(@Body RequestBody body);
 }

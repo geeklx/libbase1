@@ -16,7 +16,7 @@
         android:usesPermissionFlags="neverForLocation" />
     <application>
         <activity
-            android:name="com.geek.libnsfw.NsfwAct"
+            android:name=".NsfwAct"
             android:exported="true">
             <intent-filter>
                 <action android:name="${applicationId}.hs.act.slbapp.NsfwAct" />

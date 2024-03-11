@@ -1,12 +1,9 @@
 package com.geek.libmlkitscanner.new60;
 
 import android.app.Activity;
-import android.bluetooth.le.ScanCallback;
 import android.content.Intent;
 
 import com.geek.libmlkitscanner.R;
-import com.geek.libmlkitscanner.callback.act.ActResultRequest;
-import com.geek.libmlkitscanner.callback.act.MNScanCallback;
 
 public class ScanManager1 {
 

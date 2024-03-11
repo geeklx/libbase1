@@ -1,7 +1,5 @@
 package com.geek.libharmonyos;
 
-import android.app.Application;
-
 import ohos.abilityshell.HarmonyApplication;
 
 

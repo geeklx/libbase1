@@ -11,7 +11,8 @@ class KtApp : Application() {
 
         //扫描前必须初始化
         NSFWHelper.initHelper(
-            context = this)
+            context = this
+        )
 
         //初始化api原型
         /* NSFW初始化函数 内部日志默认关闭，调试环境可使用openDebugLog()开启日志*/

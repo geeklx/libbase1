@@ -1,7 +1,5 @@
 package com.geek.libpicturerecognitiontext;
 
-import static com.geek.libpicturerecognitiontext.SDUtils.assets2SD;
-
 import android.Manifest;
 import android.content.Context;
 import android.content.Intent;
@@ -162,7 +160,7 @@ public class PicturecognitionTextActivity extends AppCompatActivity implements V
 
         //Android6.0之前安装时就能复制，6.0之后要先请求权限，所以6.0以上的这个方法无用。
         LANGUAGE_PATH= getSDPath(PicturecognitionTextActivity.this) + File.separator + DEFAULT_LANGUAGE_NAME;
-        assets2SD(getApplicationContext(), LANGUAGE_PATH, DEFAULT_LANGUAGE_NAME);
+        SDUtils.assets2SD(getApplicationContext(), LANGUAGE_PATH, DEFAULT_LANGUAGE_NAME);
 
 
         //一个可以双指缩放移动的控件，解决滑动冲突
@@ -240,7 +238,7 @@ public class PicturecognitionTextActivity extends AppCompatActivity implements V
                 if (!checkTraineddataExists()) {
                     text += LANGUAGE_PATH + "不存在，开始复制\r\n";
                     Log.i(TAG, "run: " + LANGUAGE_PATH + "不存在，开始复制\r\n");
-                    assets2SD(getApplicationContext(), LANGUAGE_PATH, DEFAULT_LANGUAGE_NAME);
+                    SDUtils.assets2SD(getApplicationContext(), LANGUAGE_PATH, DEFAULT_LANGUAGE_NAME);
                 }
                 text += LANGUAGE_PATH + "已经存在，开始识别\r\n";
                 Log.i(TAG, "run: " + LANGUAGE_PATH + "已经存在，开始识别\r\n");
@@ -299,7 +297,7 @@ public class PicturecognitionTextActivity extends AppCompatActivity implements V
             case PERMISSION_REQUEST_CODE:
                 if (grantResults.length > 0 && grantResults[0] == PackageManager.PERMISSION_GRANTED) {
                     Log.i(TAG, "onRequestPermissionsResult: copy");
-                    assets2SD(getApplicationContext(), LANGUAGE_PATH, DEFAULT_LANGUAGE_NAME);
+                    SDUtils.assets2SD(getApplicationContext(), LANGUAGE_PATH, DEFAULT_LANGUAGE_NAME);
                 }
                 break;
             default:

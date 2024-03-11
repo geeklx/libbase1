@@ -141,7 +141,7 @@ public class ScannerView extends FrameLayout implements Camera.PreviewCallback, 
                     height2 = w;
                 }
             }
-            com.geek.libocr.base.Result result = null;
+            Result result = null;
             if (scanner != null && result == null) {
                 try {
                     result = scanner.scan(tempData, width, height);
@@ -168,8 +168,8 @@ public class ScannerView extends FrameLayout implements Camera.PreviewCallback, 
                     for (Symbol sym : syms) {
                         final String s = android.os.Build.VERSION.SDK_INT >= android.os.Build.VERSION_CODES.KITKAT ? new String(sym.getDataBytes(), StandardCharsets.UTF_8) : sym.getData();
                         if (!TextUtils.isEmpty(s)) {
-                            result = new com.geek.libocr.base.Result();
-                            result.type = com.geek.libocr.base.Result.TYPE_CODE;
+                            result = new Result();
+                            result.type = Result.TYPE_CODE;
                             result.data = s;
                             break;
                         }
@@ -181,8 +181,8 @@ public class ScannerView extends FrameLayout implements Camera.PreviewCallback, 
                 try {
                     PlanarYUVLuminanceSource source = new PlanarYUVLuminanceSource(tempData, width, height, 0, 0, width, height, false);
                     String s = getMultiFormatReader().decode(new BinaryBitmap(new HybridBinarizer(source)), hints0).getText();
-                    result = new com.geek.libocr.base.Result();
-                    result.type = com.geek.libocr.base.Result.TYPE_CODE;
+                    result = new Result();
+                    result.type = Result.TYPE_CODE;
                     result.data = s;
                 } catch (Exception e) {
                     Log.e(TAG, e.getMessage());
@@ -191,8 +191,8 @@ public class ScannerView extends FrameLayout implements Camera.PreviewCallback, 
                     try {
                         PlanarYUVLuminanceSource source = new PlanarYUVLuminanceSource(tempData2, width2, height2, 0, 0, width2, height2, false);
                         String s = getMultiFormatReader().decode(new BinaryBitmap(new HybridBinarizer(source)), hints0).getText();
-                        result = new com.geek.libocr.base.Result();
-                        result.type = com.geek.libocr.base.Result.TYPE_CODE;
+                        result = new Result();
+                        result.type = Result.TYPE_CODE;
                         result.data = s;
                     } catch (Exception e) {
                         Log.e(TAG, e.getMessage());
@@ -203,8 +203,8 @@ public class ScannerView extends FrameLayout implements Camera.PreviewCallback, 
                 try {
                     String s = BankCardUtils.decode(getBankCardAPI(), tempData, width, height);
                     if (!TextUtils.isEmpty(s)) {
-                        result = new com.geek.libocr.base.Result();
-                        result.type = com.geek.libocr.base.Result.TYPE_BANK_CARD;
+                        result = new Result();
+                        result.type = Result.TYPE_BANK_CARD;
                         result.data = s;
                     }
                 } catch (Exception e) {
@@ -214,8 +214,8 @@ public class ScannerView extends FrameLayout implements Camera.PreviewCallback, 
                     try {
                         String s = BankCardUtils.decode(getBankCardAPI(), tempData2, width2, height2);
                         if (!TextUtils.isEmpty(s)) {
-                            result = new com.geek.libocr.base.Result();
-                            result.type = com.geek.libocr.base.Result.TYPE_BANK_CARD;
+                            result = new Result();
+                            result.type = Result.TYPE_BANK_CARD;
                             result.data = s;
                         }
                     } catch (Exception e) {
@@ -336,7 +336,7 @@ public class ScannerView extends FrameLayout implements Camera.PreviewCallback, 
                 return;
             }
             if (isSaveBmp) {
-                Bitmap bmp = com.geek.libocr.base.Utils.nv21ToBitmap(data, previewWidth, previewHeight);
+                Bitmap bmp = Utils.nv21ToBitmap(data, previewWidth, previewHeight);
                 bmp = Bitmap.createBitmap(bmp, rect.left, rect.top, rect.width(), rect.height());
                 if (rotationCount != 0) {
                     // 旋转图片
@@ -344,13 +344,13 @@ public class ScannerView extends FrameLayout implements Camera.PreviewCallback, 
                     m.setRotate(rotationCount * 90, (float) bmp.getWidth() / 2, (float) bmp.getHeight() / 2);
                     bmp = Bitmap.createBitmap(bmp, 0, 0, bmp.getWidth(), bmp.getHeight(), m, true);
                 }
-                result.path = com.geek.libocr.base.Utils.saveBitmap(getContext(), bmp);
+                result.path = Utils.saveBitmap(getContext(), bmp);
                 if (TextUtils.isEmpty(result.path)) {
                     getOneMoreFrame();
                     return;
                 }
             }
-            final com.geek.libocr.base.Result result1 = result;
+            final Result result1 = result;
             //
             post(new Runnable() {//切换到主线程
                 @Override

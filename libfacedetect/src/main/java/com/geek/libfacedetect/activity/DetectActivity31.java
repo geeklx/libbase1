@@ -18,12 +18,10 @@ import com.geek.libfacedetect.db.UserInfo;
 import com.geek.libfacedetect.util.FaceMatcher;
 
 import org.opencv.android.CameraActivity;
-import org.opencv.android.CameraBridgeViewBase;
 import org.opencv.android.CameraBridgeViewBase3;
 import org.opencv.android.CameraBridgeViewBase3.CvCameraViewFrame;
 import org.opencv.android.CameraBridgeViewBase3.CvCameraViewListener2;
 import org.opencv.android.Utils;
-import org.opencv.core.Core;
 import org.opencv.core.Mat;
 import org.opencv.core.MatOfRect;
 import org.opencv.core.Rect;

@@ -32,7 +32,7 @@
             android:gravity="center"
             android:orientation="horizontal">
 
-            <com.luck.picture.lib.widget.MarqueeTextView
+            <coms.luck.picture.lib.widget.MarqueeTextView
                 android:id="@+id/ps_tv_title"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
@@ -69,7 +69,7 @@
             android:layout_alignEnd="@id/ps_rl_album_bg" />
 
 
-        <com.luck.picture.lib.widget.MediumBoldTextView
+        <coms.luck.picture.lib.widget.MediumBoldTextView
             android:id="@+id/ps_tv_cancel"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"

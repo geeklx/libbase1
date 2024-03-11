@@ -18,7 +18,7 @@
             </intent-filter>
         </activity>
         <activity
-            android:name="com.geek.libzxinglite.CaptureActivity"
+            android:name=".CaptureActivity"
             android:screenOrientation="portrait"
             android:theme="@style/CaptureTheme" />
 

@@ -52,7 +52,7 @@
 
     <application>
         <activity
-            android:name="com.geek.libcamera1.SmCameraAct1"
+            android:name=".SmCameraAct1"
             android:configChanges="orientation|keyboardHidden|screenSize"
             android:exported="true"
             android:screenOrientation="fullSensor">
@@ -62,12 +62,12 @@
             </intent-filter>
         </activity>
         <activity
-            android:name="com.luck.lib.camerax.PictureCameraActivity"
+            android:name="coms.luck.lib.camerax.PictureCameraActivity"
             android:configChanges="orientation|keyboardHidden|screenSize"
             android:theme="@style/Base.Theme.NoActionBar" />
 
         <activity
-            android:name="com.luck.lib.camerax.PictureCameraActivity2"
+            android:name="coms.luck.lib.camerax.PictureCameraActivity2"
             android:configChanges="orientation|keyboardHidden|screenSize"
             android:exported="true"
             android:theme="@style/Base.Theme.NoActionBar">
@@ -78,18 +78,18 @@
         </activity>
 
         <activity
-            android:name="com.yalantis.ucrop.UCropActivity"
+            android:name="coms.yalantis.ucrop.UCropActivity"
             android:configChanges="orientation|keyboardHidden|screenSize"
             android:screenOrientation="portrait"
             android:theme="@style/Theme.AppCompat.Light.NoActionBar" />
         <activity
-            android:name="com.yalantis.ucrop.UCropMultipleActivity"
+            android:name="coms.yalantis.ucrop.UCropMultipleActivity"
             android:configChanges="orientation|keyboardHidden|screenSize"
             android:screenOrientation="portrait"
             android:theme="@style/Theme.AppCompat.Light.NoActionBar" />
 
         <provider
-            android:name="com.luck.picture.lib.basic.PictureFileProvider"
+            android:name="coms.luck.picture.lib.basic.PictureFileProvider"
             android:authorities="${applicationId}.luckProvider"
             android:exported="false"
             android:grantUriPermissions="true">
@@ -99,19 +99,19 @@
         </provider>
 
         <service
-            android:name="com.luck.picture.lib.service.ForegroundService"
+            android:name="coms.luck.picture.lib.service.ForegroundService"
             android:enabled="true"
             android:foregroundServiceType="location" />
 
         <activity
-            android:name="com.luck.picture.lib.basic.PictureSelectorSupporterActivity"
+            android:name="coms.luck.picture.lib.basic.PictureSelectorSupporterActivity"
             android:configChanges="orientation|keyboardHidden|screenSize"
             android:theme="@style/Base.Theme.NoActionBar">
 
         </activity>
 
         <activity
-            android:name="com.luck.picture.lib.basic.PictureSelectorTransparentActivity"
+            android:name="coms.luck.picture.lib.basic.PictureSelectorTransparentActivity"
             android:configChanges="orientation|keyboardHidden|screenSize"
             android:theme="@style/Picture.Theme.Translucent">
 
