@@ -20,7 +20,7 @@ public class PictureLoadingDialog extends Dialog {
 
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.ps_alert_dialog);
+        setContentView(R.layout.gps_alert_dialog);
         setDialogSize();
     }
 

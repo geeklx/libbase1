@@ -43,7 +43,7 @@ public class AlbumListPopWindow extends PopupWindow {
     public AlbumListPopWindow(Context context, SelectorConfig config) {
         this.mContext = context;
         this.selectorConfig = config;
-        setContentView(LayoutInflater.from(context).inflate(R.layout.ps_window_folder, null));
+        setContentView(LayoutInflater.from(context).inflate(R.layout.gps_window_folder, null));
         setWidth(RelativeLayout.LayoutParams.MATCH_PARENT);
         setHeight(RelativeLayout.LayoutParams.WRAP_CONTENT);
         setAnimationStyle(R.style.PictureThemeWindowStyle);

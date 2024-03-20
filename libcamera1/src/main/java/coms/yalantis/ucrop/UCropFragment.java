@@ -125,7 +125,7 @@ public class UCropFragment extends Fragment {
     @Nullable
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
-        View rootView = inflater.inflate(R.layout.ucrop_fragment_photobox, container, false);
+        View rootView = inflater.inflate(R.layout.gucrop_fragment_photobox, container, false);
 
         Bundle args = getArguments();
 
@@ -166,7 +166,7 @@ public class UCropFragment extends Fragment {
 
             ViewGroup wrapper = view.findViewById(R.id.controls_wrapper);
             wrapper.setVisibility(View.VISIBLE);
-            LayoutInflater.from(getContext()).inflate(R.layout.ucrop_controls, wrapper, true);
+            LayoutInflater.from(getContext()).inflate(R.layout.gucrop_controls, wrapper, true);
 
             mControlsTransition = new AutoTransition();
             mControlsTransition.setDuration(CONTROLS_ANIMATION_DURATION);
@@ -368,7 +368,7 @@ public class UCropFragment extends Fragment {
         LinearLayout.LayoutParams lp = new LinearLayout.LayoutParams(0, ViewGroup.LayoutParams.MATCH_PARENT);
         lp.weight = 1;
         for (AspectRatio aspectRatio : aspectRatioList) {
-            wrapperAspectRatio = (FrameLayout) getLayoutInflater().inflate(R.layout.ucrop_aspect_ratio, null);
+            wrapperAspectRatio = (FrameLayout) getLayoutInflater().inflate(R.layout.gucrop_aspect_ratio, null);
             wrapperAspectRatio.setLayoutParams(lp);
             aspectRatioTextView = ((AspectRatioTextView) wrapperAspectRatio.getChildAt(0));
             aspectRatioTextView.setActiveColor(mActiveControlsWidgetColor);

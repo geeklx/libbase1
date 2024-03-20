@@ -1,4 +1,4 @@
-package coms.luck.lib.camerax;
+package coms.geek.libcamera1;
 
 import android.Manifest;
 import android.annotation.SuppressLint;
@@ -49,10 +49,9 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Locale;
 
-import coms.geek.libcamera1.BjyyBeanYewu3;
-import coms.geek.libcamera1.CameraUtils1;
-import coms.geek.libcamera1.GlideEngine1;
-import coms.geek.libcamera1.R;
+import coms.luck.lib.camerax.BaseApp7;
+import coms.luck.lib.camerax.CustomCameraConfig;
+import coms.luck.lib.camerax.CustomCameraView2;
 import coms.luck.lib.camerax.listener.CameraListener;
 import coms.luck.lib.camerax.listener.ClickListener;
 import coms.luck.lib.camerax.listener.IObtainCameraView;
@@ -90,7 +89,7 @@ import coms.yalantis.ucrop.view.widget.HorizontalProgressWheelView;
  * @date：2021/11/29 7:50 下午
  * @describe：PictureCameraActivity
  */
-public class PictureCameraActivity2 extends AppCompatActivity implements IObtainCameraView {
+public class PictureCameraActivity3 extends AppCompatActivity implements IObtainCameraView {
     /**
      * PermissionResultCallback
      */
@@ -131,7 +130,7 @@ public class PictureCameraActivity2 extends AppCompatActivity implements IObtain
         mCameraView.setImgClickListener(new ImgClickListener() {
             @Override
             public void onClick() {
-                CameraUtils1.getInstance(PictureCameraActivity2.this).handleImgSuccess2(GlideEngine1.createGlideEngine(), new PictureSelectorStyle()).forResult(new OnResultCallbackListener<LocalMedia>() {
+                CameraUtils1.getInstance(PictureCameraActivity3.this).handleImgSuccess2(GlideEngine1.createGlideEngine(), new PictureSelectorStyle()).forResult(new OnResultCallbackListener<LocalMedia>() {
                     @Override
                     public void onResult(ArrayList<LocalMedia> result) {
                         // 相册返回结果
@@ -188,7 +187,7 @@ public class PictureCameraActivity2 extends AppCompatActivity implements IObtain
 
             @Override
             public void onError(int videoCaptureError, @NonNull String message, @Nullable Throwable cause) {
-                Toast.makeText(PictureCameraActivity2.this.getApplicationContext(), message, Toast.LENGTH_LONG).show();
+                Toast.makeText(PictureCameraActivity3.this.getApplicationContext(), message, Toast.LENGTH_LONG).show();
             }
         });
         // 关闭页面回调
@@ -245,7 +244,7 @@ public class PictureCameraActivity2 extends AppCompatActivity implements IObtain
                     return null;
                 }
                 if (selectorConfig.chooseMode == SelectMimeType.ofAudio()) {
-                    CameraUtils1.getInstance(PictureCameraActivity2.this).copyOutputAudioToDir(selectorConfig);
+                    CameraUtils1.getInstance(PictureCameraActivity3.this).copyOutputAudioToDir(selectorConfig);
                 }
                 LocalMedia media = mCameraView.buildLocalMedia(selectorConfig.cameraPath, selectorConfig);
                 media.setCameraSource(true);
@@ -256,7 +255,7 @@ public class PictureCameraActivity2 extends AppCompatActivity implements IObtain
             public void onSuccess(LocalMedia result) {
                 PictureThreadUtils.cancel(this);
                 if (result != null) {
-                    CameraUtils1.getInstance(PictureCameraActivity2.this).onScannerScanFile(PictureCameraActivity2.this, result);
+                    CameraUtils1.getInstance(PictureCameraActivity3.this).onScannerScanFile(PictureCameraActivity3.this, result);
                     //
                     List<LocalMedia> selectedResult = selectorConfig.getSelectedResult();
                     selectedResult.clear();
@@ -307,7 +306,7 @@ public class PictureCameraActivity2 extends AppCompatActivity implements IObtain
                     File originalFile = new File(outputUri.getPath());
                     outputUri = Uri.fromFile(new File(outputDir, originalFile.getName()));
                 }
-                outputUri = FileUtils.replaceOutputUri(PictureCameraActivity2.this, isForbidCropGifWebp, inputUri, outputUri);
+                outputUri = FileUtils.replaceOutputUri(PictureCameraActivity3.this, isForbidCropGifWebp, inputUri, outputUri);
                 mGestureCropImageView.setImageUri(inputUri, outputUri, isUseCustomBitmap);
             } catch (Exception e) {
                 setResultError(e);
@@ -708,7 +707,7 @@ public class PictureCameraActivity2 extends AppCompatActivity implements IObtain
 //                Uri inputUri = getIntent().getParcelableExtra(UCrop.EXTRA_INPUT_URI);
                 Log.e("ssssssssss", mBlockingView.isClickable() + "");
                 Uri inputUri = srcUri;
-                String mimeType = FileUtils.getMimeTypeFromMediaContentUri(PictureCameraActivity2.this, inputUri);
+                String mimeType = FileUtils.getMimeTypeFromMediaContentUri(PictureCameraActivity3.this, inputUri);
                 if (FileUtils.isGif(mimeType) || FileUtils.isWebp(mimeType)) {
                     mBlockingView.setClickable(true);
                 }

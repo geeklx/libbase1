@@ -223,7 +223,7 @@ public class PictureSelectorPreviewFragment extends PictureCommonFragment {
         if (layoutResourceId != InjectResourceSource.DEFAULT_LAYOUT_RESOURCE) {
             return layoutResourceId;
         }
-        return R.layout.ps_fragment_preview;
+        return R.layout.gps_fragment_preview;
     }
 
     @Override

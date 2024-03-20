@@ -39,7 +39,7 @@ public class UCropGalleryAdapter extends RecyclerView.Adapter<UCropGalleryAdapte
 
     @Override
     public ViewHolder onCreateViewHolder(ViewGroup parent, int position) {
-        View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.ucrop_gallery_adapter_item,
+        View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.gucrop_gallery_adapter_item,
                 parent, false);
         return new ViewHolder(view);
     }

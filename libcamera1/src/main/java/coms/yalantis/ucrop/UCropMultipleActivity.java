@@ -93,7 +93,7 @@ public class UCropMultipleActivity extends AppCompatActivity implements UCropFra
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         immersive();
-        setContentView(R.layout.ucrop_activity_multiple);
+        setContentView(R.layout.gucrop_activity_multiple);
         setupViews(getIntent());
         initCropFragments(getIntent());
     }

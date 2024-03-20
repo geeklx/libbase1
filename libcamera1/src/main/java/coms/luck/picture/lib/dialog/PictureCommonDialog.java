@@ -26,7 +26,7 @@ public class PictureCommonDialog extends Dialog implements View.OnClickListener 
 
     public PictureCommonDialog(Context context, String title, String content) {
         super(context, R.style.Picture_Theme_Dialog);
-        setContentView(R.layout.ps_common_dialog);
+        setContentView(R.layout.gps_common_dialog);
         Button btnCancel = findViewById(R.id.btn_cancel);
         Button btnCommit = findViewById(R.id.btn_commit);
         TextView tvTitle = findViewById(R.id.tvTitle);

@@ -89,7 +89,7 @@ public class TitleBar extends RelativeLayout implements View.OnClickListener {
     }
 
     protected void inflateLayout() {
-        LayoutInflater.from(getContext()).inflate(R.layout.ps_title_bar, this);
+        LayoutInflater.from(getContext()).inflate(R.layout.gps_title_bar, this);
     }
 
     protected void handleLayoutUI() {

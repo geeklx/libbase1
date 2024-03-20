@@ -118,7 +118,7 @@ public class SmCameraAct1 extends AppCompatActivity implements IBridgePictureBeh
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_camera111);
+        setContentView(R.layout.gactivity_camera111);
         selectorStyle = new PictureSelectorStyle();
         // 注册需要写在onCreate或Fragment onAttach里，否则会报java.lang.IllegalStateException异常
         launcherResult = createActivityResultLauncher();

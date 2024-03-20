@@ -686,7 +686,8 @@ public class CameraUtils1 {
 //                }
 //            });
 //            camera.start(fragment.requireActivity(), fragment, requestCode);
-            SimpleCameraX camera = SimpleCameraX.of("hs.act.slbapp.PictureCameraActivity2");
+//            SimpleCameraX camera = SimpleCameraX.of("hs.act.slbapp.PictureCameraActivity2");// 原始
+            SimpleCameraX camera = SimpleCameraX.of("hs.act.slbapp.PictureCameraActivity3");// 测试
             // 裁剪设置bufen
             camera.setHideBottomControls(false);
             camera.setFreeStyleCropEnabled(true);

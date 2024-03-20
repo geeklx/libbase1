@@ -75,7 +75,7 @@ public class BottomNavBar extends RelativeLayout implements View.OnClickListener
     }
 
     protected void inflateLayout() {
-        inflate(getContext(), R.layout.ps_bottom_nav_bar, this);
+        inflate(getContext(), R.layout.gps_bottom_nav_bar, this);
     }
 
     protected void handleLayoutUI(){

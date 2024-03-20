@@ -40,7 +40,7 @@ public class PictureSelectorTransparentActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         initSelectorConfig();
         immersive();
-        setContentView(R.layout.ps_empty);
+        setContentView(R.layout.gps_empty);
         if (isExternalPreview()) {
             // TODO ignore
         } else {

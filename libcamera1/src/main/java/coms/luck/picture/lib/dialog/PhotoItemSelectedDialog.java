@@ -45,7 +45,7 @@ public class PhotoItemSelectedDialog extends DialogFragment implements View.OnCl
                 getDialog().getWindow().setBackgroundDrawableResource(android.R.color.transparent);
             }
         }
-        return inflater.inflate(R.layout.ps_dialog_camera_selected, container);
+        return inflater.inflate(R.layout.gps_dialog_camera_selected, container);
     }
 
     @Override

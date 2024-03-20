@@ -227,7 +227,7 @@ public class CustomCameraView2 extends RelativeLayout implements CameraXOrientat
 
 
     private void initView() {
-        inflate(getContext(), R.layout.picture_camera_view2, this);
+        inflate(getContext(), R.layout.gpicture_camera_view2, this);
         activity = (Activity) getContext();
         setBackgroundColor(ContextCompat.getColor(getContext(), R.color.picture_color_black));
         mCameraPreviewView = findViewById(R.id.cameraPreviewView);

@@ -84,7 +84,7 @@ public class CaptureLayout2 extends FrameLayout {
 
 
     private void initView(Context context, AttributeSet attrs, int defStyleAttr) {
-        LayoutInflater.from(getContext()).inflate(R.layout.activity_camera_1, this, true);
+        LayoutInflater.from(getContext()).inflate(R.layout.gactivity_camera_1, this, true);
         tv1 = findViewById(R.id.tv1);
         iv1 = findViewById(R.id.iv1);
         rl1 = findViewById(R.id.rl1);

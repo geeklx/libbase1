@@ -19,7 +19,7 @@ public class CustomLoadingDialog1 extends Dialog {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.custom_alert_dialog);
+        setContentView(R.layout.gcustom_alert_dialog);
         setDialogSize();
     }
 
