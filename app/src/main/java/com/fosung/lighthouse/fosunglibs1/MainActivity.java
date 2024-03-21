@@ -23,7 +23,6 @@ import com.blankj.utilcode.util.AppUtils;
 import com.blankj.utilcode.util.TimeUtils;
 import com.blankj.utilcode.util.ToastUtils;
 import com.blankj.utilcode.util.Utils;
-
 import com.fosung.lighthouse.fosunglibs1.sm4.SM4Utils;
 import com.lib.aliocr.widget.crop.Log;
 
@@ -52,6 +51,9 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
+        //
+//        ImmersionBar.with(this).fullScreen(false).fitsSystemWindows(false).statusBarColor(R.color.black)
+//                .navigationBarColor(R.color.black).statusBarDarkFont(false).init();
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         ScrollView scrollView = findViewById(R.id.scrollView);

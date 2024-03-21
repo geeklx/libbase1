@@ -118,6 +118,9 @@ public class SmCameraAct1 extends AppCompatActivity implements IBridgePictureBeh
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        //
+//        ImmersionBar.with(this).fullScreen(false).statusBarColor(R.color.ucrop_color_black)
+//                .navigationBarColor(R.color.ucrop_color_black).statusBarDarkFont(false).init();
         setContentView(R.layout.gactivity_camera111);
         selectorStyle = new PictureSelectorStyle();
         // 注册需要写在onCreate或Fragment onAttach里，否则会报java.lang.IllegalStateException异常

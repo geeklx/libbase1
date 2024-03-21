@@ -23,6 +23,7 @@ dependencies {
     implementation "androidx.transition:transition:1.4.1"
     implementation "androidx.concurrent:concurrent-futures:1.1.0"
     implementation "androidx.exifinterface:exifinterface:1.3.3"
+//    implementation 'com.geyifeng.immersionbar:immersionbar:3.2.2'
     //
 //    api 'io.github.lucksiege:pictureselector:v3.10.6'
     // image compress library (Not necessary)

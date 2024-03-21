@@ -18,10 +18,12 @@
     <color name="app_color_cc_red">#CCFF0000</color>
 
     <color name="picture_color_black">#000000</color>
+    <color name="picture_color_black2">#66000000</color>
 
 
     <!--Palette-->
     <color name="ucrop_color_black">#000000</color>
+    <color name="ucrop_color_black2">#66000000</color>
     <color name="ucrop_color_blaze_orange">#FF6300</color>
     <color name="ucrop_color_ebony_clay">#20242F</color>
     <color name="ucrop_color_heather">#B3BECE</color>
@@ -43,12 +45,14 @@
     <color name="ucrop_color_widget_text">@color/ucrop_color_blaze_orange</color>
     <color name="ucrop_color_progress_wheel_line">@color/ucrop_color_ebony_clay</color>
     <color name="ucrop_color_crop_background">@color/ucrop_color_black</color>
+    <color name="ucrop_color_crop_background2">@color/ucrop_color_black2</color>
     <color name="ucrop_color_divider_line">#666666</color>
     <color name="ucrop_color_80">#80000000</color>
     <color name="ucrop_color_20">#20000000</color>
     <!--Crop View-->
     <color name="ucrop_color_default_crop_grid">#80ffffff</color>
     <color name="ucrop_color_default_crop_frame">#ffffff</color>
+    <color name="ucrop_color_default_crop_frame2">#FF2DB5FF</color>
     <color name="ucrop_color_default_dimmed">#8c000000</color>
     <color name="ucrop_color_default_logo">#4f212121</color>
 

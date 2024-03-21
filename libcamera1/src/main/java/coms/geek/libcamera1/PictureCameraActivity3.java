@@ -51,7 +51,6 @@ import java.util.Locale;
 
 import coms.luck.lib.camerax.BaseApp7;
 import coms.luck.lib.camerax.CustomCameraConfig;
-import coms.luck.lib.camerax.CustomCameraView2;
 import coms.luck.lib.camerax.listener.CameraListener;
 import coms.luck.lib.camerax.listener.ClickListener;
 import coms.luck.lib.camerax.listener.IObtainCameraView;
@@ -65,11 +64,14 @@ import coms.luck.picture.lib.config.SelectMimeType;
 import coms.luck.picture.lib.config.SelectorConfig;
 import coms.luck.picture.lib.config.SelectorProviders;
 import coms.luck.picture.lib.entity.LocalMedia;
+import coms.luck.picture.lib.immersive.ImmersiveManager;
 import coms.luck.picture.lib.interfaces.OnResultCallbackListener;
 import coms.luck.picture.lib.style.PictureSelectorStyle;
+import coms.luck.picture.lib.style.SelectMainStyle;
 import coms.luck.picture.lib.thread.PictureThreadUtils;
 import coms.luck.picture.lib.utils.DateUtils;
 import coms.luck.picture.lib.utils.FileDirMap;
+import coms.luck.picture.lib.utils.StyleUtils;
 import coms.yalantis.ucrop.UCrop;
 import coms.yalantis.ucrop.UCropActivity;
 import coms.yalantis.ucrop.callback.BitmapCropCallback;
@@ -96,29 +98,75 @@ public class PictureCameraActivity3 extends AppCompatActivity implements IObtain
     private PermissionResultCallback mPermissionResultCallback;
 
     private RelativeLayout rl1;
-    private CustomCameraView2 mCameraView;
+    private CustomCameraView3 mCameraView;
     private ImageView ivtj1;
     private ImageView ivtj2;
+    private ImageView iv12332;
+    private LinearLayout ll_cp1;
+    private LinearLayout ll_cp2;
+
+    private void immersive() {
+        int statusBarColor = ContextCompat.getColor(this, R.color.ps_color_black);
+        int navigationBarColor = ContextCompat.getColor(this, R.color.ps_color_black);
+        ImmersiveManager.immersiveAboveAPI23(this, statusBarColor, navigationBarColor, false);
+    }
 
     @SuppressLint("WrongConstant")
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
-        getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN, WindowManager.LayoutParams.FLAG_FULLSCREEN);
-        getWindow().setFlags(WindowManager.LayoutParams.FLAG_TRANSLUCENT_STATUS, WindowManager.LayoutParams.FLAG_TRANSLUCENT_STATUS);
-        getWindow().setFlags(WindowManager.LayoutParams.FLAG_TRANSLUCENT_NAVIGATION, WindowManager.LayoutParams.FLAG_TRANSLUCENT_NAVIGATION);
-        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.P) {
-            WindowManager.LayoutParams lp = getWindow().getAttributes();
-            lp.layoutInDisplayCutoutMode = WindowManager.LayoutParams.LAYOUT_IN_DISPLAY_CUTOUT_MODE_SHORT_EDGES;
-            getWindow().setAttributes(lp);
-        }
+//        getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN, WindowManager.LayoutParams.FLAG_FULLSCREEN);
+//        getWindow().setFlags(WindowManager.LayoutParams.FLAG_TRANSLUCENT_STATUS, WindowManager.LayoutParams.FLAG_TRANSLUCENT_STATUS);
+//        getWindow().setFlags(WindowManager.LayoutParams.FLAG_TRANSLUCENT_NAVIGATION, WindowManager.LayoutParams.FLAG_TRANSLUCENT_NAVIGATION);
+//        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.P) {
+//            WindowManager.LayoutParams lp = getWindow().getAttributes();
+//            lp.layoutInDisplayCutoutMode = WindowManager.LayoutParams.LAYOUT_IN_DISPLAY_CUTOUT_MODE_SHORT_EDGES;
+//            getWindow().setAttributes(lp);
+//        }
         getWindow().addFlags(WindowManager.LayoutParams.FLAG_KEEP_SCREEN_ON);
+        //
+//        ImmersionBar.with(this).fullScreen(false).statusBarColor(R.color.ucrop_color_black)
+//                .navigationBarColor(R.color.ucrop_color_black).statusBarDarkFont(false).init();
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.gucrop_activity_photobox2);
+        //
+        immersive();
+        setContentView(R.layout.gucrop_activity_photobox3);
         // 截图bufen
         rl1 = findViewById(R.id.rl1cv);
         mCameraView = findViewById(R.id.customCameraView1);
         ivtj1 = findViewById(R.id.ivtj1);
         ivtj2 = findViewById(R.id.ivtj2);
+        ll_cp1 = findViewById(R.id.ll_cp1);
+        ll_cp2 = findViewById(R.id.ll_cp2);
+        iv12332 = findViewById(R.id.iv12332);
+        // 旋转
+        ll_cp1.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                rotateByAngle(90);
+            }
+        });
+        // 重拍
+        ll_cp2.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                // 返回
+//                onBackPressed();
+                if (mBlockingView != null) {
+                    ((RelativeLayout) findViewById(R.id.ucrop_photobox)).removeView(mBlockingView);
+                }
+                rl1.setVisibility(View.GONE);
+                mCameraView.setVisibility(View.VISIBLE);
+                mCameraView.onCancelMedia();
+            }
+        });
+        // 剪切按钮bufen
+        iv12332.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                // 提交裁剪后的图片
+                cropAndSaveImage();
+            }
+        });
         //
         mCameraView.post(new Runnable() {
             @Override
@@ -211,13 +259,14 @@ public class PictureCameraActivity3 extends AppCompatActivity implements IObtain
             @Override
             public void onClick(View view) {
                 // 返回
-//                onBackPressed();
-                if (mBlockingView != null) {
-                    ((RelativeLayout) findViewById(R.id.ucrop_photobox)).removeView(mBlockingView);
-                }
-                rl1.setVisibility(View.GONE);
-                mCameraView.setVisibility(View.VISIBLE);
-                mCameraView.onCancelMedia();
+                onBackPressed();
+                // 重拍
+//                if (mBlockingView != null) {
+//                    ((RelativeLayout) findViewById(R.id.ucrop_photobox)).removeView(mBlockingView);
+//                }
+//                rl1.setVisibility(View.GONE);
+//                mCameraView.setVisibility(View.VISIBLE);
+//                mCameraView.onCancelMedia();
             }
         });
 
@@ -531,7 +580,7 @@ public class PictureCameraActivity3 extends AppCompatActivity implements IObtain
         mToolbarTitle = mToolbarTitle != null ? mToolbarTitle : getResources().getString(R.string.ucrop_label_edit_photo);
         mLogoColor = intent.getIntExtra(UCrop.Options.EXTRA_UCROP_LOGO_COLOR, ContextCompat.getColor(this, R.color.ucrop_color_default_logo));
         mShowBottomControls = !intent.getBooleanExtra(UCrop.Options.EXTRA_HIDE_BOTTOM_CONTROLS, false);
-        mRootViewBackgroundColor = intent.getIntExtra(UCrop.Options.EXTRA_UCROP_ROOT_VIEW_BACKGROUND_COLOR, ContextCompat.getColor(this, R.color.ucrop_color_crop_background));
+        mRootViewBackgroundColor = intent.getIntExtra(UCrop.Options.EXTRA_UCROP_ROOT_VIEW_BACKGROUND_COLOR, ContextCompat.getColor(this, R.color.ucrop_color_crop_background2));
 
         setupAppBar();
         initiateRootViews();
@@ -540,7 +589,9 @@ public class PictureCameraActivity3 extends AppCompatActivity implements IObtain
 
             ViewGroup viewGroup = findViewById(R.id.ucrop_photobox);
             ViewGroup wrapper = viewGroup.findViewById(R.id.controls_wrapper);
-            wrapper.setVisibility(View.VISIBLE);
+            LinearLayout llw1 = viewGroup.findViewById(R.id.llw1);
+            wrapper.setVisibility(View.GONE);
+            llw1.setVisibility(View.VISIBLE);
             LayoutInflater.from(this).inflate(R.layout.gucrop_controls, wrapper, true);
 
             mControlsTransition = new AutoTransition();

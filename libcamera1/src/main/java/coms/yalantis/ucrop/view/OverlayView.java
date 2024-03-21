@@ -582,12 +582,14 @@ public class OverlayView extends View {
                 getResources().getDimensionPixelSize(R.dimen.ucrop_default_crop_frame_stoke_width));
         int cropFrameColor = a.getColor(R.styleable.ucrop_UCropView_ucrop_frame_color,
                 getResources().getColor(R.color.ucrop_color_default_crop_frame));
+        int cropFrameColor2 = a.getColor(R.styleable.ucrop_UCropView_ucrop_frame_color2,
+                getResources().getColor(R.color.ucrop_color_default_crop_frame2));
         mCropFramePaint.setStrokeWidth(cropFrameStrokeSize);
         mCropFramePaint.setColor(cropFrameColor);
         mCropFramePaint.setStyle(Paint.Style.STROKE);
 
         mCropFrameCornersPaint.setStrokeWidth(cropFrameStrokeSize * 3);
-        mCropFrameCornersPaint.setColor(cropFrameColor);
+        mCropFrameCornersPaint.setColor(cropFrameColor2);
         mCropFrameCornersPaint.setStyle(Paint.Style.STROKE);
     }
 
