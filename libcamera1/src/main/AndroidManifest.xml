@@ -75,7 +75,7 @@
             android:exported="true"
             android:theme="@style/Base.Theme.NoActionBar">
             <intent-filter>
-                <action android:name="hs.act.slbapp.PictureCameraActivity2" />
+                <action android:name="${applicationId}.hs.act.slbapp.PictureCameraActivity2" />
                 <category android:name="android.intent.category.DEFAULT" />
             </intent-filter>
         </activity>
@@ -86,7 +86,7 @@
             android:exported="true"
             android:theme="@style/Base.Theme.NoActionBar">
             <intent-filter>
-                <action android:name="hs.act.slbapp.PictureCameraActivity3" />
+                <action android:name="${applicationId}.hs.act.slbapp.PictureCameraActivity3" />
                 <category android:name="android.intent.category.DEFAULT" />
             </intent-filter>
         </activity>
@@ -95,12 +95,35 @@
             android:name="coms.yalantis.ucrop.UCropActivity"
             android:configChanges="orientation|keyboardHidden|screenSize"
             android:screenOrientation="portrait"
-            android:theme="@style/Theme.AppCompat.Light.NoActionBar" />
+            android:exported="true"
+            android:theme="@style/Theme.AppCompat.Light.NoActionBar" >
+            <intent-filter>
+                <action android:name="${applicationId}.hs.act.slbapp.UCropActivity" />
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name="coms.geek.libcamera1.UCropActivity3"
+            android:configChanges="orientation|keyboardHidden|screenSize"
+            android:screenOrientation="portrait"
+            android:exported="true"
+            android:theme="@style/Base.Theme.NoActionBar" >
+            <intent-filter>
+                <action android:name="${applicationId}.hs.act.slbapp.UCropActivity3" />
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </activity>
         <activity
             android:name="coms.yalantis.ucrop.UCropMultipleActivity"
             android:configChanges="orientation|keyboardHidden|screenSize"
             android:screenOrientation="portrait"
-            android:theme="@style/Theme.AppCompat.Light.NoActionBar" />
+            android:exported="true"
+            android:theme="@style/Theme.AppCompat.Light.NoActionBar">
+            <intent-filter>
+                <action android:name="${applicationId}.hs.act.slbapp.UCropMultipleActivity" />
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </activity>
 
         <provider
             android:name="coms.luck.picture.lib.basic.PictureFileProvider"

@@ -33,6 +33,17 @@
             android:src="@mipmap/icon_con10" />
     </RelativeLayout>
 
+    <TextView
+        android:id="@+id/tv_tip14324"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/rl145"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="117dp"
+        android:text="请用手机竖屏拍摄录入"
+        android:textColor="#FFFFFFFF"
+        android:textSize="14sp" />
+
 
     <LinearLayout
         android:id="@+id/ll1"

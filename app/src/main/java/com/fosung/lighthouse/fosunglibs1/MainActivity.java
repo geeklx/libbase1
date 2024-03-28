@@ -24,12 +24,15 @@ import com.blankj.utilcode.util.TimeUtils;
 import com.blankj.utilcode.util.ToastUtils;
 import com.blankj.utilcode.util.Utils;
 import com.fosung.lighthouse.fosunglibs1.sm4.SM4Utils;
+import com.geek.libutils.app.MyLogUtil;
 import com.lib.aliocr.widget.crop.Log;
 
 import java.io.File;
 import java.io.FileOutputStream;
 import java.text.SimpleDateFormat;
+import java.util.ArrayList;
 import java.util.Date;
+import java.util.List;
 //import com.app.hubert.guide.newbieguide.FirstActivity;
 //import com.blankj.utilcode.util.Utils;
 //import com.example.slbyanzheng.ZhiwenActtivity;
@@ -45,7 +48,8 @@ import java.util.Date;
  */
 public class MainActivity extends AppCompatActivity implements View.OnClickListener {
     private Button button, button1, button2, button3, button4, button5, button6, button7, button8, button9,
-            button10, button11, button12, button13, button14, button15, button16, button17, button18, button19, button20, button21, button22;
+            button10, button11, button12, button13, button14, button15, button16, button17, button18, button19,
+            button20, button21, button22, button23;
 
     private TextView tv1;
 
@@ -55,7 +59,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 //        ImmersionBar.with(this).fullScreen(false).fitsSystemWindows(false).statusBarColor(R.color.black)
 //                .navigationBarColor(R.color.black).statusBarDarkFont(false).init();
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
+        setContentView(R.layout.activity_maingeek);
         ScrollView scrollView = findViewById(R.id.scrollView);
         TextView tv_content1 = findViewById(R.id.tv_content1);
         /*屏幕适配autosize算法*/
@@ -91,6 +95,37 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
         }
         ToastUtils.showLong(t1 + "------" + t22);
+        //
+        int size = 0;
+        String digits = "abcdefghigklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ#";
+        List<String> mlist1 = new ArrayList<>();
+        String inputtext = " 写作模版内容，写作模版内容写作模版内容写作模版内容。\n" +
+                "\n" +
+                " Here is a text sample，here ";
+        inputtext = inputtext.replace("\n", " ");
+        inputtext = inputtext.replace("，", " ");
+        inputtext = inputtext.replace(",", " ");
+        inputtext = inputtext.replace(".", " ");
+        inputtext = inputtext.replace("。", " ");
+        //
+        inputtext = inputtext.replace(" ", "#");
+//        String[] aaaaa = inputtext.split("|");
+        String REGEX_CHINESE = "[\u4e00-\u9fa5]";
+        inputtext = inputtext.replaceAll(REGEX_CHINESE, "");
+        char[] aaa = inputtext.toCharArray();
+        for (int i = 0; i < aaa.length; i++) {
+            if ((i + 1) < aaa.length) {
+                if (digits.contains(aaa[i] + "")) {
+                    String a = aaa[i] + "";
+                    String b = aaa[i + 1] + "";
+                    if (a.equals("#") && !(b.equals("#"))) {
+                        size++;
+                    }
+                }
+            }
+        }
+        MyLogUtil.e("dadwadwadadwwadadad", inputtext);
+        MyLogUtil.e("dadwadwadadwwadadad", size + "");
 
         /*加密文件*/
         String result = "http://www.abc.com?k=D34D0AQ9tcjXuxVGcsw6WBHIjvADSX+x8Zm7O1jnNcXb/opqDZi+O1rXSjm0wqfw";
@@ -123,6 +158,8 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         button20 = findViewById(R.id.button20);
         button21 = findViewById(R.id.button21);
         button22 = findViewById(R.id.button22);
+        button23 = findViewById(R.id.button23);
+        button23.setOnClickListener(this);
         button.setOnClickListener(this);
         button1.setOnClickListener(this);
         button2.setOnClickListener(this);
@@ -165,7 +202,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     }
 
     public void qrCode() {
-        View view = LayoutInflater.from(this).inflate(R.layout.activity_main, null, false);
+        View view = LayoutInflater.from(this).inflate(R.layout.activity_maingeek, null, false);
         Bitmap saveBitmap = createBitmapByView(view);
         saveBitmapToAlbum(saveBitmap);
     }
@@ -395,6 +432,13 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                  *项目地址: https://github.com/LuckSiege/PictureSelector*/
 //                startActivity(new Intent(getPackageName() + ".hs.act.slbapp.NcalendarActivity"));
                 startActivity(new Intent(getPackageName() + ".hs.act.slbapp.SmCameraAct1"));
+//                startActivity(new Intent(this, NcalendarActivity.class));
+
+                break;
+            case R.id.button23:
+                // 扫描库 项目地址: https://github.com/L-X-J/RichText-Androidx
+//                startActivity(new Intent(getPackageName() + ".hs.act.slbapp.NcalendarActivity"));
+                startActivity(new Intent(getPackageName() + ".hs.act.slbapp.MainActivityRt"));
 //                startActivity(new Intent(this, NcalendarActivity.class));
 
                 break;

@@ -1,10 +1,13 @@
 package coms.geek.libcamera1;
 
 import android.content.Context;
-import android.content.res.Configuration;
+import android.os.Handler;
 import android.util.AttributeSet;
 import android.view.LayoutInflater;
 import android.view.View;
+import android.view.animation.AccelerateDecelerateInterpolator;
+import android.view.animation.AlphaAnimation;
+import android.view.animation.Animation;
 import android.widget.FrameLayout;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
@@ -17,11 +20,11 @@ import coms.luck.lib.camerax.listener.ImgClickListener;
 import coms.luck.lib.camerax.listener.LightClickListener;
 import coms.luck.lib.camerax.listener.TextClickListener1;
 import coms.luck.lib.camerax.listener.TypeListener;
-import coms.luck.lib.camerax.utils.DensityUtil;
 
 
 public class CaptureLayout3 extends FrameLayout {
 
+    private TextView tv11;//标题
     private TextView tv1;//标题
     private ImageView iv1;// 关闭
     private LinearLayout ll1;
@@ -70,7 +73,6 @@ public class CaptureLayout3 extends FrameLayout {
     private int iconRight = 0;
 
 
-
     public CaptureLayout3(Context context) {
         this(context, null);
     }
@@ -94,6 +96,7 @@ public class CaptureLayout3 extends FrameLayout {
 
     private void initView(Context context, AttributeSet attrs, int defStyleAttr) {
         LayoutInflater.from(getContext()).inflate(R.layout.gactivity_camera_3, this, true);
+        tv11 = findViewById(R.id.tv_tip14324);
         tv1 = findViewById(R.id.tv1);
         iv1 = findViewById(R.id.iv1);
         ll1 = findViewById(R.id.ll1);
@@ -101,6 +104,40 @@ public class CaptureLayout3 extends FrameLayout {
         iv12 = findViewById(R.id.iv12);
         iv1212233 = findViewById(R.id.iv1212233);
         rl145 = findViewById(R.id.rl145);
+        // start
+        tv11.setVisibility(View.INVISIBLE); // 设置TextView不可见
+        tv11.clearAnimation();
+        // 文字提示的呼吸效果
+        Animation breathAnimation = new AlphaAnimation(0.0f, 1.0f);
+        breathAnimation.setDuration(1500); // 设置动画持续时间
+        breathAnimation.setInterpolator(new AccelerateDecelerateInterpolator()); // 设置动画插入器
+        breathAnimation.setRepeatCount(Animation.INFINITE); // 设置动画重复次数为无限
+        breathAnimation.setRepeatMode(Animation.REVERSE); // 设置动画重复模式为反向
+        tv11.startAnimation(breathAnimation); // 开始动画
+        breathAnimation.setAnimationListener(new Animation.AnimationListener() {
+            @Override
+            public void onAnimationStart(Animation animation) {
+                tv11.setVisibility(View.VISIBLE); // 设置TextView可见
+            }
+
+            @Override
+            public void onAnimationEnd(Animation animation) {
+                tv11.setVisibility(View.INVISIBLE); // 设置TextView不可见
+            }
+
+            @Override
+            public void onAnimationRepeat(Animation animation) {
+
+            }
+        });
+        new Handler().postDelayed(new Runnable() {
+            @Override
+            public void run() {
+                // stop
+                tv11.clearAnimation();
+            }
+        }, 8 * 1000);
+        //
         // 标题
         tv1.setOnClickListener(new OnClickListener() {
             @Override

@@ -1,0 +1,18 @@
+apply from: "${rootDir.path}/gradle/publish.gradle"
+apply from: "${rootDir.path}/gradle/base.gradle"
+def librarys = rootProject.ext.dependencies //依赖
+dependencies {
+    implementation fileTree(dir: 'libs', include: ['*.jar'])
+    api 'androidx.legacy:legacy-support-v4:1.0.0'
+    api 'com.zzhoujay.markdown:markdown:1.0.5'
+    api 'com.jakewharton:disklrucache:2.0.2'
+//    api 'org.ccil.cowan.tagsoup:1.2.1'
+    api group: 'org.ccil.cowan.tagsoup', name: 'tagsoup', version: '1.2.1'
+//    api 'com.zzhoujay:html:1.0.1'
+//    api 'com.zzhoujay:html:latest-version'
+}
+
+android {
+    namespace 'com.geek.librichtext'
+}
+

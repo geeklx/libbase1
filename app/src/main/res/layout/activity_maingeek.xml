@@ -194,6 +194,12 @@
                 android:layout_height="wrap_content"
                 android:gravity="center"
                 android:text="扫描图片上传OCR库" />
+            <Button
+                android:id="@+id/button23"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:text="富文本支持html+markdown库" />
 
         </LinearLayout>
     </ScrollView>

@@ -26,6 +26,7 @@ import androidx.constraintlayout.widget.ConstraintSet;
 import androidx.core.content.ContextCompat;
 import androidx.fragment.app.Fragment;
 
+import com.blankj.utilcode.util.AppUtils;
 import com.bumptech.glide.Glide;
 import com.bumptech.glide.request.target.CustomTarget;
 import com.bumptech.glide.request.transition.Transition;
@@ -84,7 +85,7 @@ import coms.luck.picture.lib.utils.SdkVersionUtils;
 import coms.luck.picture.lib.utils.StyleUtils;
 import coms.luck.picture.lib.utils.ToastUtils;
 import coms.luck.picture.lib.widget.MediumBoldTextView;
-import coms.yalantis.ucrop.UCrop;
+import coms.yalantis.ucrop.UCrop3;
 import coms.yalantis.ucrop.UCropImageEngine;
 import top.zibin.luban.CompressionPredicate;
 import top.zibin.luban.Luban;
@@ -449,8 +450,8 @@ public class CameraUtils1 {
      *
      * @return
      */
-    public UCrop.Options BuildOptions(PictureSelectorStyle selectorStyle) {
-        UCrop.Options options = new UCrop.Options();
+    public UCrop3.Options BuildOptions(PictureSelectorStyle selectorStyle) {
+        UCrop3.Options options = new UCrop3.Options();
         options.setHideBottomControls(false);
         options.setFreeStyleCropEnabled(true);
         options.setShowCropFrame(true);
@@ -610,8 +611,15 @@ public class CameraUtils1 {
 
         @Override
         public void onStartCrop(Fragment fragment, Uri srcUri, Uri destinationUri, ArrayList<String> dataSource, int requestCode) {
-            UCrop.Options options = BuildOptions(selectorStyle);
-            UCrop uCrop = UCrop.of(srcUri, destinationUri, dataSource);
+            UCrop3.Options options = BuildOptions(selectorStyle);
+            UCrop3 uCrop = null;
+            if (dataSource.size() > 0) {
+                if (dataSource.size() == 1) {
+                    uCrop = UCrop3.of(AppUtils.getAppPackageName() + ".hs.act.slbapp.UCropActivity3", srcUri, destinationUri, dataSource);
+                } else {
+                    uCrop = UCrop3.of(AppUtils.getAppPackageName() + ".hs.act.slbapp.UCropMultipleActivity", srcUri, destinationUri, dataSource);
+                }
+            }
             uCrop.withOptions(options);
             uCrop.setImageEngine(new UCropImageEngine() {
                 @Override
@@ -687,7 +695,7 @@ public class CameraUtils1 {
 //            });
 //            camera.start(fragment.requireActivity(), fragment, requestCode);
 //            SimpleCameraX camera = SimpleCameraX.of("hs.act.slbapp.PictureCameraActivity2");// 原始
-            SimpleCameraX camera = SimpleCameraX.of("hs.act.slbapp.PictureCameraActivity3");// 测试
+            SimpleCameraX camera = SimpleCameraX.of(AppUtils.getAppPackageName() + ".hs.act.slbapp.PictureCameraActivity3");// 测试
             // 裁剪设置bufen
             camera.setHideBottomControls(false);
             camera.setFreeStyleCropEnabled(true);

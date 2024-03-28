@@ -25,6 +25,8 @@ dependencies {
     api project(':libscreen')
     api project(':libncalendar')
     api project(':libcamera1')
+    api project(':librichtext')
+    api project(':librichtext2')
     //
 //    api project(':libsupertextview')
 //    api project(':libgoodview')

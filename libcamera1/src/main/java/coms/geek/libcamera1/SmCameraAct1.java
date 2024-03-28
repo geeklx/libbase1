@@ -1,5 +1,6 @@
 package coms.geek.libcamera1;
 
+import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
 import android.os.Parcelable;
@@ -28,6 +29,9 @@ import org.jetbrains.annotations.NotNull;
 import java.util.ArrayList;
 import java.util.List;
 
+import coms.luck.lib.camerax.BaseApp7;
+import coms.luck.picture.lib.app.IApp;
+import coms.luck.picture.lib.app.PictureAppMaster;
 import coms.luck.picture.lib.basic.IBridgePictureBehavior;
 import coms.luck.picture.lib.basic.PictureCommonFragment;
 import coms.luck.picture.lib.basic.PictureSelectionCameraModel;
@@ -35,6 +39,7 @@ import coms.luck.picture.lib.basic.PictureSelector;
 import coms.luck.picture.lib.config.PictureConfig;
 import coms.luck.picture.lib.config.PictureMimeType;
 import coms.luck.picture.lib.engine.ImageEngine;
+import coms.luck.picture.lib.engine.PictureSelectorEngine;
 import coms.luck.picture.lib.entity.LocalMedia;
 import coms.luck.picture.lib.entity.MediaExtraInfo;
 import coms.luck.picture.lib.interfaces.OnResultCallbackListener;
@@ -76,20 +81,23 @@ public class SmCameraAct1 extends AppCompatActivity implements IBridgePictureBeh
     @Subscribe(threadMode = ThreadMode.POSTING)
     public void onEventBus(BjyyBeanYewu3 event) {
         if (event.getId().equals("重拍")) {
-            CameraUtils1.getInstance(SmCameraAct1.this).handleCameraSuccess(imageEngine, selectorStyle).forResult(new OnResultCallbackListener<LocalMedia>() {
-                @Override
-                public void onResult(ArrayList<LocalMedia> result) {
-                    mData = result;
-                    String url = mData.get(0).getCutPath();
-                    SPUtils.getInstance().put("camera_url", url);
-                    Glide.with(SmCameraAct1.this).load(url).into(iv1111);
-                }
+            CameraUtils1.getInstance(SmCameraAct1.this).handleCameraSuccess(imageEngine, selectorStyle)
+                    .forResult(new OnResultCallbackListener<LocalMedia>() {
+                        @Override
+                        public void onResult(ArrayList<LocalMedia> result) {
+                            mData = result;
+                            String url = mData.get(0).getCutPath();
+                            SPUtils.getInstance().put("camera_url", url);
+                            Glide.with(SmCameraAct1.this).load(url).into(iv1111);
+                        }
 
-                @Override
-                public void onCancel() {
+                        @Override
+                        public void onCancel() {
 
-                }
-            });
+                        }
+                    });
+            //
+
         }
         if (event.getId().equals("相册")) {
             if (TextUtils.isEmpty(event.getName())) {
@@ -122,6 +130,19 @@ public class SmCameraAct1 extends AppCompatActivity implements IBridgePictureBeh
 //        ImmersionBar.with(this).fullScreen(false).statusBarColor(R.color.ucrop_color_black)
 //                .navigationBarColor(R.color.ucrop_color_black).statusBarDarkFont(false).init();
         setContentView(R.layout.gactivity_camera111);
+        //
+        PictureAppMaster.getInstance().setApp(new IApp() {
+            @Override
+            public Context getAppContext() {
+                return BaseApp7.get();
+            }
+
+            @Override
+            public PictureSelectorEngine getPictureSelectorEngine() {
+                return new PictureSelectorEngineImp();
+            }
+        });
+        //
         selectorStyle = new PictureSelectorStyle();
         // 注册需要写在onCreate或Fragment onAttach里，否则会报java.lang.IllegalStateException异常
         launcherResult = createActivityResultLauncher();
@@ -141,24 +162,27 @@ public class SmCameraAct1 extends AppCompatActivity implements IBridgePictureBeh
                 // 拍照
 //                result1 = new ArrayList<>();
 //                        .setSelectedData(mData);
+//                CameraUtils1.getInstance(SmCameraAct1.this).handleCameraSuccess(imageEngine, selectorStyle)
+//                        .forResult(new OnResultCallbackListener<LocalMedia>() {
+//                            @Override
+//                            public void onResult(ArrayList<LocalMedia> result) {
+//                                mData = result;
+//                                String url = mData.get(0).getCutPath();
+//                                SPUtils.getInstance().put("camera_url", url);
+//                                if (TextUtils.isEmpty(url)) {
+//                                    return;
+//                                }
+//                                Glide.with(SmCameraAct1.this).load(url).into(iv1111);
+//                            }
+//
+//                            @Override
+//                            public void onCancel() {
+//
+//                            }
+//                        });
+                //
                 CameraUtils1.getInstance(SmCameraAct1.this).handleCameraSuccess(imageEngine, selectorStyle)
-                        .forResult(new OnResultCallbackListener<LocalMedia>() {
-                            @Override
-                            public void onResult(ArrayList<LocalMedia> result) {
-                                mData = result;
-                                String url = mData.get(0).getCutPath();
-                                SPUtils.getInstance().put("camera_url", url);
-                                if (TextUtils.isEmpty(url)) {
-                                    return;
-                                }
-                                Glide.with(SmCameraAct1.this).load(url).into(iv1111);
-                            }
-
-                            @Override
-                            public void onCancel() {
-
-                            }
-                        });
+                        .forResultActivity(launcherResult);
             }
         });
     }
@@ -226,6 +250,14 @@ public class SmCameraAct1 extends AppCompatActivity implements IBridgePictureBeh
                         if (resultCode == RESULT_OK) {
                             ArrayList<LocalMedia> selectList = PictureSelector.obtainSelectorList(result.getData());
                             analyticalSelectResults(selectList);
+                            //
+                            mData = selectList;
+                            String url = mData.get(0).getCutPath();
+                            SPUtils.getInstance().put("camera_url", url);
+                            if (TextUtils.isEmpty(url)) {
+                                return;
+                            }
+                            Glide.with(SmCameraAct1.this).load(url).into(iv1111);
                         } else if (resultCode == RESULT_CANCELED) {
                             Log.i("TAG", "onActivityResult PictureSelector Cancel");
                         }
