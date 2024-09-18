@@ -41,7 +41,6 @@ import com.king.mlkit.vision.barcode.utils.PointUtils;
 import com.king.mlkit.vision.camera.AnalyzeResult;
 import com.king.mlkit.vision.camera.CameraScan;
 import com.king.mlkit.vision.camera.analyze.Analyzer;
-import com.king.mlkit.vision.camera.config.ResolutionCameraConfig;
 
 import java.lang.ref.WeakReference;
 import java.util.ArrayList;

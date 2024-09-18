@@ -2,7 +2,6 @@ pluginManagement {
     repositories {
         gradlePluginPortal()
         google()
-//        mavenLocal()
         mavenCentral()
         maven { url 'https://jitpack.io' }
         maven { url 'https://maven.aliyun.com/repository/jcenter' }
@@ -13,13 +12,15 @@ pluginManagement {
         }
         maven { url 'https://maven.aliyun.com/repository/public' }
         maven { url "https://frontjs-static.pgyer.com/dist/sdk/pgyersdk" }  //主力仓库
+        maven {
+            allowInsecureProtocol = true
+            url 'http://4thline.org/m2'}
     }
 }
 dependencyResolutionManagement {
     repositoriesMode.set(RepositoriesMode.FAIL_ON_PROJECT_REPOS)
     repositories {
         google()
-//        mavenLocal()
         mavenCentral()
         maven { url 'https://jitpack.io' }
         maven { url 'https://maven.aliyun.com/repository/jcenter' }
@@ -30,6 +31,9 @@ dependencyResolutionManagement {
         }
         maven { url 'https://maven.aliyun.com/repository/public' }
         maven { url "https://frontjs-static.pgyer.com/dist/sdk/pgyersdk" }  //主力仓库
+        maven {
+            allowInsecureProtocol = true
+            url 'http://4thline.org/m2'}
     }
 }
 rootProject.name = "libbase1"
@@ -49,7 +53,7 @@ include ':libsCenterNew',
 
 // commonlibs
 include ':libgeek'
-include ':libBroccoli'
+include ':libbroccoli1'
 include ':libdkplayer'
 include ':libEncryption'
 include ':libfacedetect'
@@ -65,6 +69,12 @@ include ':libvideocompressor'
 include ':libviewpagerbottomsheet'
 include ':libyanzheng'
 include ':libzxinglite'
+include ':libscreen'
+include ':libncalendar'
 //
 //include ':libsupertextview'
 //include ':libgoodview'
+include ':libharmonyos'
+include ':libcamera1'
+include ':librichtext'
+include ':librichtext2'

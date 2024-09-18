@@ -20,7 +20,7 @@ dependencies {
     implementation "androidx.lifecycle:lifecycle-viewmodel:2.4.0"
     implementation 'androidx.lifecycle:lifecycle-viewmodel-ktx:2.4.0'
     implementation 'com.google.zxing:core:3.3.3'
-
+//    implementation 'com.github.SherlockGougou:BigImageViewPager:androidx-7.2.3'
     api 'com.github.duanhong169:colorpicker:1.1.6'
     api 'com.github.duanhong169:checkerboarddrawable:1.0.2'
     //

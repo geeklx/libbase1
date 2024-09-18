@@ -1,7 +1,6 @@
 package com.example.slbyanzheng.slide;
 
 import android.content.Context;
-import android.graphics.BitmapShader;
 import android.graphics.Canvas;
 import android.graphics.Color;
 import android.graphics.DashPathEffect;

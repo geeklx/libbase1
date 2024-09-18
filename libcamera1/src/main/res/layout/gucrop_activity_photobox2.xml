@@ -1,0 +1,81 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/ucrop_photobox"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+    <!--    android:fitsSystemWindows="true"-->
+
+    <RelativeLayout
+        android:id="@+id/rl1cv"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:visibility="gone"
+        tools:visibility="visible">
+
+        <RelativeLayout
+            android:id="@+id/rlfh1"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="50dp">
+
+            <ImageView
+                android:id="@+id/ivtj1"
+                android:layout_width="30dp"
+                android:layout_height="30dp"
+                android:layout_marginLeft="10dp"
+                android:gravity="center"
+                android:src="@drawable/ucrop_ic_cross" />
+            <!--            重拍-->
+
+            <ImageView
+                android:id="@+id/ivtj2"
+                android:layout_width="30dp"
+                android:layout_height="30dp"
+                android:layout_alignParentRight="true"
+                android:layout_marginRight="10dp"
+                android:src="@drawable/ucrop_ic_done" />
+            <!--                剪切提交-->
+
+        </RelativeLayout>
+
+        <FrameLayout
+            android:id="@+id/ucrop_frame"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_above="@+id/controls_wrapper"
+            android:layout_below="@+id/rlfh1"
+            android:layout_marginBottom="-12dp">
+
+            <ImageView
+                android:id="@+id/image_view_logo"
+                android:layout_width="@dimen/ucrop_default_crop_logo_size"
+                android:layout_height="@dimen/ucrop_default_crop_logo_size"
+                android:layout_gravity="center"
+                app:srcCompat="@drawable/ucrop_vector_ic_crop"
+                tools:background="@drawable/ucrop_vector_ic_crop"
+                tools:ignore="ContentDescription,MissingPrefix" />
+
+            <coms.yalantis.ucrop.view.UCropView
+                android:id="@+id/ucrop"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:alpha="0" />
+
+        </FrameLayout>
+
+        <FrameLayout
+            android:id="@+id/controls_wrapper"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:visibility="gone"
+            tools:visibility="visible" />
+    </RelativeLayout>
+
+    <coms.luck.lib.camerax.CustomCameraView2
+        android:id="@+id/customCameraView1"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent" />
+
+</RelativeLayout>

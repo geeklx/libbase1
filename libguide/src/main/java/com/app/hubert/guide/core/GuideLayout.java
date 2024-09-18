@@ -20,14 +20,12 @@ import android.widget.RelativeLayout;
 
 import com.app.hubert.guide.NewbieGuide;
 import com.app.hubert.guide.listener.AnimationListenerAdapter;
-import com.app.hubert.guide.listener.OnHighlightDrewListener;
 import com.app.hubert.guide.listener.OnLayoutInflatedListener;
 import com.app.hubert.guide.model.GuidePage;
 import com.app.hubert.guide.model.HighLight;
 import com.app.hubert.guide.model.HighlightOptions;
 import com.app.hubert.guide.model.RelativeGuide;
 
-import java.util.ArrayList;
 import java.util.List;
 
 /**

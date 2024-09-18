@@ -4,8 +4,6 @@ import android.os.Bundle;
 
 import androidx.appcompat.app.AppCompatActivity;
 
-import com.geek.libprogressbar.numberprogressbar.CircleProgressBar;
-
 public class NumberActivity1 extends AppCompatActivity {
 
     private int count = 0;

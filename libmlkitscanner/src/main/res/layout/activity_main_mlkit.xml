@@ -29,6 +29,15 @@
             android:textColor="#FFFFFF" />
 
         <Button
+            android:id="@+id/btn_scan_defaulttest"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="10dp"
+            android:background="#6200EE"
+            android:text="默认扫描自己拿到结果"
+            android:textColor="#FFFFFF" />
+
+        <Button
             android:id="@+id/btn_scan_custom"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -161,6 +170,14 @@
             android:layout_gravity="center_horizontal"
             android:scaleType="fitXY"
             android:src="@mipmap/ic_launcher" />
+        <Button
+            android:id="@+id/btn_saveiamge"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:background="#6200EE"
+            android:text="保存二维码"
+            android:textColor="#FFFFFF" />
 
     </LinearLayout>
 

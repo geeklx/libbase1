@@ -20,17 +20,22 @@
         android:supportsRtl="true">
 
         <activity
-            android:name="com.geek.libmlkitscanner.ui.ScanPreviewActivity"
+            android:name=".ui.ScanPreviewActivity"
             android:exported="true"
             android:screenOrientation="portrait"
             android:theme="@style/MNScanCaptureTheme" />
         <activity
-            android:name="com.geek.libmlkitscanner.ui.CustomConfigActivity"
+            android:name=".ui.ScanPreviewActivity1"
+            android:exported="true"
+            android:screenOrientation="portrait"
+            android:theme="@style/MNScanCaptureTheme" />
+        <activity
+            android:name=".ui.CustomConfigActivity"
             android:exported="true"
             android:screenOrientation="portrait" />
 
         <activity
-            android:name="com.geek.libmlkitscanner.ui.MlkitMainActivity"
+            android:name=".ui.MlkitMainActivity"
             android:exported="true"
             android:screenOrientation="portrait">
             <intent-filter>
@@ -39,7 +44,7 @@
             </intent-filter>
         </activity>
         <activity
-            android:name="com.geek.libmlkitscanner.new60.MlkitMainActivity1"
+            android:name=".new60.MlkitMainActivity1"
             android:exported="true"
             android:screenOrientation="portrait">
             <intent-filter>
@@ -48,7 +53,7 @@
             </intent-filter>
         </activity>
         <activity
-            android:name="com.geek.libmlkitscanner.new60.QRCodeAct1"
+            android:name=".new60.QRCodeAct1"
             android:exported="true"
             android:screenOrientation="portrait"
             android:theme="@style/MNScanCaptureTheme">

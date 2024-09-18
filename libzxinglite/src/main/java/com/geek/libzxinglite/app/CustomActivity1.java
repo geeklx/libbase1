@@ -11,11 +11,10 @@ import android.widget.Toast;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.fragment.app.Fragment;
 
-import com.geek.libzxinglite.CaptureHelper;
 import com.geek.libzxinglite.CaptureHelper1;
 import com.geek.libzxinglite.OnCaptureCallback;
 import com.geek.libzxinglite.R;
-import com.geek.libzxinglite.ViewfinderView;
+
 import com.geek.libzxinglite.ViewfinderViews;
 
 import java.util.Arrays;

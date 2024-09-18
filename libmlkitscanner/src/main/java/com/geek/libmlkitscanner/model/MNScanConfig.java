@@ -232,7 +232,8 @@ public class MNScanConfig implements Serializable {
         //闪光灯
         private boolean showLightController = true;
         //扫描提示文案
-        private String scanHintText = "扫二维码/条形码";
+//        private String scanHintText = "扫二维码/条形码";
+        private String scanHintText = "扫二维码";
         //扫描提示文案颜色
         private String scanHintTextColor;
         //扫描提示文案字体大小

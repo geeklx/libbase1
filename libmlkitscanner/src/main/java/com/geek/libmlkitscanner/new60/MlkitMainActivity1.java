@@ -11,7 +11,6 @@ import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 
 import com.geek.libmlkitscanner.R;
-import com.geek.libmlkitscanner.callback.act.MNScanCallback;
 
 import java.util.ArrayList;
 

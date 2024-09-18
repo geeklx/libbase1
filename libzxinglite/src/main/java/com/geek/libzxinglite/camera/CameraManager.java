@@ -26,6 +26,7 @@ import android.view.SurfaceHolder;
 
 import androidx.annotation.FloatRange;
 
+import com.geek.libzxinglite.CaptureActivity;
 import com.geek.libzxinglite.camera.open.OpenCamera;
 import com.geek.libzxinglite.camera.open.OpenCameraInterface;
 import com.geek.libzxinglite.util.LogUtils;
@@ -188,7 +189,7 @@ public final class CameraManager {
     }
 
     /**
-     * Convenience method for {@link com.geek.libzxinglite.CaptureActivity}
+     * Convenience method for {@link CaptureActivity}
      *
      * @param newSetting if {@code true}, light should be turned on if currently off. And vice versa.
      */

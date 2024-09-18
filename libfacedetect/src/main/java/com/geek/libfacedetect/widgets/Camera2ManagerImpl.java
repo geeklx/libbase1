@@ -403,7 +403,7 @@ public class Camera2ManagerImpl extends AbsCameraManager {
 
     private Surface getCaptureSurface() {
         if (cImageReader == null) {
-            cImageReader = ImageReader.newInstance(AbsCameraManager.PWIDTH, AbsCameraManager.PHEIGHT, ImageFormat.YUV_420_888, 2);
+            cImageReader = ImageReader.newInstance(PWIDTH, PHEIGHT, ImageFormat.YUV_420_888, 2);
             cImageReader.setOnImageAvailableListener(new ImageReader.OnImageAvailableListener() {
                 @Override
                 public void onImageAvailable(ImageReader reader) {
