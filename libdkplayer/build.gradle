@@ -25,6 +25,7 @@ dependencies {
 //    api "com.google.android.exoplayer:exoplayer-hls:2.13.2"
 //    api "com.google.android.exoplayer:exoplayer-rtsp:2.18.2"
 //    api "com.google.android.exoplayer:extension-rtmp:2.18.2"
+    api "com.github.CarGuo:GSYIjkJava:1.0.0"
 //    api "com.github.CarGuo:GSYIjkJava:1.0.0"
 //    api('com.github.CarGuo.GSYVideoPlayer:GSYVideoPlayer:v8.1.9-release-jitpack') {
     api "com.github.CarGuo:GSYIjkJava:1.0.0"
