@@ -27,25 +27,25 @@ import java.io.File;
 import java.lang.reflect.Field;
 import java.util.Map;
 
-public final class ExoMediaSourceHelper {
+public final class ExoMediaSourceHelper2 {
 
-    private static volatile ExoMediaSourceHelper sInstance;
+    private static volatile ExoMediaSourceHelper2 sInstance;
 
     private final String mUserAgent;
     private final Context mAppContext;
     private HttpDataSource.Factory mHttpDataSourceFactory;
     private Cache mCache;
 
-    private ExoMediaSourceHelper(Context context) {
+    private ExoMediaSourceHelper2(Context context) {
         mAppContext = context.getApplicationContext();
         mUserAgent = Util.getUserAgent(mAppContext, mAppContext.getApplicationInfo().name);
     }
 
-    public static ExoMediaSourceHelper getInstance(Context context) {
+    public static ExoMediaSourceHelper2 getInstance(Context context) {
         if (sInstance == null) {
-            synchronized (ExoMediaSourceHelper.class) {
+            synchronized (ExoMediaSourceHelper2.class) {
                 if (sInstance == null) {
-                    sInstance = new ExoMediaSourceHelper(context);
+                    sInstance = new ExoMediaSourceHelper2(context);
                 }
             }
         }

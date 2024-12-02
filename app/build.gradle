@@ -1,6 +1,10 @@
 apply plugin: 'com.android.application'
+//apply plugin: 'kotlin-android'
+//apply plugin: 'kotlin-parcelize'
+//apply plugin: 'kotlin-kapt'
 apply plugin: 'kotlin-android'
-apply plugin: 'kotlin-parcelize'
+apply plugin: 'kotlin-platform-android'
+apply plugin: 'kotlin-android-extensions'
 apply plugin: 'kotlin-kapt'
 android {
 
@@ -90,7 +94,17 @@ dependencies {
     api 'io.github.lucksiege:camerax:v3.10.6'
 
 
-
+    // jetbrains
+    api("androidx.vectordrawable:vectordrawable:1.1.0",
+            "org.jetbrains.anko:anko-common:0.10.8",
+            "org.jetbrains.anko:anko-sdk19:0.10.8",
+            "org.jetbrains.anko:anko-support-v4:0.10.8",
+            "org.jetbrains.anko:anko-appcompat-v7:0.10.8",
+            "org.jetbrains.anko:anko-design:0.10.8",
+            "org.jetbrains.anko:anko-cardview-v7:0.10.8",
+            "org.jetbrains.anko:anko-recyclerview-v7:0.10.8",
+            "androidx.legacy:legacy-support-v4:1.0.0"
+    )
 
     
 

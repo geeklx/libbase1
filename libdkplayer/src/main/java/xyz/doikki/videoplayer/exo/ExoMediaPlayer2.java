@@ -30,12 +30,12 @@ import xyz.doikki.videoplayer.player.AbstractPlayer;
 import xyz.doikki.videoplayer.player.VideoViewManager;
 
 
-public class ExoMediaPlayer extends AbstractPlayer implements Player.Listener {
+public class ExoMediaPlayer2 extends AbstractPlayer implements Player.Listener {
 
     protected Context mAppContext;
     protected ExoPlayer mInternalPlayer;
     protected MediaSource mMediaSource;
-    protected ExoMediaSourceHelper mMediaSourceHelper;
+    protected ExoMediaSourceHelper2 mMediaSourceHelper;
 
     private PlaybackParameters mSpeedPlaybackParameters;
 
@@ -45,9 +45,9 @@ public class ExoMediaPlayer extends AbstractPlayer implements Player.Listener {
     private RenderersFactory mRenderersFactory;
     private TrackSelector mTrackSelector;
 
-    public ExoMediaPlayer(Context context) {
+    public ExoMediaPlayer2(Context context) {
         mAppContext = context.getApplicationContext();
-        mMediaSourceHelper = ExoMediaSourceHelper.getInstance(context);
+        mMediaSourceHelper = ExoMediaSourceHelper2.getInstance(context);
     }
 
     @Override

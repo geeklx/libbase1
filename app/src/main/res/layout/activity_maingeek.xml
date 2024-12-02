@@ -200,6 +200,12 @@
                 android:layout_height="wrap_content"
                 android:gravity="center"
                 android:text="富文本支持html+markdown库" />
+            <Button
+                android:id="@+id/button24"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:text="加解密播放器GSY库" />
 
         </LinearLayout>
     </ScrollView>

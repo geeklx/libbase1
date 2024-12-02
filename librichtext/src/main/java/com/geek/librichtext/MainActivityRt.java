@@ -8,6 +8,7 @@ import android.view.MenuItem;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.zzhoujay.richtext.ImageHolder;
 import com.zzhoujay.richtext.RichText;
 import com.zzhoujay.richtext.callback.OnUrlClickListener;
 
@@ -168,7 +169,9 @@ public class MainActivityRt extends AppCompatActivity {
                 "<img src='http://wx1.sinaimg.cn/mw690/eaaf2affly1fihvjpekzwj21el0qotfq.jpg' /><img src='http://wx1.sinaimg.cn/mw690/eaaf2affly1fihvjpekzwj21el0qotfq.jpg' />" +
                 "<img src='http://wx1.sinaimg.cn/mw690/eaaf2affly1fihvjpekzwj21el0qotfq.jpg' /><img src='http://wx1.sinaimg.cn/mw690/eaaf2affly1fihvjpekzwj21el0qotfq.jpg' /><B>End</B>";
 
-        RichText.from(color_test1)
+        RichText.from(html)
+                .autoFix(true)
+                .scaleType(ImageHolder.ScaleType.center_crop)
                 .urlClick(new OnUrlClickListener() {
                     @Override
                     public boolean urlClicked(String url) {

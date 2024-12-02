@@ -18,7 +18,7 @@ import tv.danmaku.ijk.media.player.misc.IjkTrackInfo;
 import xyz.doikki.videoplayer.player.AbstractPlayer;
 import xyz.doikki.videoplayer.player.VideoViewManager;
 
-public class IjkPlayer extends AbstractPlayer implements IMediaPlayer.OnErrorListener,
+public class IjkPlayer2 extends AbstractPlayer implements IMediaPlayer.OnErrorListener,
         IMediaPlayer.OnCompletionListener, IMediaPlayer.OnInfoListener,
         IMediaPlayer.OnBufferingUpdateListener, IMediaPlayer.OnPreparedListener,
         IMediaPlayer.OnVideoSizeChangedListener, IjkMediaPlayer.OnNativeInvokeListener {
@@ -27,7 +27,7 @@ public class IjkPlayer extends AbstractPlayer implements IMediaPlayer.OnErrorLis
     private int mBufferedPercent;
     private final Context mAppContext;
 
-    public IjkPlayer(Context context) {
+    public IjkPlayer2(Context context) {
         mAppContext = context;
     }
 
@@ -56,7 +56,7 @@ public class IjkPlayer extends AbstractPlayer implements IMediaPlayer.OnErrorLis
         try {
             Uri uri = Uri.parse(path);
             if (ContentResolver.SCHEME_ANDROID_RESOURCE.equals(uri.getScheme())) {
-                RawDataSourceProvider rawDataSourceProvider = RawDataSourceProvider.create(mAppContext, uri);
+                RawDataSourceProvider2 rawDataSourceProvider = RawDataSourceProvider2.create(mAppContext, uri);
                 mMediaPlayer.setDataSource(rawDataSourceProvider);
             } else {
                 //处理UA问题
@@ -78,7 +78,7 @@ public class IjkPlayer extends AbstractPlayer implements IMediaPlayer.OnErrorLis
     @Override
     public void setDataSource(AssetFileDescriptor fd) {
         try {
-            mMediaPlayer.setDataSource(new RawDataSourceProvider(fd));
+            mMediaPlayer.setDataSource(new RawDataSourceProvider2(fd));
         } catch (Exception e) {
             mPlayerEventListener.onError();
         }
