@@ -83,7 +83,7 @@ dependencies {
 //    implementation 'com.github.geeklx:fosunglibs:1.0.8'
 //    implementation 'com.github.JessYanCoding:AndroidAutoSize:v1.2.1'
 //    implementation 'com.blankj:utilcodex:1.30.6'
-    implementation 'com.github.geeklx.libbase2:libutils:2.5.9'
+    implementation 'com.github.geeklx.libbase2:libutils:2.6.6'
 //    implementation 'com.github.geeklx.libbase2:libgeek:2.2.2'//核心库
 
 
@@ -94,7 +94,7 @@ dependencies {
     api 'io.github.lucksiege:ucrop:v3.10.6'
     // simple camerax library (Not necessary)
     api 'io.github.lucksiege:camerax:v3.10.6'
-
+    api 'com.google.android.flexbox:flexbox:3.0.0'
 
     // jetbrains
     api("androidx.vectordrawable:vectordrawable:1.1.0",

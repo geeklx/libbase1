@@ -166,6 +166,7 @@ bmelnychuk                        : 'com.github.bmelnychuk:atv:1.2.9',
 //---------------------EasyPermissions高效处理权限-------------------------
 easypermissions                   : 'pub.devrel:easypermissions:3.0.0',
 XXPermissions                     : 'com.github.getActivity:XXPermissions:11.0',
+Toaster                           : 'com.github.getActivity:Toaster:12.6',
 //--------------------------七牛云sdk------------------------------
 qiniu                             : 'com.qiniu:qiniu-android-sdk:7.2.3',
 //--------------------------使用EasyRecyclerView列表实现复杂布局的刷新与加载--------------------------

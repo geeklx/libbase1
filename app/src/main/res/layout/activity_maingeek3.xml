@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+
+    <LinearLayout
+        android:id="@+id/llzbn1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="@drawable/shape_zbn1"
+        android:minWidth="80dp"
+        android:orientation="vertical">
+
+        <RelativeLayout
+            android:id="@+id/rlzbn1"
+            android:layout_width="match_parent"
+            android:layout_height="22dp">
+
+            <ImageView
+                android:id="@+id/ivzbn1"
+                android:layout_width="14dp"
+                android:layout_height="14dp"
+                android:layout_centerVertical="true"
+                android:layout_marginLeft="10dp"
+                android:src="@mipmap/icon_zbn1" />
+
+            <TextView
+                android:id="@+id/tvzbn1"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_marginLeft="4dp"
+                android:layout_toRightOf="@+id/ivzbn1"
+                android:gravity="center"
+                android:text="公告"
+                android:textColor="#FFE19A"
+                android:textSize="12dp" />
+
+            <ImageView
+                android:id="@+id/ivzbn3"
+                android:layout_width="10dp"
+                android:layout_height="10dp"
+                android:layout_centerVertical="true"
+                android:layout_marginLeft="10dp"
+                android:layout_toRightOf="@+id/tvzbn1"
+                android:src="@mipmap/icon_zbn3" />
+        </RelativeLayout>
+
+        <ScrollView
+            android:id="@+id/scrollView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:scrollbars="none">
+
+            <TextView
+                android:id="@+id/tvzbn2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_toRightOf="@+id/ivzbn1"
+                android:lineHeight="15dp"
+                android:maxWidth="150dp"
+                android:paddingLeft="10dp"
+                android:paddingTop="2dp"
+                android:paddingRight="10dp"
+                android:paddingBottom="6dp"
+                android:text=""
+                android:textColor="#FFE19A"
+                android:textSize="11dp" />
+        </ScrollView>
+
+
+        <LinearLayout
+            android:id="@+id/llzbn2"
+            android:layout_width="match_parent"
+            android:layout_height="22dp"
+            android:background="@drawable/shape_zbn2"
+            android:gravity="center"
+            android:orientation="vertical"
+            android:visibility="gone"
+            tools:visibility="visible">
+
+            <ImageView
+                android:layout_width="14dp"
+                android:layout_height="14dp"
+                android:layout_gravity="center"
+                android:layout_toRightOf="@+id/tvzbn1"
+                android:src="@mipmap/icon_zbn2" />
+        </LinearLayout>
+    </LinearLayout>
+
+
+</LinearLayout>
