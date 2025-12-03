@@ -49,7 +49,7 @@ import java.util.List;
 public class MainActivity extends AppCompatActivity implements View.OnClickListener {
     private Button button, button1, button2, button3, button4, button5, button6, button7, button8, button9,
             button10, button11, button12, button13, button14, button15, button16, button17, button18, button19,
-            button20, button21, button22, button23, button24, button25, button26;
+            button20, button21, button22, button23, button24, button25, button26, button27;
 
     private TextView tv1;
 
@@ -162,6 +162,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         button24 = findViewById(R.id.button24);
         button25 = findViewById(R.id.button25);
         button26 = findViewById(R.id.button26);
+        button27 = findViewById(R.id.button27);
         button.setOnClickListener(this);
         button1.setOnClickListener(this);
         button2.setOnClickListener(this);
@@ -189,6 +190,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         button24.setOnClickListener(this);
         button25.setOnClickListener(this);
         button26.setOnClickListener(this);
+        button27.setOnClickListener(this);
 //        new PgyerSDKManager.Init()
 //                .setContext(getApplicationContext()) //设置上下问对象
 //                .start();
@@ -466,6 +468,13 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 // 扫描库 项目地址: https://github.com/L-X-J/RichText-Androidx
 //                startActivity(new Intent(getPackageName() + ".hs.act.slbapp.NcalendarActivity"));
                 startActivity(new Intent(getPackageName() + ".hs.act.slbapp.SqAct1"));
+//                startActivity(new Intent(this, NcalendarActivity.class));
+
+                break;
+            case R.id.button27:
+                // 扫描库 项目地址: https://github.com/L-X-J/RichText-Androidx
+//                startActivity(new Intent(getPackageName() + ".hs.act.slbapp.NcalendarActivity"));
+                startActivity(new Intent(getPackageName() + ".hs.act.slbapp.DjxzAct1"));
 //                startActivity(new Intent(this, NcalendarActivity.class));
 
                 break;

@@ -11,7 +11,7 @@ import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
 import com.bumptech.glide.load.engine.DiskCacheStrategy
 import com.chad.library.adapter.base.BaseQuickAdapter
-import com.chad.library.adapter.base.viewholder.BaseViewHolder
+import com.chad.library.adapter.base.BaseViewHolder
 import com.geek.libnsfw.R
 import kotlin.random.Random
 
@@ -69,8 +69,10 @@ class NsfwMainActivity : NsfwBaseActivity() {
 
                 }
             }.also { adapter ->
-                adapter.setAnimationWithDefault(BaseQuickAdapter.AnimationType.ScaleIn)
-                adapter.isAnimationFirstOnly = false
+//                adapter.setAnimationWithDefault(BaseQuickAdapter.AnimationType.ScaleIn)
+//                adapter.isAnimationFirstOnly = false
+//                adapter.setAnimationWithDefault(BaseQuickAdapter.AnimationType.ScaleIn)
+//                adapter.isAnimationFirstOnly = false
 
                 Thread({
 

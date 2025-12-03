@@ -5,11 +5,12 @@ import android.widget.RelativeLayout
 import android.widget.TextView
 import androidx.core.content.ContextCompat
 import com.chad.library.adapter.base.BaseQuickAdapter
-import com.chad.library.adapter.base.viewholder.BaseViewHolder
+import com.chad.library.adapter.base.BaseViewHolder
 import com.geek.libnsfw.R
 
 class Nsfw2ActAdapter(nsfwList: List<MyNsfwBean>?) :
-    BaseQuickAdapter<MyNsfwBean, BaseViewHolder>(R.layout.item_mainnsfw2,
+    BaseQuickAdapter<MyNsfwBean, BaseViewHolder>(
+        R.layout.item_mainnsfw2,
         nsfwList as MutableList<MyNsfwBean>?
     ) {
 
@@ -17,13 +18,14 @@ class Nsfw2ActAdapter(nsfwList: List<MyNsfwBean>?) :
         val textView = holder.getView<TextView>(R.id.tv_text)
         val imageView = holder.getView<ImageView>(R.id.iv)
         val view = holder.getView<RelativeLayout>(R.id.view)
-        var color = ContextCompat.getColor(context, R.color.nsfw1)
+        var color = ContextCompat.getColor(mContext, R.color.nsfw1)
         when (item.nsfw) {
             in 0.0..0.2 -> {
-                color = ContextCompat.getColor(context, R.color.nsfw3)
+                color = ContextCompat.getColor(mContext, R.color.nsfw3)
             }
+
             in 0.2..0.8 -> {
-                color = ContextCompat.getColor(context, R.color.nsfw2)
+                color = ContextCompat.getColor(mContext, R.color.nsfw2)
             }
         }
         textView.text =

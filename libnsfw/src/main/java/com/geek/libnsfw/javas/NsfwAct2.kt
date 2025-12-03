@@ -135,7 +135,8 @@ class NsfwAct2 : AppCompatActivity(), View.OnClickListener {
 
     private fun reScFromImgs(list: MutableList<LocalMedia?>) {
         index = 0
-        mainAdapter?.setNewInstance(null)
+//        mainAdapter?.setNewInstance(null)
+        mainAdapter?.setNewData(null)
         listData = ArrayList<MyNsfwBean>()
         Thread(Runnable {
             for (lm in list) {
@@ -158,7 +159,8 @@ class NsfwAct2 : AppCompatActivity(), View.OnClickListener {
 
     private fun reScAssetsImgs() {
         index = 0
-        mainAdapter?.setNewInstance(null)
+//        mainAdapter?.setNewInstance(null)
+        mainAdapter?.setNewData(null)
         listData = ArrayList<MyNsfwBean>()
         for (a in resources.assets.list("img")!!) {
             val path = "img/${a}"

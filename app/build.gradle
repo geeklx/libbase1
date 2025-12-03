@@ -85,7 +85,7 @@ dependencies {
 //    implementation 'com.blankj:utilcodex:1.30.6'
     implementation 'com.github.geeklx.libbase2:libutils:2.6.6'
 //    implementation 'com.github.geeklx.libbase2:libgeek:2.2.2'//核心库
-
+    implementation 'com.github.CymChad:BaseRecyclerViewAdapterHelper:2.9.40'
 
     api 'io.github.lucksiege:pictureselector:v3.10.6'
     // image compress library (Not necessary)
